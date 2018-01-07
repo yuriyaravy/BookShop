@@ -1,0 +1,18 @@
+янв 04, 2018 9:44:00 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.io.InvalidClassException: by.home.book.base.Book; local class incompatible: stream classdesc serialVersionUID = -4191243739583845127, local class serialVersionUID = 3510938719235402191
+янв 04, 2018 9:44:00 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
+янв 04, 2018 9:46:15 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
+янв 04, 2018 9:47:45 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
+янв 04, 2018 9:59:45 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
+янв 04, 2018 10:13:08 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.io.FileNotFoundException: src\by\home\book\file\CSVFiles\books.csv (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+янв 05, 2018 3:09:00 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
+янв 05, 2018 3:10:57 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
+янв 05, 2018 3:31:36 PM by.home.book.DAO.TextLogger exceptLog
+INFO: Exeption: java.lang.NullPointerException
