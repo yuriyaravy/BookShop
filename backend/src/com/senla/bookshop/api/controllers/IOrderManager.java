@@ -29,4 +29,14 @@ public interface IOrderManager {
 
 	ArrayList<Order> getOrders(Comparator<Order> comparator);
 
+	void saveOrderToCSV(int id);
+
+	ArrayList<String> readOrderFromCSV();
+
+	ArrayList<Order> getOrders();
+
+	Order cloneOrder(Order order);
+
+	public void serializationForOrder();
+
 }

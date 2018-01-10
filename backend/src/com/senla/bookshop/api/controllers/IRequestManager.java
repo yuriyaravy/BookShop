@@ -12,6 +12,14 @@ public interface IRequestManager {
 	public Request getRequestById(int id);
 
 	public ArrayList<Request> getRequests(Comparator<Request> comparator);
+
+	ArrayList<Request> getRequests();
+
+	ArrayList<String> readRequestFromCSV();
+
+	void saveRequestToCSV(int id);
+
+	public void serializationForRequest();
 	
 
 }

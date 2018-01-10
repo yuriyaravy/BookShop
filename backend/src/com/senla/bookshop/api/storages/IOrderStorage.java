@@ -13,6 +13,6 @@ public interface IOrderStorage {
 	
 	public void setOrderBooks(ArrayList<Order> orderBooks);
 
-	public ArrayList<Order> getOrders(Comparator<Order> comparator);
+	ArrayList<Order> getSortOrders(Comparator<Order> comparator);
 
 }

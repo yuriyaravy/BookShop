@@ -12,6 +12,10 @@ import backend.src.com.senla.bookshop.entities.Book;
 import backend.src.com.senla.bookshop.entities.Request;
 import backend.src.com.senla.bookshop.storage.BookStorage;
 import backend.src.com.senla.bookshop.storage.RequestStorage;
+import backend.src.com.senla.bookshop.utils.csvworker.PathStorage;
+import backend.src.com.senla.bookshop.utils.csvworker.ReadFromCSV;
+import backend.src.com.senla.bookshop.utils.csvworker.SaveObjectToCSV;
+import backend.src.com.senla.bookshop.utils.txtworker.TextSerializ;
 
 public class RequestManager implements IRequestManager{
 	
@@ -37,6 +41,22 @@ public class RequestManager implements IRequestManager{
 	@Override
 	public ArrayList<Request> getRequests(Comparator<Request> comparator){
 		return RequestStorage.getInstance().getRequests(comparator);
+	}
+	@Override
+	public void saveRequestToCSV(int id){
+		SaveObjectToCSV.requestWriteToCSV(id);
+	}
+	@Override
+	public ArrayList<String> readRequestFromCSV(){
+		return ReadFromCSV.readCSV(new PathStorage().getCsvBookFile());
+	}
+	@Override
+	public ArrayList<Request> getRequests(){
+		return RequestStorage.getInstance().getRequestsBooks();
+	}
+	@Override
+	public void serializationForRequest() {
+		TextSerializ.getInstance().textReuqestSerial(RequestStorage.getInstance().getRequestsBooks());
 	}
 
 

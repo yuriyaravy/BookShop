@@ -1,7 +1,6 @@
 package backend.src.com.senla.bookshop.api.facade;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 import backend.src.com.senla.bookshop.entities.Book;
 import backend.src.com.senla.bookshop.entities.Order;
@@ -60,6 +59,32 @@ public interface IFacade {
 	ArrayList<Book> sortBookByYearOfPublic();
 
 	ArrayList<Order> sortOrderByCompleate();
+
+	void saveBookToCSV(int id);
+
+	void saveOrderToCSV(int id);
+
+	void saveRequestToCSV(int id);
+
+	public ArrayList<String> readRequestFromCSV();
+
+	public ArrayList<String> readOrderFromCSV();
+
+	public ArrayList<String> readBookFromCSV();
+
+	ArrayList<Book> getBooks();
+
+	ArrayList<Request> getRequests();
+
+	ArrayList<Order> getOrders();
+
+	void cloneOrder(Order order);
+
+	void serializationForBook();
+
+	void serializationForOrder();
+
+	void serializationForRequest();
 	
 	
 }

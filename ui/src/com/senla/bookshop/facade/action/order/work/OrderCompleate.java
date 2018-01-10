@@ -1,6 +1,5 @@
 package ui.src.com.senla.bookshop.facade.action.order.work;
 
-import backend.src.com.senla.bookshop.controllers.OrderManager;
 import backend.src.com.senla.bookshop.facade.Facade;
 import backend.src.com.senla.bookshop.utils.exceptions.Setting;
 import ui.src.com.senla.bookshop.facade.api.IAction;

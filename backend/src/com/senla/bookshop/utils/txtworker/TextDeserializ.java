@@ -17,8 +17,8 @@ public class TextDeserializ {
 	private static final Logger logger = Logger.getLogger(TextDeserializ.class);
 	
 	private String PATH_BOOK = "E:/WorkSpace/BookShop/src/file/com/senla/bookshop/files/book.txt";
-	private String PATH_ORDER = "/BookShop/src/file/com/senla/bookshop/files/order.txt";
-	private String PATH_REQUEST = "/BookShop/src/file/com/senla/bookshop/files/request.txt";
+	private String PATH_ORDER = "E:/WorkSpace/BookShop/src/file/com/senla/bookshop/files/order.txt";
+	private String PATH_REQUEST = "E:/WorkSpace/BookShop/src/file/com/senla/bookshop/files/request.txt";
 	
 	private static TextDeserializ instance;
 	

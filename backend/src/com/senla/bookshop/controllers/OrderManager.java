@@ -14,6 +14,10 @@ import backend.src.com.senla.bookshop.storage.BookStorage;
 import backend.src.com.senla.bookshop.storage.OrderStorage;
 import backend.src.com.senla.bookshop.utils.DateManager;
 import backend.src.com.senla.bookshop.utils.OtherSorting;
+import backend.src.com.senla.bookshop.utils.csvworker.PathStorage;
+import backend.src.com.senla.bookshop.utils.csvworker.ReadFromCSV;
+import backend.src.com.senla.bookshop.utils.csvworker.SaveObjectToCSV;
+import backend.src.com.senla.bookshop.utils.txtworker.TextSerializ;
 
 public class OrderManager implements IOrderManager{
 	
@@ -111,8 +115,33 @@ public class OrderManager implements IOrderManager{
 	}
 	@Override
 	public ArrayList<Order> getOrders(Comparator<Order> comparator){
-		return OrderStorage.getInstance().getOrders(comparator);
+		return OrderStorage.getInstance().getSortOrders(comparator);
+	}
+	@Override
+	public void saveOrderToCSV(int id){
+		SaveObjectToCSV.orderWriteToCSV(id);
+	}
+	@Override
+	public ArrayList<String> readOrderFromCSV(){
+		return ReadFromCSV.readCSV(new PathStorage().getCsvOrderFile());
+	}
+	@Override
+	public ArrayList<Order> getOrders(){
+		return OrderStorage.getInstance().getOrdersBooks();
 	}
 	
-
+	@Override
+	public Order cloneOrder(Order order) {
+		Order clone = null;
+		try {
+			clone = order.clone();
+		} catch (CloneNotSupportedException e) {
+			logger.error(e);
+     		}
+		return clone;
+	}
+	@Override
+	public void serializationForOrder() {
+		TextSerializ.getInstance().textOrderSerial(OrderStorage.getInstance().getOrdersBooks());
+	}
 }

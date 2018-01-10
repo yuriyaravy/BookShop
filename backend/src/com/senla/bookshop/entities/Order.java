@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 import backend.src.com.senla.bookshop.enums.OrderStatus;
+import backend.src.com.senla.bookshop.storage.OrderStorage;
 
 public class Order implements Serializable , Cloneable{
 	
@@ -74,7 +75,7 @@ public class Order implements Serializable , Cloneable{
 	@Override
 	public Order clone() throws CloneNotSupportedException {
 		Order cloneOrder = (Order)super.clone();
-		cloneOrder.setBookId(bookId);
+		cloneOrder.setId(OrderStorage.getInstance().getOrdersBooks().size()-1);
 		cloneOrder.setStatus(OrderStatus.PROCESSING);
 		return cloneOrder;
   }

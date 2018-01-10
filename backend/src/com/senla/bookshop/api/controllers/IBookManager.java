@@ -11,4 +11,12 @@ public interface IBookManager {
 
 	ArrayList<Book> getBook(Comparator<Book> comparator);
 
+	void saveBookToCSV(int id);
+
+	ArrayList<Book> getBooks();
+
+	ArrayList<String> readBookFromCSV();
+
+	void serializationForBooks();
+
 }

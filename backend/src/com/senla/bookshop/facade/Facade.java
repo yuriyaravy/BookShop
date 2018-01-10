@@ -1,7 +1,6 @@
 package backend.src.com.senla.bookshop.facade;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 import org.apache.log4j.Logger;
 
@@ -15,6 +14,7 @@ import backend.src.com.senla.bookshop.controllers.RequestManager;
 import backend.src.com.senla.bookshop.entities.Book;
 import backend.src.com.senla.bookshop.entities.Order;
 import backend.src.com.senla.bookshop.entities.Request;
+import backend.src.com.senla.bookshop.storage.OrderStorage;
 import backend.src.com.senla.bookshop.utils.comparators.book.ComparatorBookByDate;
 import backend.src.com.senla.bookshop.utils.comparators.book.ComparatorBookByName;
 import backend.src.com.senla.bookshop.utils.comparators.book.ComparatorBookByPrice;
@@ -158,5 +158,58 @@ public class Facade implements IFacade{
 	@Override
 	public ArrayList<Book> sortBookByYearOfPublic(){
 		return bookManager.getBook(new ComparatorBookByYearOfPublic());
+	}
+	@Override
+	public void saveBookToCSV(int id){
+		bookManager.saveBookToCSV(id);
+	}
+	@Override
+	public void saveOrderToCSV(int id){
+		orderManager.saveOrderToCSV(id);
+	}
+	@Override
+	public void saveRequestToCSV(int id){
+		requestManager.saveRequestToCSV(id);
+	}
+	@Override
+	public ArrayList<String> readRequestFromCSV(){
+		return requestManager.readRequestFromCSV();
+	}
+	@Override
+	public ArrayList<String> readBookFromCSV(){
+		return bookManager.readBookFromCSV();
+	}
+	@Override
+	public ArrayList<String> readOrderFromCSV(){
+		return orderManager.readOrderFromCSV();
+	}
+	@Override
+	public ArrayList<Book> getBooks(){
+		return bookManager.getBooks();
+	}
+	@Override
+	public ArrayList<Order> getOrders(){
+		return orderManager.getOrders();
+	}
+	@Override
+	public ArrayList<Request> getRequests(){
+		return requestManager.getRequests();
+	}
+	@Override
+	public void serializationForBook(){
+		bookManager.serializationForBooks();
+	}
+	@Override
+	public void serializationForOrder(){
+		orderManager.serializationForOrder();
+	}
+	@Override
+	public void serializationForRequest(){
+		requestManager.serializationForRequest();
+	}
+	@Override
+	public void cloneOrder(Order order){
+		orderManager.cloneOrder(order);
+		OrderStorage.getInstance().getOrdersBooks().add(order);
 	}
 }

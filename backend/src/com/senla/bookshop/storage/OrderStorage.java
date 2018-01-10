@@ -46,8 +46,10 @@ public class OrderStorage implements IOrderStorage{
 		}
 	}
 	@Override
-	public ArrayList<Order> getOrders(Comparator<Order> comparator){
+	public ArrayList<Order> getSortOrders(Comparator<Order> comparator){
 		sortOrders(orderBooks, comparator);
 		return orderBooks;
 	}
+
+	
 }
