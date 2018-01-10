@@ -1,5 +1,7 @@
 package backend.src.com.senla.bookshop.controllers;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;
@@ -106,6 +108,10 @@ public class OrderManager implements IOrderManager{
 	public int getCountOfOrder(){
 		int profit = OrderStorage.getInstance().getOrdersBooks().size();
 		return profit;
+	}
+	@Override
+	public ArrayList<Order> getOrders(Comparator<Order> comparator){
+		return OrderStorage.getInstance().getOrders(comparator);
 	}
 	
 

@@ -24,7 +24,4 @@ public class PathStorage {
 	public void setCsvRequestFile(String csvRequestFile) {
 		this.csvRequestFile = csvRequestFile;
 	}
-	
-	
-
 }

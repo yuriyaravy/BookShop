@@ -1,5 +1,8 @@
 package backend.src.com.senla.bookshop.controllers;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 import org.apache.log4j.Logger;
 
 import backend.src.com.senla.bookshop.api.controllers.IBookManager;
@@ -21,6 +24,9 @@ public class BookManager implements IBookManager{
 		}
 		return current;
 	}
-	
+	@Override
+	public ArrayList<Book> getBook(Comparator<Book> comparator){
+		return BookStorage.getInstance().getSortBook(comparator);
+	}
 	
 }

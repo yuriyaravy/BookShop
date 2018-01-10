@@ -15,15 +15,8 @@ public class Main {
 	private static final Logger logger = Logger.getLogger(Main.class);
 
 	public static void main(String[] args) {
-		try{
-			int a = 1;
-			int b = 0;
-			int resual = a/b;
-		}catch(ArithmeticException e){
-			logger.error(e);
-		}
-		}
-	
+		
+	}
 	public static void booklist(){
 		BookStorage.getInstance().addBook(new Book(1, "Azbyka", 245, 2006, false));
 		BookStorage.getInstance().addBook(new Book(2, "Gore ot yma", 235, 1824, true));

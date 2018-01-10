@@ -10,6 +10,8 @@ public interface IRequestManager {
 	public void addRequest(int id);
 	
 	public Request getRequestById(int id);
+
+	public ArrayList<Request> getRequests(Comparator<Request> comparator);
 	
 
 }

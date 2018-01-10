@@ -34,6 +34,10 @@ public class RequestManager implements IRequestManager{
 		}
 		return current;
 	}
+	@Override
+	public ArrayList<Request> getRequests(Comparator<Request> comparator){
+		return RequestStorage.getInstance().getRequests(comparator);
+	}
 
 
 }

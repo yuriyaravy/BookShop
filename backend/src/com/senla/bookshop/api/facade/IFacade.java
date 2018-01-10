@@ -34,6 +34,32 @@ public interface IFacade {
 	public void cancelOrder(int id);
 	
 	public int getCountOfOrder();
+
+	public ArrayList<Request> sortRequestAmounte();
+
+	public ArrayList<Request> sortRequestByName();
+
+	ArrayList<Order> sortOrderByStatus();
+
+	ArrayList<Order> sortOrderByPrice();
+
+	ArrayList<Order> sortOrderByDateOfCompleate();
+
+	ArrayList<Order> sortOrderByDate();
+
+	ArrayList<Order> sortOrderByDateOfDeliver();
+
+	ArrayList<Book> sortBookByDate();
+
+	ArrayList<Book> sortBookByName();
+
+	ArrayList<Book> sortBookByPrice();
+
+	ArrayList<Book> sortBookByStatus();
+
+	ArrayList<Book> sortBookByYearOfPublic();
+
+	ArrayList<Order> sortOrderByCompleate();
 	
 	
 }

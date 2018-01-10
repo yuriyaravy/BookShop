@@ -1,5 +1,8 @@
 package backend.src.com.senla.bookshop.api.controllers;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 import backend.src.com.senla.bookshop.entities.Order;
 
 public interface IOrderManager {
@@ -23,5 +26,7 @@ public interface IOrderManager {
 	public void cancelOrder(int id);
 	
 	public int getCountOfOrder();
+
+	ArrayList<Order> getOrders(Comparator<Order> comparator);
 
 }

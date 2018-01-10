@@ -1,6 +1,8 @@
 package backend.src.com.senla.bookshop.storage;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import backend.src.com.senla.bookshop.api.storages.IRequestStorage;
 import backend.src.com.senla.bookshop.entities.Request;
@@ -35,6 +37,17 @@ public class RequestStorage implements IRequestStorage{
 	@Override
 	public void setRequestsBooks(ArrayList<Request> requestBooks) {
 		this.requestBooks = requestBooks;
+	}
+	
+	private void sortReuqest(ArrayList<Request> requstBook, Comparator<Request> comparator){
+		if(comparator != null){
+			Collections.sort(requstBook, comparator);
+		}
+	}
+	@Override
+	public ArrayList<Request> getRequests(Comparator<Request> comparator){
+		sortReuqest(requestBooks, comparator);
+		return requestBooks;
 	}
 
 }

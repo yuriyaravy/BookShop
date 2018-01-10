@@ -1,6 +1,8 @@
 package backend.src.com.senla.bookshop.storage;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import backend.src.com.senla.bookshop.api.storages.IOrderStorage;
 import backend.src.com.senla.bookshop.entities.Order;
@@ -36,5 +38,16 @@ public class OrderStorage implements IOrderStorage{
 	@Override
 	public void setOrderBooks(ArrayList<Order> orderBooks) {
 		this.orderBooks = orderBooks;
+	}
+	
+	private void sortOrders(ArrayList<Order> order, Comparator<Order> comparator){
+		if(comparator != null){
+			Collections.sort(order, comparator);
+		}
+	}
+	@Override
+	public ArrayList<Order> getOrders(Comparator<Order> comparator){
+		sortOrders(orderBooks, comparator);
+		return orderBooks;
 	}
 }
