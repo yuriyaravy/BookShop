@@ -1,0 +1,1 @@
+[2018-01-10 03:50:38,010] [ERROR] [Main]: java.lang.ArithmeticException: / by zero
