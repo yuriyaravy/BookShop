@@ -1,0 +1,10 @@
+[2018-01-11 20:48:48,284] [ERROR] [TextDeserializ]: java.io.InvalidClassException: backend.src.com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = 7367670322368680253, local class serialVersionUID = -1234937414016645173
+[2018-01-11 20:48:48,292] [ERROR] [TextDeserializ]: java.lang.ClassNotFoundException: by.home.book.base.Order
+[2018-01-11 20:48:48,307] [ERROR] [TextDeserializ]: java.lang.ClassNotFoundException: by.home.book.base.Request
+[2018-01-11 20:48:48,354] [ERROR] [Setting]: java.io.FileNotFoundException: \BookShop\src\file\com\senla\bookshop\files\property\propConfig.txt (Системе не удается найти указанный путь)
+[2018-01-11 20:48:48,354] [ERROR] [Setting]: java.io.FileNotFoundException: \BookShop\src\file\com\senla\bookshop\files\property\propConfig.txt (Системе не удается найти указанный путь)
+[2018-01-11 20:51:30,057] [ERROR] [TextDeserializ]: java.io.InvalidClassException: backend.src.com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = 7367670322368680253, local class serialVersionUID = -1234937414016645173
+[2018-01-11 20:51:30,060] [ERROR] [TextDeserializ]: java.lang.ClassNotFoundException: by.home.book.base.Order
+[2018-01-11 20:51:30,062] [ERROR] [TextDeserializ]: java.lang.ClassNotFoundException: by.home.book.base.Request
+[2018-01-11 20:51:30,065] [ERROR] [Setting]: java.io.FileNotFoundException: \BookShop\src\file\com\senla\bookshop\files\property\propConfig.txt (Системе не удается найти указанный путь)
+[2018-01-11 20:51:30,065] [ERROR] [Setting]: java.io.FileNotFoundException: \BookShop\src\file\com\senla\bookshop\files\property\propConfig.txt (Системе не удается найти указанный путь)
