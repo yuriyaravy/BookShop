@@ -25,7 +25,8 @@ public class ParseToObject {
 				csvBook.setName(cutArray[1]);
 				csvBook.setPrice(Double.parseDouble(cutArray[2]));
 				csvBook.setStatus(Boolean.parseBoolean(cutArray[3]));
-				csvBook.setYearOfPublication(Integer.parseInt(cutArray[4]));
+				
+				csvBook.setYearOfPublication(Integer.parseInt(cutArray[4].trim()));
 				DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
 				csvBook.setDate(df.parse(cutArray[5]));
 				csvBook.setCountOfRequest(Integer.parseInt(cutArray[6]));
@@ -41,20 +42,20 @@ public class ParseToObject {
 		Order csvOrder = new Order();
 		
 			for (int i = 1; i < array.length; i++) {
-				String[] cutArray = array[i].split(", ");
+				String[] cutArray = array[i].split(",");
 				csvOrder.setId(Integer.parseInt(cutArray[0]));
 			
-				for (int j = 5; j < array.length; j++) {
+				for (int j = 2; j < array.length; j++) {
 					String[] cutBook = array[j].split(",");
 					Book csvBook = new Book();
 					csvBook.setId(Integer.parseInt(cutBook[0]));
 					csvBook.setName(cutBook[1]);
 					csvBook.setPrice(Double.parseDouble(cutBook[2]));
 					csvBook.setStatus(Boolean.parseBoolean(cutBook[3]));
-					csvBook.setYearOfPublication(Integer.parseUnsignedInt(cutBook[4]));
+					csvBook.setYearOfPublication(Integer.parseInt(cutBook[4].trim()));
 					DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
-					csvBook.setDate(df.parse(cutBook[5]));
-					csvBook.setCountOfRequest(Integer.parseInt(cutBook[6]));
+					csvBook.setDate(df.parse(cutBook[5].trim()));
+					csvBook.setCountOfRequest(Integer.parseInt(cutBook[6].trim()));
 					cutListBooks.add(csvBook);
 				}
 			csvOrder.setBook(cutListBooks);	
@@ -62,7 +63,13 @@ public class ParseToObject {
 				DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
 				csvOrder.setDateOfDeliver(df.parse(cutArray[1]));
 			}
-			csvOrder.setStatus(OrderStatus.valueOf(cutArray[2]));
+			if(cutArray[2].toUpperCase().equals("COMPLEATE")){
+				csvOrder.setStatus(OrderStatus.COMPLEATE);
+			}else if(cutArray[2].toUpperCase().equals("CANCELED")){
+				csvOrder.setStatus(OrderStatus.CANCELED);
+			}else{
+				csvOrder.setStatus(OrderStatus.PROCESSING);
+			}
 			orderFromCSV.add(csvOrder);
 		}
 		return orderFromCSV;
@@ -81,10 +88,10 @@ public class ParseToObject {
 			csvBook.setName(cutBook[1]);
 			csvBook.setPrice(Double.parseDouble(cutBook[2]));
 			csvBook.setStatus(Boolean.parseBoolean(cutBook[3]));
-			csvBook.setYearOfPublication(Integer.parseInt(cutBook[4]));
+			csvBook.setYearOfPublication(Integer.parseInt(cutBook[4].trim()));
 			DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
-			csvBook.setDate(df.parse(cutBook[5]));
-			csvBook.setCountOfRequest(Integer.parseInt(cutBook[6]));
+			csvBook.setDate(df.parse(cutBook[5].trim()));
+			csvBook.setCountOfRequest(Integer.parseInt(cutBook[6].trim()));
 		}
 		csvRequest.setBook(csvBook);
 		requestFromCSV.add(csvRequest);
