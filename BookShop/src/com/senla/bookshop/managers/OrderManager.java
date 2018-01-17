@@ -114,14 +114,12 @@ public class OrderManager implements IOrderManager{
 	@Override
 	public void readOrderFromCSV() throws ParseException{
 		List<Order> csvOrders = ParseToObject.stringToOrder(ReadFromCSV.readCSV(PROPARTY_KEY_CSV));
-		Order newOrder = null;
 		for(Order tempCSV : csvOrders){
 			for(int i = 0; i < orderStorage.getOrdersBooks().size(); i++){
 				if(tempCSV.getId() != orderStorage.getOrdersBooks().get(i).getId()){
-					newOrder = tempCSV;
 				}
 			}
-			orderStorage.addOrders(newOrder);
+			orderStorage.addOrders(tempCSV);
 		}
 	}
 	@Override

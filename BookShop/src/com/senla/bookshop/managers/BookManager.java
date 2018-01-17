@@ -43,16 +43,19 @@ public class BookManager implements IBookManager{
 	@Override
 	public void readBookFromCSV() throws ParseException{
 		List<Book> csvBooks = ParseToObject.stringToBook(ReadFromCSV.readCSV(PROPARTY_KEY_CSV));
-		Book newBook = null;
+		int booksSize = bookStorage.getBooks().size();
 		for(Book tempCSV : csvBooks){
-			for(int i = 0; i < bookStorage.getBooks().size(); i++){
-				if(tempCSV.getId() != bookStorage.getBooks().get(i).getId()){
-					newBook = tempCSV;
+			if(bookStorage.getBooks().size()>0){
+				for(int i = 0; i < booksSize; i++){
+					if(tempCSV.getId() != bookStorage.getBooks().get(i).getId()){
+						bookStorage.addBook(tempCSV);
+					}
 				}
 			}
-			bookStorage.addBook(newBook);
+			bookStorage.addBook(tempCSV);
 		}
 	}
+	
 	
 	@Override
 	public List<Book> getBooks(){

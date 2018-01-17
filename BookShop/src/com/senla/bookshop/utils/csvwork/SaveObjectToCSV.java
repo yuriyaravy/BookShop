@@ -24,8 +24,8 @@ public class SaveObjectToCSV {
 	private static String NEW_LINE_SEPARATOR = "\n";
 	
 	private static String FILE_BOOK_HEADER = "id, name, price, status, yearOfPublication, date, countOfRequest";
-	private static String FILE_ORDER_HEADER = "id, books, dateOfDeliver, status";
-	private static String FILE_REQUEST_HEADER = "id, book";
+	private static String FILE_ORDER_HEADER = "id, dateOfDeliver, status, idBook, nameOfBook, price, yearOfPublication";
+	private static String FILE_REQUEST_HEADER = "id, idBook, nameOfBook, priceOfBook, yearOfPublication";
 	
 	private final static String PROPARTY_BOOK_KEY_CSV = "bookPathCSV";
 	private final static String PROPARTY_ORDER_KEY_CSV = "orderPathCSV";

@@ -21,10 +21,16 @@ public class MainMain {
 
 	public static void main(String[] args) throws ParseException {
 		MainMain mm = new MainMain();
-	//	mm.booklist();
-		Facade.getInstance().fillUpStorages();
-		Facade.getInstance().saveRequestToCSV();
-		System.out.println(Facade.getInstance().readRequestFromCSV());
+	//	mm.orderList();
+	//	Facade.getInstance().serializationForOrder();
+	//	Facade.getInstance().fillUpStorages();
+	//	Facade.getInstance().saveOrderToCSV();
+		Facade.getInstance().readOrderFromCSV();
+	//	System.out.println(OrderStorage.getInstance().getOrdersBooks());
+		for(Order temp : OrderStorage.getInstance().getOrdersBooks()){
+			System.out.println(temp);
+		}
+	//	System.out.println(RequestStorage.getInstance().getRequestsBooks());
 	}
 	
 	public void booklist(){
@@ -46,12 +52,9 @@ public class MainMain {
 	@SuppressWarnings("unchecked")
 	public static void orderList(){
 		List<Book> ordBook1 = new ArrayList<Book>();
-			ordBook1.add(new Book(1, "Azbyka", 245.0, 2006, false));
 			ordBook1.add(new Book(3, "Master i margarita", 305.10, 1937, true));
 		OrderStorage.getInstance().addOrders(new Order(1, ordBook1, null , OrderStatus.PROCESSING));
 		List<Book> ordBook = new ArrayList<Book>();
-			ordBook.add(new Book(5, "Idiot",  250.0, 1868, false));
-			ordBook.add(new Book(13, "Programming book",  1230.0, 2015, true));
 			ordBook.add(new Book(9, "Don Quixote", 750.15, 1875, false));
 		OrderStorage.getInstance().addOrders(new Order(3, ordBook, null , OrderStatus.PROCESSING));
 		List<Book> ordBook2 = new ArrayList<Book>();

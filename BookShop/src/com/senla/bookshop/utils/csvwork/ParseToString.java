@@ -47,24 +47,21 @@ public class ParseToString {
 			
 			str.append(String.valueOf(orderFromList.getId()));
 			str.append(COMMA_DELIMITER);
-			str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
-			
-			if(orderFromList.getBook() != null){
-				List<Book> orderBooks = orderFromList.getBook();
-				String[] orderBooksArray = new String[orderBooks.size()];
-				orderBooksArray = bookToString(orderBooks);
-				str.append(SaveObjectToCSV.getFILE_BOOK_HEADER());
-				str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
-				for(int j = 0; j < orderBooksArray.length; j++){
-					str.append(orderBooksArray[j]);
-					str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
-				}
-			}
-			str.append(COMMA_DELIMITER);
 			str.append(String.valueOf(orderFromList.getDateOfDeliver()));
 			str.append(COMMA_DELIMITER);
 			str.append(String.valueOf(orderFromList.getStatus()));
 			str.append(COMMA_DELIMITER);
+			for(Book temp : orderFromList.getBook()){
+				str.append(String.valueOf(temp.getId()));
+				str.append(COMMA_DELIMITER);
+				str.append(String.valueOf(temp.getName()));
+				str.append(COMMA_DELIMITER);
+				str.append(String.valueOf(temp.getPrice()));
+				str.append(COMMA_DELIMITER);
+				str.append(String.valueOf(temp.getYearOfPublication()));
+				str.append(COMMA_DELIMITER);
+			//	str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
+			}
 			stringOrders[i] = str.toString();
 		}
 		return stringOrders;
@@ -79,20 +76,14 @@ public class ParseToString {
 			
 			str.append(String.valueOf(requestFromList.getId()));
 			str.append(COMMA_DELIMITER);
-			str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
-			
-			if(requestFromList.getBook() != null){
-				List<Book> books = new ArrayList<Book>();
-				books.add(requestFromList.getBook());
-				String[] requestBooksArray = new String[books.size()];
-				requestBooksArray = bookToString(books);
-				str.append(SaveObjectToCSV.getFILE_BOOK_HEADER());
-				str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
-				for(int j = 0; j < requestBooksArray.length; j++){
-					str.append(requestBooksArray[j]);
-					str.append(SaveObjectToCSV.getNEW_LINE_SEPARATOR());
-				}
-			}
+			str.append(requestFromList.getBook().getId());
+			str.append(COMMA_DELIMITER);
+			str.append(requestFromList.getBook().getName());
+			str.append(COMMA_DELIMITER);
+			str.append(requestFromList.getBook().getPrice());
+			str.append(COMMA_DELIMITER);
+			str.append(requestFromList.getBook().getYearOfPublication());
+			str.append(COMMA_DELIMITER);
 			stringRequest[i] = str.toString();
 		}
 		return stringRequest;

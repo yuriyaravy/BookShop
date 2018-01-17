@@ -60,7 +60,7 @@ public class RequestManager implements IRequestManager{
 					newRequest = tempCSV;
 				}
 			}
-			requestStorage.addRequestBooks(newRequest);
+			requestStorage.addRequestBooks(tempCSV);
 		}
 	}
 	@Override
