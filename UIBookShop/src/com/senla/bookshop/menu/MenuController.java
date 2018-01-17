@@ -1,6 +1,5 @@
 package com.senla.bookshop.menu;
 
-import com.senla.bookshop.facade.Facade;
 import com.senla.bookshop.utils.Choice;
 
 public class MenuController {
@@ -18,7 +17,6 @@ public class MenuController {
 	}
 
 	public void run(){
-		Facade.getInstance().fillUpStorages();
 		builder = new Builder();
 		builder.buildMenu();
 		navigator = new Navigator (builder.getRootMenu());

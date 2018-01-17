@@ -10,12 +10,11 @@ public class DeleteOrder implements IAction{
 	@Override
 	public void execute() {
 		Printers.show(Facade.getInstance().getOrders());
-		System.out.println();
-		System.out.println("Write order id for delete this order");
+		Printers.show("Write order id for delete this order");
 		if(Facade.getInstance().deleteBookToOrder(Scanners.scannerForInteger())){
-			System.out.println("Your order was delete");
+			Printers.show("Your order was delete");
 		}else{
-			System.out.println("Fail, something wrong");
+			Printers.show("Fail, something wrong");
 		}
 	}
 

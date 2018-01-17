@@ -28,7 +28,7 @@ public class ParseToObject {
 				
 				csvBook.setYearOfPublication(Integer.parseInt(cutArray[4].trim()));
 				DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
-				csvBook.setDate(df.parse(cutArray[5]));
+				csvBook.setDate(df.parse(cutArray[5].trim()));
 				csvBook.setCountOfRequest(Integer.parseInt(cutArray[6]));
 				bookFromCSV.add(csvBook);
 			}
@@ -42,13 +42,16 @@ public class ParseToObject {
 		Order csvOrder = new Order();
 		
 			for (int i = 1; i < array.length; i++) {
-				String[] cutArray = array[i].split(",");
+				String[] cutArray = array[i].split(", ");
 				csvOrder.setId(Integer.parseInt(cutArray[0]));
 			
-				for (int j = 2; j < array.length; j++) {
-					String[] cutBook = array[j].split(",");
+				for (int j = 3; j < array.length; j++) {
+					String[] cutBook = array[j].split(", ");
+					System.out.println(cutBook[0]);
 					Book csvBook = new Book();
-					csvBook.setId(Integer.parseInt(cutBook[0]));
+					//System.out.println(array[3]);
+					Integer id = Integer.parseInt(cutBook[0].replaceAll("\"", ""));
+					csvBook.setId(id);
 					csvBook.setName(cutBook[1]);
 					csvBook.setPrice(Double.parseDouble(cutBook[2]));
 					csvBook.setStatus(Boolean.parseBoolean(cutBook[3]));
@@ -78,20 +81,29 @@ public class ParseToObject {
 	public static List<Request> stringToRequest(String [] array) throws ParseException{
 		List<Request> requestFromCSV = new ArrayList<Request>();
 		Book csvBook = new Book();
-		String[] cutArray = array[1].split(",");
 		Request csvRequest = new Request();
+		
+		for (int i = 1; i < array.length; i++){
+		
+		String[] cutArray = array[i].split(", ");
 		csvRequest.setId(Integer.parseInt(cutArray[0]));
 				
-		for (int j = 2; j < array.length; j++) {
-			String[] cutBook = array[j].split(",");
-			csvBook.setId(Integer.parseInt(cutBook[0]));
-			csvBook.setName(cutBook[1]);
-			csvBook.setPrice(Double.parseDouble(cutBook[2]));
-			csvBook.setStatus(Boolean.parseBoolean(cutBook[3]));
-			csvBook.setYearOfPublication(Integer.parseInt(cutBook[4].trim()));
-			DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
-			csvBook.setDate(df.parse(cutBook[5].trim()));
-			csvBook.setCountOfRequest(Integer.parseInt(cutBook[6].trim()));
+			for (int j = 3; j < array.length; j++) {
+				String[] cutBook = array[j].split(", ");
+			//	System.out.println(array[3]);
+				//System.out.println(cutBook.length);
+				System.out.println(cutBook[4]);
+				Integer id = Integer.parseInt(cutBook[0]);
+				System.out.println(id);
+				csvBook.setId(id);
+				csvBook.setName(cutBook[1]);
+				csvBook.setPrice(Double.parseDouble(cutBook[2]));
+				csvBook.setStatus(Boolean.parseBoolean(cutBook[3]));
+				csvBook.setYearOfPublication(Integer.parseInt(cutBook[4].trim()));
+				DateFormat df = new SimpleDateFormat("EEE MMM dd kk:mm:ss z yyyy", Locale.ENGLISH);
+				csvBook.setDate(df.parse(cutBook[5].trim()));
+				csvBook.setCountOfRequest(Integer.parseInt(cutBook[6].trim()));
+			}
 		}
 		csvRequest.setBook(csvBook);
 		requestFromCSV.add(csvRequest);

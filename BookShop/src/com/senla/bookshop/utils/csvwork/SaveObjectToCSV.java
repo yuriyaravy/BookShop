@@ -6,11 +6,14 @@ import java.util.List;
 import org.apache.log4j.Category;
 import org.apache.log4j.Logger;
 
-import com.senla.bookshop.controllers.BookManager;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Order;
 import com.senla.bookshop.entities.Request;
 import com.senla.bookshop.facade.Facade;
+import com.senla.bookshop.managers.BookManager;
+import com.senla.bookshop.storage.BookStorage;
+import com.senla.bookshop.storage.OrderStorage;
+import com.senla.bookshop.storage.RequestStorage;
 import com.senla.bookshop.utils.setting.Setting;
 
 public class SaveObjectToCSV {
@@ -18,9 +21,7 @@ public class SaveObjectToCSV {
 	private static final Logger logger = Logger.getLogger(SaveObjectToCSV.class);
 	
 	
-	private static String COMMA_DELIMITER = ", ";
 	private static String NEW_LINE_SEPARATOR = "\n";
-	private static String SPACE_SEPARATOR = "\t";
 	
 	private static String FILE_BOOK_HEADER = "id, name, price, status, yearOfPublication, date, countOfRequest";
 	private static String FILE_ORDER_HEADER = "id, books, dateOfDeliver, status";
@@ -31,93 +32,52 @@ public class SaveObjectToCSV {
 	private final static String PROPARTY_REQUEST_KEY_CSV = "requestPathCSV";
 	
 	
-    public static void bookWriteToCSV(int id){
+	public static String getFILE_BOOK_HEADER() {
+		return FILE_BOOK_HEADER;
+	}
+	public static String getNEW_LINE_SEPARATOR() {
+		return NEW_LINE_SEPARATOR;
+	}
+	
+    public static void bookWriteToCSV(){
     	try(FileWriter fileWriter = new FileWriter(Setting.getPath(PROPARTY_BOOK_KEY_CSV))){
-    		Book book = new BookManager().getBookById(id);
+    		String[] arrayBooks = ParseToString.bookToString(BookStorage.getInstance().getBooks());
 				fileWriter.append(FILE_BOOK_HEADER);
 				fileWriter.append(NEW_LINE_SEPARATOR);
-				fileWriter.append(String.valueOf(book.getId()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(book.getName());
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(book.getPrice()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(book.isStatus()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(book.getYearOfPublication()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(book.getDate()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(book.getCountOfRequest()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(NEW_LINE_SEPARATOR);
+				for(int i = 0; i < arrayBooks.length; i++){
+					fileWriter.append(arrayBooks[i]);
+					fileWriter.append(NEW_LINE_SEPARATOR);
+				}
 				fileWriter.flush();
-				fileWriter.close();
 		} catch (Exception e ) {
 			logger.error(e);
 		}
     }
     
-    public static void orderWriteToCSV(int id){
+    public static void orderWriteToCSV(){
     	try (FileWriter fileWriter = new FileWriter(Setting.getPath(PROPARTY_ORDER_KEY_CSV))){
-    		Order order = Facade.getInstance().getOrderById(id);
+    		String[] arrayOrders = ParseToString.orderToString(OrderStorage.getInstance().getOrdersBooks());
 				fileWriter.append(FILE_ORDER_HEADER);
 				fileWriter.append(NEW_LINE_SEPARATOR);
-				fileWriter.append(String.valueOf(order.getId()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(order.getDateOfDeliver()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(order.getStatus()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(NEW_LINE_SEPARATOR);
-				for(Book temp : order.getBook()){
-					fileWriter.append(String.valueOf(temp.getId()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(temp.getName());
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getPrice()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.isStatus()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getYearOfPublication()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getDate()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getCountOfRequest()));
-					fileWriter.append(COMMA_DELIMITER);
+				for(int i = 0; i < arrayOrders.length; i++){
+					fileWriter.append(arrayOrders[i]);
 					fileWriter.append(NEW_LINE_SEPARATOR);
 				}
-				
 				fileWriter.flush();
 		} catch (Exception e) {
 			logger.error(e);
 		}
     }
     
-    public static void requestWriteToCSV(int id){
+    public static void requestWriteToCSV(){
     	try (FileWriter fileWriter = new FileWriter(Setting.getPath(PROPARTY_REQUEST_KEY_CSV))){
-    		Request request = Facade.getInstance().getRequestById(id);
+    		String[] arrayRequest = ParseToString.requestToString(RequestStorage.getInstance().getRequestsBooks());
 				fileWriter.append(FILE_REQUEST_HEADER);
 				fileWriter.append(NEW_LINE_SEPARATOR);
-				fileWriter.append(String.valueOf(request.getId()));
-				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(NEW_LINE_SEPARATOR);
-				Book temp = request.getBook();
-					fileWriter.append(String.valueOf(temp.getId()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(temp.getName());
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getPrice()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.isStatus()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getYearOfPublication()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getDate()));
-					fileWriter.append(COMMA_DELIMITER);
-					fileWriter.append(String.valueOf(temp.getCountOfRequest()));
-					fileWriter.append(COMMA_DELIMITER);
+				for(int i = 0; i < arrayRequest.length; i++){
+					fileWriter.append(arrayRequest[i]);
 					fileWriter.append(NEW_LINE_SEPARATOR);
+				}
 				fileWriter.flush();
 		} catch (Exception e) {
 			logger.error(e);

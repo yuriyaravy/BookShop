@@ -18,11 +18,11 @@ public interface IRequestManager {
 
 	void readRequestFromCSV() throws ParseException;
 
-	void saveRequestToCSV(int id);
-
 	public void serializationForRequest();
 
 	void fillUpRequestStorage();
+
+	void saveRequestToCSV();
 	
 
 }

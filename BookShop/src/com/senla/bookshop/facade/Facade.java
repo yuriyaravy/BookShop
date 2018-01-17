@@ -9,12 +9,12 @@ import com.senla.bookshop.api.controllers.IBookManager;
 import com.senla.bookshop.api.controllers.IOrderManager;
 import com.senla.bookshop.api.controllers.IRequestManager;
 import com.senla.bookshop.api.facade.IFacade;
-import com.senla.bookshop.controllers.BookManager;
-import com.senla.bookshop.controllers.OrderManager;
-import com.senla.bookshop.controllers.RequestManager;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Order;
 import com.senla.bookshop.entities.Request;
+import com.senla.bookshop.managers.BookManager;
+import com.senla.bookshop.managers.OrderManager;
+import com.senla.bookshop.managers.RequestManager;
 import com.senla.bookshop.storage.OrderStorage;
 import com.senla.bookshop.utils.comparators.book.ComparatorBookByDate;
 import com.senla.bookshop.utils.comparators.book.ComparatorBookByName;
@@ -179,16 +179,16 @@ public class Facade implements IFacade{
 		return bookManager.getBook(new ComparatorBookByYearOfPublic());
 	}
 	@Override
-	public void saveBookToCSV(int id){
-		bookManager.saveBookToCSV(id);
+	public void saveBookToCSV(){
+		bookManager.saveBookToCSV();
 	}
 	@Override
-	public void saveOrderToCSV(int id){
-		orderManager.saveOrderToCSV(id);
+	public void saveOrderToCSV(){
+		orderManager.saveOrderToCSV();
 	}
 	@Override
-	public void saveRequestToCSV(int id){
-		requestManager.saveRequestToCSV(id);
+	public void saveRequestToCSV(){
+		requestManager.saveRequestToCSV();
 	}
 	@Override
 	public boolean readRequestFromCSV(){

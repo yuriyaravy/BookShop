@@ -1,6 +1,7 @@
-package com.senla.bookshop.controllers;
+package com.senla.bookshop.managers;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -36,13 +37,23 @@ public class BookManager implements IBookManager{
 		return bookStorage.getSortBook(comparator);
 	}
 	@Override
-	public void saveBookToCSV(int id){
-		SaveObjectToCSV.bookWriteToCSV(id);
+	public void saveBookToCSV(){
+		SaveObjectToCSV.bookWriteToCSV();
 	}
 	@Override
 	public void readBookFromCSV() throws ParseException{
-		bookStorage.setBooks(ParseToObject.stringToBook(ReadFromCSV.readCSV(PROPARTY_KEY_CSV)));
+		List<Book> csvBooks = ParseToObject.stringToBook(ReadFromCSV.readCSV(PROPARTY_KEY_CSV));
+		Book newBook = null;
+		for(Book tempCSV : csvBooks){
+			for(int i = 0; i < bookStorage.getBooks().size(); i++){
+				if(tempCSV.getId() != bookStorage.getBooks().get(i).getId()){
+					newBook = tempCSV;
+				}
+			}
+			bookStorage.addBook(newBook);
+		}
 	}
+	
 	@Override
 	public List<Book> getBooks(){
 		return bookStorage.getBooks();

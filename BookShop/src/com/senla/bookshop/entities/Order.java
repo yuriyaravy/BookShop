@@ -66,6 +66,7 @@ public class Order implements Serializable , Cloneable{
 	@Override
 	public Order clone() throws CloneNotSupportedException {
 		Order cloneOrder = (Order)super.clone();
+		cloneOrder.setId(0);
 		return cloneOrder;
   }
 	

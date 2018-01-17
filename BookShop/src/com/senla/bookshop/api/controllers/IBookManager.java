@@ -12,8 +12,6 @@ public interface IBookManager {
 
 	List<Book> getBook(Comparator<Book> comparator);
 
-	void saveBookToCSV(int id);
-
 	List<Book> getBooks();
 
 	void readBookFromCSV() throws ParseException;
@@ -21,5 +19,7 @@ public interface IBookManager {
 	void serializationForBooks();
 
 	void fillUpBookStorage();
+
+	void saveBookToCSV();
 
 }

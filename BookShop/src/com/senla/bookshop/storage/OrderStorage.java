@@ -26,13 +26,13 @@ public class OrderStorage implements IOrderStorage{
 		}
 		return orderStorage;
 	}
-	private Integer idSetter(){
+	private Integer idOrderSetter(){
 		return lastId++;
 	}
 	
 	@Override
 	public void addOrders(Order order) {
-		order.setId(idSetter());
+		order.setId(idOrderSetter());
 		orderBooks.add(order);
 	}
 
@@ -64,6 +64,7 @@ public class OrderStorage implements IOrderStorage{
 		}
 		return current;
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public void fillUpOrderStorage(String key){
 		TextDeserializ textDeserializ = new TextDeserializ();

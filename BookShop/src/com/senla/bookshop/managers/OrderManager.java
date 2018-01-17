@@ -1,4 +1,4 @@
-package com.senla.bookshop.controllers;
+package com.senla.bookshop.managers;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -108,12 +108,21 @@ public class OrderManager implements IOrderManager{
 		return orderStorage.getSortOrders(comparator);
 	}
 	@Override
-	public void saveOrderToCSV(int id){
-		SaveObjectToCSV.orderWriteToCSV(id);
+	public void saveOrderToCSV(){
+		SaveObjectToCSV.orderWriteToCSV();
 	}
 	@Override
 	public void readOrderFromCSV() throws ParseException{
-		orderStorage.setOrderBooks(ParseToObject.stringToOrder(ReadFromCSV.readCSV(PROPARTY_KEY_CSV)));
+		List<Order> csvOrders = ParseToObject.stringToOrder(ReadFromCSV.readCSV(PROPARTY_KEY_CSV));
+		Order newOrder = null;
+		for(Order tempCSV : csvOrders){
+			for(int i = 0; i < orderStorage.getOrdersBooks().size(); i++){
+				if(tempCSV.getId() != orderStorage.getOrdersBooks().get(i).getId()){
+					newOrder = tempCSV;
+				}
+			}
+			orderStorage.addOrders(newOrder);
+		}
 	}
 	@Override
 	public List<Order> getOrders(){

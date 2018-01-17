@@ -1,0 +1,9 @@
+id, book
+0, 
+id, name, price, status, yearOfPublication, date, countOfRequest
+18, HAPPY NEW YEAR, 2018.01, true, 2018, Sat Jan 13 21:10:16 MSK 2018, 0, 
+
+1, 
+id, name, price, status, yearOfPublication, date, countOfRequest
+19, say no hangovers )), 10.1, true, 1869, Sat Jan 13 21:10:16 MSK 2018, 0, 
+

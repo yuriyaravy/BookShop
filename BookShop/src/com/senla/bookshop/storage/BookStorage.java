@@ -15,6 +15,8 @@ public class BookStorage implements IBookStorage{
 	
 	private static BookStorage bookStorage;
 	
+	private Integer lastId = 0;
+	
 	private BookStorage(){
 	}
 	
@@ -25,8 +27,13 @@ public class BookStorage implements IBookStorage{
 		return bookStorage;
 	}
 	
+	private Integer idBookSetter(){
+		return lastId++;
+	}
+	
 	@Override
 	public void addBook(Book book) {
+		book.setId(idBookSetter());
 		books.add(book);
 	}
 	

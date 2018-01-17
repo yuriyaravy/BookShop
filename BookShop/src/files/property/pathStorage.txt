@@ -1,6 +1,0 @@
-bookPath=src/files/book.txt
-orderPath=src/files/order.txt
-requestPath=src/files/request.txt
-bookPathCSV=src/files/csv/books.csv
-orderPathCSV=src/files/csv/orders.csv
-requestPathCSV=src/files/csv/requests.csv

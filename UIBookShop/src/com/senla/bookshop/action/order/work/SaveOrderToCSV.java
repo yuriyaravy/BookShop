@@ -9,8 +9,7 @@ public class SaveOrderToCSV implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getOrders());
-		Facade.getInstance().saveOrderToCSV(Scanners.scannerForInteger());
+		Facade.getInstance().saveOrderToCSV();
 	}
 
 }

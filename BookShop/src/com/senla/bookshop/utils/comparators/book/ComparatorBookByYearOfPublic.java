@@ -9,13 +9,7 @@ public class ComparatorBookByYearOfPublic implements Comparator<Book>{
 	
 	@Override
 	public int compare(Book o1, Book o2) {
-		if(o1 != null && o2 != null) {
 			return ((Book)o1).getYearOfPublication() - ((Book)o2).getYearOfPublication();
-		} else if (o1 != null && o2 == null) {
-			return 1;
-		} else {
-			return -1;
-		}		
 	}
 	
 }

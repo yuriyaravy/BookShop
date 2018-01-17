@@ -11,8 +11,7 @@ public class SaveBookToCSV implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(BookStorage.getInstance().getBooks());
-		Facade.getInstance().saveBookToCSV(Scanners.scannerForInteger());
+		Facade.getInstance().saveBookToCSV();
 	}
 
 }

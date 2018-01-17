@@ -16,6 +16,8 @@ public class RequestStorage implements IRequestStorage{
 	
 	private static RequestStorage requestStorage;
 	
+	private Integer lastId = 0;
+	
 	private RequestStorage(){
 	}
 	
@@ -25,10 +27,14 @@ public class RequestStorage implements IRequestStorage{
 		}
 		return requestStorage;
 	}
+	
+	private Integer idRequestSetter(){
+		return lastId++;
+	}
 
 	@Override
 	public void addRequestBooks(Request request) {
-		request.setId(requestBooks.size());
+		request.setId(idRequestSetter());
 		requestBooks.add(request);
 	}
 

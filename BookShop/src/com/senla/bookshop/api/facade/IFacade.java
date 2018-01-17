@@ -58,11 +58,9 @@ public interface IFacade {
 
 	List<Order> sortOrderByCompleate();
 
-	void saveBookToCSV(int id);
+	void saveOrderToCSV();
 
-	void saveOrderToCSV(int id);
-
-	void saveRequestToCSV(int id);
+	void saveRequestToCSV();
 
 	boolean readRequestFromCSV();
 
@@ -87,6 +85,8 @@ public interface IFacade {
 	boolean addBookToOrder(List<Book> book);
 
 	void fillUpStorages();
+
+	void saveBookToCSV();
 	
 	
 }

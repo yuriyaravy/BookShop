@@ -1,4 +1,4 @@
-package com.senla.bookshop.controllers;
+package com.senla.bookshop.managers;
 
 
 import java.text.ParseException;
@@ -47,12 +47,21 @@ public class RequestManager implements IRequestManager{
 		return requestStorage.getRequests(comparator);
 	}
 	@Override
-	public void saveRequestToCSV(int id){
-		SaveObjectToCSV.requestWriteToCSV(id);
+	public void saveRequestToCSV(){
+		SaveObjectToCSV.requestWriteToCSV();
 	}
 	@Override
 	public void readRequestFromCSV() throws ParseException{
-		requestStorage.setRequestsBooks(ParseToObject.stringToRequest(ReadFromCSV.readCSV(PROPARTY_KEY_CSV)));
+		List<Request> csvRequest = ParseToObject.stringToRequest(ReadFromCSV.readCSV(PROPARTY_KEY_CSV));
+		Request newRequest = null;
+		for(Request tempCSV : csvRequest){
+			for(int i = 0; i < requestStorage.getRequestsBooks().size(); i++){
+				if(tempCSV.getId() != requestStorage.getRequestsBooks().get(i).getId()){
+					newRequest = tempCSV;
+				}
+			}
+			requestStorage.addRequestBooks(newRequest);
+		}
 	}
 	@Override
 	public List<Request> getRequests(){

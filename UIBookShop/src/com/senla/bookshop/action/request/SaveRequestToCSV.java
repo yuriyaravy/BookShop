@@ -9,7 +9,6 @@ public class SaveRequestToCSV implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getRequests());
-		Facade.getInstance().saveRequestToCSV(Scanners.scannerForInteger());
+		Facade.getInstance().saveRequestToCSV();
 	}
 }

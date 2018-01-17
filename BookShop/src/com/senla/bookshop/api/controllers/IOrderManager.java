@@ -29,8 +29,6 @@ public interface IOrderManager {
 
 	List<Order> getOrders(Comparator<Order> comparator);
 
-	void saveOrderToCSV(int id);
-
 	void readOrderFromCSV() throws ParseException;
 
 	List<Order> getOrders();
@@ -42,6 +40,8 @@ public interface IOrderManager {
 	void addBookToOrder(List<Book> book) throws Exception;
 
 	void fillUpOrderStorage();
+
+	void saveOrderToCSV();
 
 
 }
