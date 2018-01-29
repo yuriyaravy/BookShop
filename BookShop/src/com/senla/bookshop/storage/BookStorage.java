@@ -5,10 +5,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.senla.bookshop.annotations.DiStorage;
 import com.senla.bookshop.api.storages.IBookStorage;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.utils.txtwork.TextDeserializ;
 
+@DiStorage
 public class BookStorage implements IBookStorage{
 	
 	private List<Book> books = new ArrayList<>();

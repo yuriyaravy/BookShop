@@ -78,7 +78,6 @@ public class Setting {
 		Properties properties = new Properties();
 		properties.load(in);
 		path = properties.getProperty(key);
-		System.out.println(key);
 		}catch (FileNotFoundException  e) {
 			logger.error("FileNotFoundException, you lost your txt file" + e);
 		}catch (IOException e) {

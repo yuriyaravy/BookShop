@@ -1,5 +1,8 @@
 package com.senla.bookshop.managers;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -7,8 +10,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.senla.bookshop.annotations.utils.AnnotationCSVReader;
 import com.senla.bookshop.api.controllers.IBookManager;
 import com.senla.bookshop.api.storages.IBookStorage;
+import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Request;
 import com.senla.bookshop.storage.BookStorage;
@@ -20,13 +25,19 @@ import com.senla.bookshop.utils.txtwork.TextSerializ;
 
 public class BookManager implements IBookManager{
 	
-	private final IBookStorage bookStorage = BookStorage.getInstance();
+	private final IBookStorage bookStorage = (IBookStorage) DependencyIngection.getInctance().getStorageInstance(IBookStorage.class);
 	
 	private static final Logger logger = Logger.getLogger(BookManager.class);
 	
 	private final String PROPARTY_KEY = "bookPath";
 	
 	private final String PROPARTY_KEY_CSV = "bookPathCSV";
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public void getAnnotationBook() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException{
+		bookStorage.setBooks((List<Book>) AnnotationCSVReader.readerFromCsv(Book.class));
+	}
 	
 	@Override
 	public Book getBookById(int id){

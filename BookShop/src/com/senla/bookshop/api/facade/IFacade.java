@@ -87,6 +87,12 @@ public interface IFacade {
 	void fillUpStorages();
 
 	void saveBookToCSV();
+
+	boolean booksAnnotationFromCSV();
+
+	boolean OrderAnnotationFromCSV();
+
+	boolean requestAnnotationFromCSV();
 	
 	
 }

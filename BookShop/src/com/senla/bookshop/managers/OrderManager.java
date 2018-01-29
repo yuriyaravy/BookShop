@@ -1,5 +1,8 @@
 package com.senla.bookshop.managers;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -8,8 +11,11 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.senla.bookshop.annotations.utils.AnnotationCSVReader;
 import com.senla.bookshop.api.controllers.IOrderManager;
+import com.senla.bookshop.api.storages.IBookStorage;
 import com.senla.bookshop.api.storages.IOrderStorage;
+import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Order;
 import com.senla.bookshop.enums.OrderStatus;
@@ -26,13 +32,19 @@ import com.senla.bookshop.utils.txtwork.TextSerializ;
 
 public class OrderManager implements IOrderManager{
 	
-	private final IOrderStorage orderStorage = OrderStorage.getInstance();
+	private final IOrderStorage orderStorage = (IOrderStorage) DependencyIngection.getInctance().getStorageInstance(IOrderStorage.class);
 	
 	private static final Logger logger = Logger.getLogger(OrderManager.class);
 	
 	private final String PROPARTY_KEY = "orderPath";
 	
 	private final String PROPARTY_KEY_CSV = "orderPathCSV";
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public void getAnnotationOrder() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException{
+		orderStorage.setOrderBooks((List<Order>) AnnotationCSVReader.readerFromCsv(Order.class));
+	}
 	
 	@Override
 	public double getProfitForAllOrders(){

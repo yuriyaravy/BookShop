@@ -5,14 +5,22 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import com.senla.bookshop.annotations.CsvEntity;
+import com.senla.bookshop.annotations.CsvProperty;
+import com.senla.bookshop.annotations.enums.PropertyType;
 import com.senla.bookshop.enums.OrderStatus;
 import com.senla.bookshop.storage.OrderStorage;
 
+@CsvEntity(fileName = "files/files/data/csv/order.csv")
 public class Order implements Serializable , Cloneable{
 	
+	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1)
 	private Integer id;
+	@CsvProperty(propertyType = PropertyType.CompositeProperty, columnNumber = 2, keyField="bookInfo")
 	private List<Book> book;
+	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 3)
 	private Date dateOfDeliver;
+	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 4)
 	private OrderStatus status;
 
 	public Order() {

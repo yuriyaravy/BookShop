@@ -1,6 +1,9 @@
 package com.senla.bookshop.managers;
 
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,9 +12,13 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.senla.bookshop.annotations.utils.AnnotationCSVReader;
 import com.senla.bookshop.api.controllers.IRequestManager;
+import com.senla.bookshop.api.storages.IOrderStorage;
 import com.senla.bookshop.api.storages.IRequestStorage;
+import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Book;
+import com.senla.bookshop.entities.Order;
 import com.senla.bookshop.entities.Request;
 import com.senla.bookshop.storage.BookStorage;
 import com.senla.bookshop.storage.OrderStorage;
@@ -24,13 +31,19 @@ import com.senla.bookshop.utils.txtwork.TextSerializ;
 
 public class RequestManager implements IRequestManager{
 	
-	private final IRequestStorage requestStorage = RequestStorage.getInstance();
+	private final IRequestStorage requestStorage = (IRequestStorage) DependencyIngection.getInctance().getStorageInstance(IRequestStorage.class);
 	
 	private static final Logger logger = Logger.getLogger(RequestManager.class);
 	
 	private final String PROPARTY_KEY = "requestPath";
 	
 	private final String PROPARTY_KEY_CSV = "requestPathCSV";
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public void getAnnotationRequest() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException{
+		requestStorage.setRequestsBooks((List<Request>) AnnotationCSVReader.readerFromCsv(Request.class));
+	}
 	
 	@Override
 	public void addRequest(int id){

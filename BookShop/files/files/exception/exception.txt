@@ -1,13 +1,5 @@
-[2018-01-17 01:33:55,454] [ERROR] [Facade]: java.text.ParseException: Unparseable date: " Sat Jan 13 16:02:03 MSK 2018"
-[2018-01-17 01:33:55,457] [ERROR] [Facade]: java.text.ParseException: Unparseable date: " Sat Jan 13 16:02:03 MSK 2018"
-[2018-01-17 01:34:58,596] [ERROR] [Facade]: java.text.ParseException: Unparseable date: " Sat Jan 13 16:02:03 MSK 2018"
-[2018-01-17 01:34:58,599] [ERROR] [Facade]: java.text.ParseException: Unparseable date: " Sat Jan 13 16:02:03 MSK 2018"
-[2018-01-17 01:53:25,818] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 01:53:55,581] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 01:54:29,990] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 01:54:46,972] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 01:56:33,422] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 02:05:31,380] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 02:09:25,860] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 02:09:45,533] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
-[2018-01-17 02:09:55,480] [ERROR] [Facade]: java.text.ParseException: Unparseable number: ""
+[2018-01-26 00:19:29,612] [ERROR] [TextDeserializ]: java.io.InvalidClassException: com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = -2634021483042897783, local class serialVersionUID = -8173928063127407492
+[2018-01-26 00:19:29,626] [ERROR] [TextDeserializ]: java.io.InvalidClassException: com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = -2634021483042897783, local class serialVersionUID = -8173928063127407492
+[2018-01-26 00:19:29,682] [ERROR] [TextDeserializ]: java.io.InvalidClassException: com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = -2634021483042897783, local class serialVersionUID = -8173928063127407492
+[2018-01-26 00:20:15,714] [ERROR] [TextDeserializ]: java.io.InvalidClassException: com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = -2634021483042897783, local class serialVersionUID = -8173928063127407492
+[2018-01-26 00:20:15,727] [ERROR] [TextDeserializ]: java.io.InvalidClassException: com.senla.bookshop.entities.Book; local class incompatible: stream classdesc serialVersionUID = -2634021483042897783, local class serialVersionUID = -8173928063127407492

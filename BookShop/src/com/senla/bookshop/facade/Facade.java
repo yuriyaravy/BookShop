@@ -1,5 +1,7 @@
 package com.senla.bookshop.facade;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import com.senla.bookshop.api.controllers.IBookManager;
 import com.senla.bookshop.api.controllers.IOrderManager;
 import com.senla.bookshop.api.controllers.IRequestManager;
 import com.senla.bookshop.api.facade.IFacade;
+import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Order;
 import com.senla.bookshop.entities.Request;
@@ -33,9 +36,9 @@ public class Facade implements IFacade{
 	
 	final static Logger logger = Logger.getLogger(Facade.class);
 	
-	private IRequestManager requestManager = new RequestManager();
-	private IBookManager bookManager = new BookManager();
-	private IOrderManager orderManager = new OrderManager();
+	private IRequestManager requestManager = (IRequestManager) DependencyIngection.getInctance().getStorageInstance(IRequestManager.class);
+	private IBookManager bookManager = (IBookManager) DependencyIngection.getInctance().getStorageInstance(IBookManager.class);
+	private IOrderManager orderManager = (IOrderManager) DependencyIngection.getInctance().getStorageInstance(IOrderManager.class);
 	
 	private static Facade facade;
 	
@@ -260,5 +263,40 @@ public class Facade implements IFacade{
 		orderManager.fillUpOrderStorage();
 		bookManager.fillUpBookStorage();
 		requestManager.fillUpRequestStorage();
+	}
+	@Override
+	public boolean booksAnnotationFromCSV(){
+		try {
+			bookManager.getAnnotationBook();
+			return true;
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| IOException | ParseException e) {
+			logger.error(e);
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean OrderAnnotationFromCSV(){
+		try {
+			orderManager.getAnnotationOrder();
+			return true;
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| IOException | ParseException e) {
+			logger.error(e);
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean requestAnnotationFromCSV(){
+		try {
+			requestManager.getAnnotationRequest();
+			return true;
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| IOException | ParseException e) {
+			logger.error(e);
+			return false;
+		}
 	}
 }
