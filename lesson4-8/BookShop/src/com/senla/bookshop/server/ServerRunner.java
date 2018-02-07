@@ -7,6 +7,9 @@ import java.net.Socket;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import com.senla.bookshop.api.facade.IFacade;
+import com.senla.bookshop.di.DependencyIngection;
+
 public class ServerRunner {
 	
 	private static final int PORT = 8991;
@@ -14,6 +17,9 @@ public class ServerRunner {
 	private static Logger logger = LogManager.getLogger(ServerRunner.class);
 
 	public static void main(String[] args) {
+		
+		IFacade facade = (IFacade) DependencyIngection.getInctance().getClassInstance(IFacade.class);
+		facade.fillUpStorages();
 		
 		try(ServerSocket server = new ServerSocket(PORT)){
 			while(true){
