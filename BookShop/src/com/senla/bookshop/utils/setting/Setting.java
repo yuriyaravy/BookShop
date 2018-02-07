@@ -12,6 +12,8 @@ public class Setting {
 	
 	private static final Logger logger = Logger.getLogger(Setting.class);
 	
+	private final static String PROPARTY_CONFIG = "E:/WorkSpace/BookShop/files/files/property/propConfig.property";
+	
 	private static Setting instance;
 	
 	private Setting (){
@@ -46,7 +48,7 @@ public class Setting {
 	
 	private static boolean getturnOnOffOrder(){
 		boolean resualt = false;
-		try (FileInputStream in = new FileInputStream("files/files/property/propConfig.property")){
+		try (FileInputStream in = new FileInputStream(PROPARTY_CONFIG)){
 		Properties properties = new Properties();
 		properties.load(in);
 		resualt = Boolean.parseBoolean(properties.getProperty("resualt"));
@@ -60,7 +62,7 @@ public class Setting {
 	
 	private static int getMonthResualt(){
 		int resualt = 0;
-		try (FileInputStream in = new FileInputStream("files/files/property/propConfig.property")){
+		try (FileInputStream in = new FileInputStream(PROPARTY_CONFIG)){
 		Properties properties = new Properties();
 		properties.load(in);
 		resualt = Integer.parseInt(properties.getProperty("month"));
@@ -74,7 +76,7 @@ public class Setting {
 	
 	public static String getPath(String key){
 		String path = null;
-		try (FileInputStream in = new FileInputStream("files/files/property/pathStorage.txt")){
+		try (FileInputStream in = new FileInputStream("E:/WorkSpace/BookShop/files/files/property/pathStorage.txt")){
 		Properties properties = new Properties();
 		properties.load(in);
 		path = properties.getProperty(key);

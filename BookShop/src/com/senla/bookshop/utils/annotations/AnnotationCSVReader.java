@@ -1,4 +1,4 @@
-package com.senla.bookshop.annotations.utils;
+package com.senla.bookshop.utils.annotations;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

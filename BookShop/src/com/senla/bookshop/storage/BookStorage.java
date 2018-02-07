@@ -19,7 +19,7 @@ public class BookStorage implements IBookStorage{
 	
 	private Integer lastId = 0;
 	
-	private BookStorage(){
+	public BookStorage(){
 	}
 	
 	public static BookStorage getInstance(){

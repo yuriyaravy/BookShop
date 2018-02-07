@@ -36,13 +36,13 @@ public class Facade implements IFacade{
 	
 	final static Logger logger = Logger.getLogger(Facade.class);
 	
-	private IRequestManager requestManager = (IRequestManager) DependencyIngection.getInctance().getStorageInstance(IRequestManager.class);
-	private IBookManager bookManager = (IBookManager) DependencyIngection.getInctance().getStorageInstance(IBookManager.class);
-	private IOrderManager orderManager = (IOrderManager) DependencyIngection.getInctance().getStorageInstance(IOrderManager.class);
+	private IRequestManager requestManager = (IRequestManager) DependencyIngection.getInctance().getClassInstance(IRequestManager.class);
+	private IBookManager bookManager = (IBookManager) DependencyIngection.getInctance().getClassInstance(IBookManager.class);
+	private IOrderManager orderManager = (IOrderManager) DependencyIngection.getInctance().getClassInstance(IOrderManager.class);
 	
 	private static Facade facade;
 	
-	private Facade(){
+	public Facade(){
 		
 	}
 	public static Facade getInstance() {

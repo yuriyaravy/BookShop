@@ -1,7 +1,7 @@
-com.senla.bookshop.api.controllers.IRequestManager=com.senla.bookshop.managers.RequestManager
-com.senla.bookshop.api.controllers.IOrderManager=com.senla.bookshop.managers.OrderManager
-com.senla.bookshop.api.controllers.IRequestManager=com.senla.bookshop.managers.RequestManager
-com.senla.bookshop.api.facade.IFacade=com.senla.bookshop.facade.Facade
-com.senla.bookshop.api.storages.IBookStorage=com.senla.bookshop.storage.BookStorage
-com.senla.bookshop.api.storages.IOrderStorage=com.senla.bookshop.storage.OrderStorage
-com.senla.bookshop.api.storages.IRequestStorage=com.senla.bookshop.storage.RequestStorage
+com.senla.bookshop.api.controllers.IRequestManager = com.senla.bookshop.managers.RequestManager
+com.senla.bookshop.api.controllers.IOrderManager = com.senla.bookshop.managers.OrderManager
+com.senla.bookshop.api.controllers.IRequestManage r= com.senla.bookshop.managers.RequestManager
+com.senla.bookshop.api.facade.IFacade = com.senla.bookshop.facade.Facade
+com.senla.bookshop.api.storages.IBookStorage = com.senla.bookshop.storage.BookStorage
+com.senla.bookshop.api.storages.IOrderStorage = com.senla.bookshop.storage.OrderStorage
+com.senla.bookshop.api.storages.IRequestStorage = com.senla.bookshop.storage.RequestStorage

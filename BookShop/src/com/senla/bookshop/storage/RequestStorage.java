@@ -19,7 +19,7 @@ public class RequestStorage implements IRequestStorage{
 	
 	private Integer lastId = 0;
 	
-	private RequestStorage(){
+	public RequestStorage(){
 	}
 	
 	public static  RequestStorage getInstance(){

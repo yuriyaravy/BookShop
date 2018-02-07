@@ -19,7 +19,7 @@ public class OrderStorage implements IOrderStorage{
 	
 	private Integer lastId = 0;
 	
-	private OrderStorage(){
+	public OrderStorage(){
 	}
 	
 	public static OrderStorage getInstance(){
