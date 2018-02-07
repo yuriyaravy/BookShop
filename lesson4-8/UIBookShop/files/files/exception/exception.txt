@@ -1,0 +1,32 @@
+[2018-02-07 20:43:53,461] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:43:53,519] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:43:53,522] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:43:53,522] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:46:37,613] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:46:37,670] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:46:37,673] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:46:37,673] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:47:25,392] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:47:25,449] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:47:43,795] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:47:43,852] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:47:43,855] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: BookShop\files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:47:43,856] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: BookShop\files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:47:51,715] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:47:51,775] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:47:51,779] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: \files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:47:51,779] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: \files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:47:57,064] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:47:57,121] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:47:57,124] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:47:57,124] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:48:04,352] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:48:04,413] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:48:04,416] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:48:04,416] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: files\property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:48:10,743] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:48:10,812] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-07 20:48:10,816] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:48:10,818] [ERROR] [Setting]: FileNotFoundException, you lost your txt filejava.io.FileNotFoundException: property\propConfig.property (Системе не удается найти указанный путь)
+[2018-02-07 20:48:18,788] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-07 20:48:18,851] [ERROR] [ServerWorker]: java.lang.NullPointerException
