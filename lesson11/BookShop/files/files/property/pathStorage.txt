@@ -1,0 +1,6 @@
+bookPath=files/files/book.txt
+orderPath=files/files/order.txt
+requestPath=files/files/request.txt
+bookPathCSV=files/files/csv/books.csv
+orderPathCSV=files/files/csv/orders.csv
+requestPathCSV=files/files/csv/requests.csv

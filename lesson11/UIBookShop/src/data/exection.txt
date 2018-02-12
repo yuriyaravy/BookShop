@@ -1,0 +1,1 @@
+[2018-02-09 00:49:02,579] [ERROR] [ServerWorker]: java.net.SocketException: Socket is closed

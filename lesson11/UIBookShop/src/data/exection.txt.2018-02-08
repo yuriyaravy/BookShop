@@ -1,0 +1,8 @@
+[2018-02-08 22:32:11,569] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-08 22:32:11,652] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-08 22:33:24,354] [ERROR] [ServerWorker]: java.net.SocketException: Socket is closed
+[2018-02-08 22:41:05,225] [ERROR] [Client]: java.net.ConnectException: Connection refused: connect
+[2018-02-08 22:41:05,283] [ERROR] [ServerWorker]: java.lang.NullPointerException
+[2018-02-08 22:41:24,171] [ERROR] [ServerWorker]: java.net.SocketException: Socket is closed
+[2018-02-08 22:43:23,384] [ERROR] [ServerWorker]: java.net.SocketException: Socket is closed
+[2018-02-08 22:43:36,014] [ERROR] [ServerWorker]: java.net.SocketException: Socket is closed
