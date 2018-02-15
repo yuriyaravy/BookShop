@@ -70,6 +70,10 @@ public interface IFacade {
 	List<Request> readObjectFromCSV();
 
 	double getProfitForOneOrder();
+
+	List<Book> getAllBooks();
+
+	boolean addBook(Book book);
 	
 	
 

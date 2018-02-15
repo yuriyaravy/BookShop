@@ -13,7 +13,7 @@ public interface IBookManager {
 	
 	void getAnnotationBook() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException, SQLException;
 
-	List<Book> getBookByName();
+	List<Book> getBookByName() throws ClassNotFoundException;
 
 	List<Book> getBookByPrice();
 
@@ -28,6 +28,8 @@ public interface IBookManager {
 	Book getBookById(int id);
 
 	List<Book> sortOldBooks();
+
+	void addBook(Book book);
 
 	
 	

@@ -98,13 +98,11 @@ public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
 		
 	}
 	@Override
-	public List<Double> getProfitByPeriodOfTime(int day) {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
+	public List<Double> getProfitByPeriodOfTime(Connection connection, int day) {
 		List<Double> tempList = new ArrayList<>();
 		Statement statement = null;
 		try {
-			statement = (Statement) dbConnect.createStatement();
+			statement = (Statement) connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(SELECT_ORDER_PROFIT+day);
 			while (resultSet.next()) {
 				tempList.add(resultSet.getDouble(PRICE_BOOK));
@@ -122,13 +120,11 @@ public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
 		}
 	}
 	@Override
-	public List<Double> getAllOrderByPrice() {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
+	public List<Double> getAllOrderByPrice(Connection connection) {
 		List<Double> tempList = new ArrayList<>();
 		Statement statement = null;
 		try {
-			statement = (Statement) dbConnect.createStatement();
+			statement = (Statement) connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(SELECT_ORDER_BY_AMOUNT);
 			while (resultSet.next()) {
 				tempList.add(resultSet.getDouble(PRICE_BOOK));
@@ -146,16 +142,16 @@ public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
 		}
 	}
 	@Override
-	public List<Order> getOrderByStatus(){
-		return getAll(ORDER_STATUS);
+	public List<Order> getOrderByStatus(Connection connection){
+		return getAll(connection, ORDER_STATUS);
 	}
 	@Override
-	public List<Order> getOrderByDateOfDelivered(){
-		return getAll(DATE_OF_DELIVERY);
+	public List<Order> getOrderByDateOfDelivered(Connection connection){
+		return getAll(connection, DATE_OF_DELIVERY);
 	}
 	@Override
-	public List<Order> getOrderById(){
-		return getAll(ID_ORDER);
+	public List<Order> getOrderById(Connection connection){
+		return getAll(connection, ID_ORDER);
 	}
 	
 

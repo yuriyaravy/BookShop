@@ -33,13 +33,10 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 	
 	
 	@Override
-	public void create(T object) throws SQLException {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
-		
+	public void create(Connection connection, T object) throws SQLException {
 		PreparedStatement statement = null;
 		try{
-				statement = dbConnect.prepareStatement(getInsertQuery());
+				statement = connection.prepareStatement(getInsertQuery());
 			prepareInsertStatement(statement, object);
 			statement.executeUpdate();
 		} catch (SQLException e){
@@ -55,13 +52,10 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 	}
 
 	@Override
-	public void delete(Integer id) throws SQLException {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
-		
+	public void delete(Connection connection, Integer id) throws SQLException {
 		PreparedStatement statement = null;
 		try{
-			statement = dbConnect.prepareStatement(getDeleteQuery());
+			statement = connection.prepareStatement(getDeleteQuery());
 			statement.setInt(1, id);
 			if (statement.executeUpdate() == 0) {}
 		} catch (SQLException e){
@@ -76,12 +70,10 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 	}
 
 	@Override
-	public T getById(Integer id) {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
+	public T getById(Connection connection, Integer id) {
 		PreparedStatement statement = null;
 		try{
-			statement = dbConnect.prepareStatement(getIdQuery());
+			statement = connection.prepareStatement(getIdQuery());
 			statement.setInt(1, id);
 			ResultSet rs = statement.executeQuery();
 			if(rs.next()){
@@ -102,14 +94,11 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 	}
 	
 	@Override
-	public List<T> getAll(String... sortingColumn) {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
-		
+	public List<T> getAll(Connection connection, String... sortingColumn) {
 		List<T> tempList = new ArrayList<>();
 		Statement statement = null;
 		try {
-			statement = (Statement) dbConnect.createStatement();
+			statement = (Statement) connection.createStatement();
 			String query = (sortingColumn.length == 1) ? getAllQuery() + " order by " + sortingColumn[0]
 					: getAllQuery();
 			ResultSet resultSet = statement.executeQuery(query);
@@ -130,13 +119,10 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 	}
 
 	@Override
-	public void update(T object) throws SQLException {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
-		
+	public void update(Connection connection, T object) throws SQLException {
 		PreparedStatement statement = null;
 		try{
-			statement = dbConnect.prepareStatement(getUpdateQuery());
+			statement = connection.prepareStatement(getUpdateQuery());
 			prepareUpdateStatement(statement, object);
 			statement.executeUpdate();
 		} catch (SQLException e){

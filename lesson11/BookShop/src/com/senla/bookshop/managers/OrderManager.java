@@ -7,9 +7,10 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
-
+import com.mysql.jdbc.Connection;
 import com.senla.bookshop.api.controllers.IOrderManager;
 import com.senla.bookshop.dao.api.IOrderDao;
+import com.senla.bookshop.dao.connect.DataBaseConnect;
 import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Order;
@@ -20,17 +21,18 @@ import com.senla.bookshop.utils.annotations.AnnotationCSVWriter;
 public class OrderManager implements IOrderManager{
 	
 	private final IOrderDao orderStorage = (IOrderDao) DependencyIngection.getInctance().getClassInstance(IOrderDao.class);
+	private DataBaseConnect dbconnect = DataBaseConnect.getInstance();
 	
 	@Override
 	public void getAnnotationOrder() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException, SQLException{
-		orderStorage.create((Order) AnnotationCSVReader.readerFromCsv(Order.class));
+		orderStorage.create((Connection) dbconnect.getConnection(),(Order) AnnotationCSVReader.readerFromCsv(Order.class));
 	}
 	
 	@Override
 	public double getProfitForAllOrders(){
 		double profit = 0;
 		synchronized (orderStorage) {
-			for(Double tempReq : orderStorage.getAllOrderByPrice()){
+			for(Double tempReq : orderStorage.getAllOrderByPrice((Connection) dbconnect.getConnection())){
 				profit += tempReq;
 			}
 		}
@@ -39,24 +41,24 @@ public class OrderManager implements IOrderManager{
 	@Override
 	public void orderCompleate(int id) throws SQLException{
 		synchronized (orderStorage) {
-			Order order = orderStorage.getById(id);
+			Order order = orderStorage.getById((Connection) dbconnect.getConnection(),id);
 			order.setStatus(OrderStatus.COMPLEATE);
-			orderStorage.update(order);
+			orderStorage.update((Connection) dbconnect.getConnection(),order);
 		}
 	}
 	@Override
 	public  void allOrderCompleate() throws SQLException{
 		synchronized (orderStorage) {
-			for(Order temp : orderStorage.getOrderById()){
+			for(Order temp : orderStorage.getOrderById((Connection) dbconnect.getConnection())){
 				temp.setStatus(OrderStatus.COMPLEATE);
-				orderStorage.update(temp);
+				orderStorage.update((Connection) dbconnect.getConnection(),temp);
 			}
 		}
 	}
 			
 	@Override
 	public Order getOrderById(int id){
-		return orderStorage.getById(id);
+		return orderStorage.getById((Connection) dbconnect.getConnection(),id);
 	}
 
 	@Override
@@ -65,55 +67,55 @@ public class OrderManager implements IOrderManager{
 			Order order = new Order();
 			order.setBook(book);
 			order.setStatus(OrderStatus.PROCESSING);
-			orderStorage.create(order);
+			orderStorage.create((Connection) dbconnect.getConnection(),order);
 		}
 	}
 	@Override
 	public void deleteOrder(int id) throws SQLException{
 		synchronized (orderStorage) {
-			orderStorage.delete(id);
+			orderStorage.delete((Connection) dbconnect.getConnection(),id);
 		}
 	}
 	@Override
 	public void cancelOrder(int id) throws SQLException{
 		synchronized (orderStorage) {
-			Order cancelOrder = orderStorage.getById(id);
+			Order cancelOrder = orderStorage.getById((Connection) dbconnect.getConnection(),id);
 			cancelOrder.setStatus(OrderStatus.CANCELED);
-			orderStorage.update(cancelOrder);
+			orderStorage.update((Connection) dbconnect.getConnection(),cancelOrder);
 		}
 	}
 	@Override
 	public int getCountOfOrder(){
-		int profit = orderStorage.getOrderById().size();
+		int profit = orderStorage.getOrderById((Connection) dbconnect.getConnection()).size();
 		return profit;
 	}
 	@Override
 	public List<Order> getOrderByDateOfDelivered(){
-		return orderStorage.getOrderByDateOfDelivered();
+		return orderStorage.getOrderByDateOfDelivered((Connection) dbconnect.getConnection());
 	}
 	@Override
 	public List<Order> getOrderByStatus(){
-		return orderStorage.getOrderByStatus();
+		return orderStorage.getOrderByStatus((Connection) dbconnect.getConnection());
 	}
 	@Override
 	public List<Double> getOrderByPrice(){
-		return orderStorage.getAllOrderByPrice();
+		return orderStorage.getAllOrderByPrice((Connection) dbconnect.getConnection());
 	}
 	@Override
 	public List<Double> getProfitByPeriodOfTime(int day){
-		return orderStorage.getProfitByPeriodOfTime(day);
+		return orderStorage.getProfitByPeriodOfTime((Connection) dbconnect.getConnection(),day);
 	}
 	@Override
 	public void saveOrderToCSV() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException, IOException{
 		AnnotationCSVWriter aw = new AnnotationCSVWriter();
-		aw.wtiteToCSVFile(orderStorage.getOrderById());
+		aw.wtiteToCSVFile(orderStorage.getOrderById((Connection) dbconnect.getConnection()));
 	}
 	@Override
 	public void readOrderFromCSV(){
 	}
 	@Override
 	public List<Order> getOrders(){
-		return orderStorage.getOrderById();
+		return orderStorage.getOrderById((Connection) dbconnect.getConnection());
 	}
 	
 	@Override

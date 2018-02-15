@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 public class PropertyHolder {
 	
-	private static final String PROPERTIES_PATH = "src/dataBase.properties";
+	private static final String PROPERTIES_PATH ="src/dataBase.properties";
     private static Logger logger = LogManager.getLogger(PropertyHolder.class);
     
     private static PropertyHolder instance;
@@ -19,6 +19,9 @@ public class PropertyHolder {
     private String dbHost;
     private String dbLogin;
     private String dbPassword;
+    
+    
+    private PropertyHolder(){}
     
     public static PropertyHolder getInstance() {
 		if (instance == null) {
@@ -37,7 +40,7 @@ public class PropertyHolder {
     } 
 
 
-    public static Properties readFile() {
+    public Properties readFile() {
         Properties prop = new Properties();
         try (InputStream input = new FileInputStream(PROPERTIES_PATH)) {
             prop.load(input);

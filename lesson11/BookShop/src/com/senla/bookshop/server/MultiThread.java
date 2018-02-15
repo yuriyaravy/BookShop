@@ -17,63 +17,37 @@ public class MultiThread extends Thread{
 	
 	final static Logger logger = Logger.getLogger(MultiThread.class);
 	
-	private IFacade facade = (IFacade) DependencyIngection.getInctance().getClassInstance(IFacade.class);
-	private ObjectOutputStream outputstm;
-	private ObjectInputStream inputstm;
+	private Socket clientSocket;
 	
 	public MultiThread(Socket socket){
-		try {
-			outputstm = new ObjectOutputStream(socket.getOutputStream());
-			inputstm = new ObjectInputStream(socket.getInputStream());
-		} catch (IOException e) {
-			logger.error(e);
-		}
+		this.clientSocket = socket;
 	}
-	
-	private Response execute(Request message){
-		Response response = null;
-		Class<?>[] parameterTypes = new Class[message.getParameters().length];
 		
-		for(int i =0; i < parameterTypes.length; i++){
-			parameterTypes[i] = message.getParameters()[i].getClass();
-		}
-		try {
-			Method method = Facade.class.getMethod(message.getMethodName(), parameterTypes);
-			response = new Response(method.invoke(facade, message.getParameters()));
-		} catch (Exception e) {
-			logger.error(e);
-		}
-		return response;
-	
-	}
-
+	@Override
 	public void run() {
+		ObjectInputStream input = null;
+		ObjectOutputStream output = null;
 		try {
-			Request message;
+			output = new ObjectOutputStream(clientSocket.getOutputStream());
+			input = new ObjectInputStream(clientSocket.getInputStream());
 			while (true) {
-				message = (Request) inputstm.readObject();
+				Request message  = (Request) input.readObject();
 				if (message != null) {
-					Response response = execute(message);
-					outputstm.writeObject(response);
-					outputstm.flush();
+					output.writeObject(Invoker.execute(message.getMethodName(), message.getParameters()));
+					output.flush();
 				}
 			}
 		} catch (IOException | ClassNotFoundException e) {
-			logger.error(e);
+			logger.error("Class or input/ouput errors",e);
 		} finally {
-			end();
+			try{
+			output.close();
+			input.close();
+			}catch(IOException e){
+				logger.error("Failed to close!", e);
+			}
 		}
 	}
 	
-	private void end(){
-		try{
-			outputstm.close();
-			inputstm.close();
-		}catch(IOException e){
-			logger.error(e);
-		}finally {
-			this.interrupt();
-		}
-	}
-
+	
 }

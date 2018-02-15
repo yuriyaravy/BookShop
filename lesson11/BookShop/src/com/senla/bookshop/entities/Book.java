@@ -30,8 +30,15 @@ public class Book implements Serializable{
 	public Book() {
 	}
 	
+	public Book(Integer id,String name, Double price, Boolean status, Integer yearOfPublication) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.status = status;
+		this.yearOfPublication = yearOfPublication;
+	}
 	
-	
+
 	public Book(Integer id, String name, Double price, Boolean status, Integer yearOfPublication, Date date) {
 		super();
 		this.id = id;

@@ -37,13 +37,11 @@ public class RequestDataBaseDao extends ADataBaseDao<Request> implements IReques
 	private static final String SELECT_REQUEST_BY_AMOUNT = "select o.price, o.name from book as o, requests as p where o.id_book = p.id_book order by o.price desc;";
 	
 	@Override
-	public List<Double> getAllBookRequestByAmount() {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
+	public List<Double> getAllBookRequestByAmount(Connection connection) {
 		List<Double> tempList = new ArrayList<>();
 		Statement statement = null;
 		try {
-			statement = (Statement) dbConnect.createStatement();
+			statement = (Statement) connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(SELECT_REQUEST_BY_AMOUNT);
 			while (resultSet.next()) {
 				tempList.add(resultSet.getDouble(PRICE_BOOK));
@@ -61,13 +59,11 @@ public class RequestDataBaseDao extends ADataBaseDao<Request> implements IReques
 		}
 	}
 	@Override
-	public List<String> getAllBookRequestByName() {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
+	public List<String> getAllBookRequestByName(Connection connection) {
 		List<String> tempList = new ArrayList<>();
 		Statement statement = null;
 		try {
-			statement = (Statement) dbConnect.createStatement();
+			statement = (Statement) connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(SELECT_BOOK_NAME_FROM_REQUEST);
 			while (resultSet.next()) {
 				tempList.add(resultSet.getString(NAME_BOOK));
@@ -138,8 +134,8 @@ public class RequestDataBaseDao extends ADataBaseDao<Request> implements IReques
 	}
 	
 	@Override
-	public List<Request> getRequest(){
-		return getAll(ID_REQUEST);
+	public List<Request> getRequest(Connection connection){
+		return getAll(connection, ID_REQUEST);
 	}
 
 }

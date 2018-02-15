@@ -146,7 +146,13 @@ public class Facade implements IFacade{
 	}
 	@Override
 	public List<Book> sortBookByName(){
-		return bookManager.getBookByName();
+		try {
+			return bookManager.getBookByName();
+		} catch (ClassNotFoundException e) {
+			logger.error(e);
+			e.printStackTrace();
+		}
+		return null;
 	}
 	@Override
 	public List<Book> sortBookByPrice(){
@@ -168,6 +174,10 @@ public class Facade implements IFacade{
 	
 	@Override
 	public List<Book> getBooks(){
+		return bookManager.getBooks();
+	}
+	@Override
+	public List<Book> getAllBooks(){
 		return bookManager.getBooks();
 	}
 	@Override
@@ -214,6 +224,17 @@ public class Facade implements IFacade{
 			return true;
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| IOException | ParseException | SQLException e) {
+			logger.error(e);
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean addBook(Book book){
+		try{
+			bookManager.addBook(book);
+		return true;
+		}catch(Exception e){
 			logger.error(e);
 			return false;
 		}

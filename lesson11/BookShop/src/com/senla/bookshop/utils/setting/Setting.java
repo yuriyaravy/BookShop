@@ -73,7 +73,7 @@ public class Setting {
 		}
 		return resualt;
 	}
-	
+	/*
 	public static String getPath(String key){
 		String path = null;
 		try (FileInputStream in = new FileInputStream("E:/WorkSpace/BookShop/files/files/property/pathStorage.txt")){
@@ -87,4 +87,5 @@ public class Setting {
 		}
 		return path;
 	}
+	*/
 }

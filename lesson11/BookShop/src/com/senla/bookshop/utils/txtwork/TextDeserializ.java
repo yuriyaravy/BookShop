@@ -17,7 +17,7 @@ import com.senla.bookshop.utils.setting.Setting;
 public class TextDeserializ {
 	
 	private static final Logger logger = Logger.getLogger(TextDeserializ.class);
-
+/*
 	public List<?> textDeserialez(String key){
 		List<?> object = null;
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Setting.getPath(key)))){
@@ -30,5 +30,5 @@ public class TextDeserializ {
 		return object;
 	}
 	
-	
+	*/
 }

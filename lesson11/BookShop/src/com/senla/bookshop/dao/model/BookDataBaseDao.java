@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import com.senla.bookshop.dao.api.IBookDao;
-import com.senla.bookshop.dao.connect.DataBaseConnect;
 import com.senla.bookshop.entities.Book;
 
 public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
@@ -90,40 +89,38 @@ public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
 		}
 	}
 	@Override
-	public List<Book> getBooks(){
-		return getAll(ID_BOOK);
+	public List<Book> getBooks(Connection connection){
+		return getAll(connection, ID_BOOK);
 	}
 	
 	@Override
-	public List<Book> getBookByName(){
-		return getAll(NAME_BOOK);
+	public List<Book> getBookByName(Connection connection){
+		return getAll(connection, NAME_BOOK);
 	}
 	
 	@Override
-	public List<Book> getBookByPrice(){
-		return getAll(PRICE_BOOK);
+	public List<Book> getBookByPrice(Connection connection){
+		return getAll(connection, PRICE_BOOK);
 	}
 	@Override
-	public List<Book> getBookByStatus(){
-		return getAll(STATUS_BOOK);
+	public List<Book> getBookByStatus(Connection connection){
+		return getAll(connection, STATUS_BOOK);
 	}
 	@Override
-	public List<Book> getBookByYearOfPublic(){
-		return getAll(PUBLICATION_OF_BOOK);
+	public List<Book> getBookByYearOfPublic(Connection connection){
+		return getAll(connection, PUBLICATION_OF_BOOK);
 	}
 	@Override
-	public List<Book> getBookByDate(){
-		return getAll(DATE_OF_ADD_BOOK);
+	public List<Book> getBookByDate(Connection connection){
+		return getAll(connection, DATE_OF_ADD_BOOK);
 	}
 	
 	@Override
-	public List<Book> getOldBook() {
-		DataBaseConnect.getInstance().Connect();
-		Connection dbConnect = (Connection) DataBaseConnect.getInstance().getMysqlConnect();
+	public List<Book> getOldBook(Connection connection) {
 		List<Book> tempList = new ArrayList<>();
 		Statement statement = null;
 		try {
-			statement = (Statement) dbConnect.createStatement();
+			statement = (Statement) connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(SELECT_OLD_BOOK);
 			while (resultSet.next()) {
 				tempList.add(parseEntity(resultSet));

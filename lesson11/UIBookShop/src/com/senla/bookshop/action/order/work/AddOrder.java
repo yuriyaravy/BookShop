@@ -12,7 +12,8 @@ public class AddOrder implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show("write books id which you want to add to order");
+		Printers.show("Select book number which do you want to add to order");
+		Printers.show(Facade.getInstance().getBooks());
 		Book book = Facade.getInstance().getBookById(Scanners.scannerForInteger());
 		if(Facade.getInstance().addBookToOrder((List<Book>) book)){
 			Printers.show("Your order was add");

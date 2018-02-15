@@ -20,7 +20,6 @@ public class Builder {
 	public Menu buildMenu(){
 		
 		orderWork.addMenu(new MenuItem("Show all orders",new CheckOrders()));
-		orderWork.addMenu(new MenuItem("Add book to storage",new OrderCompleate()));
 		orderWork.addMenu(new MenuItem("Add order",new AddOrder()));
 		orderWork.addMenu(new MenuItem("Delete order",new DeleteOrder()));
 		orderWork.addMenu(new MenuItem("Canceled orders",new CanceledOrder()));
@@ -43,6 +42,7 @@ public class Builder {
 		orderMenu.addMenu(new MenuItem("Read order from CSV file", new ReadOrderFromCSV()));
 		orderMenu.addMenu(new MenuItem("Back",mainMenu));
 		
+		bookMenu.addMenu(new MenuItem("Add a new book ", new AddBook()));
 		bookMenu.addMenu(new MenuItem("Show all books ", new ShowAllBook()));
 		bookMenu.addMenu(new MenuItem("Show old books ", new SortOldBook()));
 		bookMenu.addMenu(new MenuItem("Sort books by name ", new SortBookByName()));

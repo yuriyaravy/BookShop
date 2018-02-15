@@ -1,5 +1,6 @@
 package com.senla.bookshop.menu;
 
+import com.senla.bookshop.server.MultiThread;
 import com.senla.bookshop.utils.Choice;
 
 public class MenuController {
@@ -7,6 +8,14 @@ public class MenuController {
 	private Navigator navigator;
 	private Builder builder;
 	private boolean exit = false;
+	
+	private MultiThread serverWorker;
+	
+	public MenuController() {}
+	
+	public MenuController(MultiThread serverWorker) {
+		this.serverWorker = serverWorker;
+	}
 
 	public boolean isExit() {
 		return exit;

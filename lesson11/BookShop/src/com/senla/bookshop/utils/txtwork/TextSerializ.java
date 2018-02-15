@@ -14,7 +14,7 @@ import com.senla.bookshop.utils.setting.Setting;
 
 
 public class TextSerializ {
-	
+	/*
 	private static final Logger logger = Logger.getLogger(TextSerializ.class);
 
 	public static void textSerialize(List<?> object, String key){
@@ -25,5 +25,5 @@ public class TextSerializ {
 		}
 	}
 	
-	
+	*/
 }

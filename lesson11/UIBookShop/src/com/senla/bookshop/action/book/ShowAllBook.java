@@ -8,7 +8,7 @@ public class ShowAllBook implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getBooks());
+		Printers.show(Facade.getInstance().getAllBooks());
 		
 	}
 

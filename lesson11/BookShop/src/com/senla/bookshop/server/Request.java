@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Request implements Serializable{
 	
 	private String methodName;
-	private Object[] parameters;
+	private Object parameters;
 	
 	public Request(String methodName, Object[] parameters){
 		this.methodName = methodName;
@@ -20,11 +20,11 @@ public class Request implements Serializable{
 		this.methodName = methodName;
 	}
 
-	public Object[] getParameters() {
+	public Object getParameters() {
 		return parameters;
 	}
 
-	public void setParameters(Object[] parameters) {
+	public void setParameters(Object parameters) {
 		this.parameters = parameters;
 	}
 

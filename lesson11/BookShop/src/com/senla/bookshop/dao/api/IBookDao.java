@@ -2,23 +2,24 @@ package com.senla.bookshop.dao.api;
 
 import java.util.List;
 
+import com.mysql.jdbc.Connection;
 import com.senla.bookshop.entities.Book;
 
 public interface IBookDao extends IDataBaseDao<Book> {
 
-	List<Book> getBookByName();
+	List<Book> getBookByName(Connection connection);
 
-	List<Book> getBookByDate();
+	List<Book> getBookByDate(Connection connection);
 
-	List<Book> getBookByYearOfPublic();
+	List<Book> getBookByYearOfPublic(Connection connection);
 
-	List<Book> getBookByStatus();
+	List<Book> getBookByStatus(Connection connection);
 
-	List<Book> getBookByPrice();
+	List<Book> getBookByPrice(Connection connection);
 
-	List<Book> getBooks();
+	List<Book> getBooks(Connection connection);
 
-	List<Book> getOldBook();
+	List<Book> getOldBook(Connection connection);
 	
 
 }
