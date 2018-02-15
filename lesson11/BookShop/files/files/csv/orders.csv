@@ -1,4 +1,0 @@
-id, dateOfDeliver, status, idBook, nameOfBook, price, yearOfPublication
-0, null, PROCESSING, 3, Master i margarita, 305.1, 1937, 
-1, null, PROCESSING, 9, Don Quixote, 750.15, 1875, 
-2, null, PROCESSING, 6, Coloring book, 100.8, 2015, 
