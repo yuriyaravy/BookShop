@@ -3,15 +3,9 @@ package com.senla.bookshop.server;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.reflect.Method;
 import java.net.Socket;
 
 import org.apache.log4j.Logger;
-
-import com.senla.bookshop.api.controllers.IOrderManager;
-import com.senla.bookshop.api.facade.IFacade;
-import com.senla.bookshop.di.DependencyIngection;
-import com.senla.bookshop.facade.Facade;
 
 public class MultiThread extends Thread{
 	

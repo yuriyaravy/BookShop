@@ -1,11 +1,11 @@
-package com.senla.bookshop.dao.api;
+package com.senla.bookshop.api.dao;
 
 import java.util.List;
 
 import com.mysql.jdbc.Connection;
 import com.senla.bookshop.entities.Book;
 
-public interface IBookDao extends IDataBaseDao<Book> {
+public interface IBookDao extends IGenericDao<Book> {
 
 	List<Book> getBookByName(Connection connection);
 
@@ -19,7 +19,7 @@ public interface IBookDao extends IDataBaseDao<Book> {
 
 	List<Book> getBooks(Connection connection);
 
-	List<Book> getOldBook(Connection connection);
+	List<Book> getOldBook(Connection connection) throws Exception;
 	
 
 }

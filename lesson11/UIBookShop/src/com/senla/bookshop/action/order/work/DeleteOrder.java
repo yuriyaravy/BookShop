@@ -9,7 +9,11 @@ public class DeleteOrder implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getOrders());
+		try {
+			Printers.show(Facade.getInstance().getOrders());
+		} catch (Exception e) {
+			Printers.show("Failed to display orders");
+		}
 		Printers.show("Write order id for delete this order");
 		if(Facade.getInstance().deleteBookToOrder(Scanners.scannerForInteger())){
 			Printers.show("Your order was delete");

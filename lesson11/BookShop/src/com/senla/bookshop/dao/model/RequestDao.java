@@ -11,15 +11,13 @@ import org.apache.log4j.Logger;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
-import com.senla.bookshop.dao.api.IRequestDao;
-import com.senla.bookshop.dao.connect.DataBaseConnect;
+import com.senla.bookshop.api.dao.IRequestDao;
 import com.senla.bookshop.di.DependencyIngection;
-import com.senla.bookshop.entities.Book;
 import com.senla.bookshop.entities.Request;
 
-public class RequestDataBaseDao extends ADataBaseDao<Request> implements IRequestDao{
+public class RequestDao extends AbstractDao<Request> implements IRequestDao{
 	
-	private static final Logger logger = LogManager.getLogger(RequestDataBaseDao.class);
+	private static final Logger logger = LogManager.getLogger(RequestDao.class);
 	
 	private static final String ID_REQUEST = "id_request";
 	private static final String ID_BOOK = "id_book";
@@ -52,7 +50,9 @@ public class RequestDataBaseDao extends ADataBaseDao<Request> implements IReques
 			return null;
 		} finally {
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -74,7 +74,9 @@ public class RequestDataBaseDao extends ADataBaseDao<Request> implements IReques
 			return null;
 		} finally {
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -123,7 +125,7 @@ public class RequestDataBaseDao extends ADataBaseDao<Request> implements IReques
 			Request tempRequest = new Request();
 			tempRequest.setId(resultSet.getInt(ID_REQUEST));
 			if (resultSet.findColumn(ID_BOOK) > 0) {
-				BookDataBaseDao bookDao = (BookDataBaseDao) DependencyIngection.getInctance().getClassInstance(BookDataBaseDao.class);
+				BookDao bookDao = (BookDao) DependencyIngection.getInctance().getClassInstance(BookDao.class);
 				tempRequest.setBook(bookDao.parseEntity(resultSet));
 			}
 			return tempRequest;

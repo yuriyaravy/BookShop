@@ -9,6 +9,10 @@ public class RequestByPrice implements IAction{
 	
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortRequestAmounte());
+		try {
+			Printers.show(Facade.getInstance().sortRequestAmounte());
+		} catch (Exception e) {
+			Printers.show("Can not sort by amounte");
+		}
 	}
 }

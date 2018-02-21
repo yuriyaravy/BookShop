@@ -73,19 +73,5 @@ public class Setting {
 		}
 		return resualt;
 	}
-	/*
-	public static String getPath(String key){
-		String path = null;
-		try (FileInputStream in = new FileInputStream("E:/WorkSpace/BookShop/files/files/property/pathStorage.txt")){
-		Properties properties = new Properties();
-		properties.load(in);
-		path = properties.getProperty(key);
-		}catch (FileNotFoundException  e) {
-			logger.error("FileNotFoundException, you lost your txt file" + e);
-		}catch (IOException e) {
-			logger.error(e);
-		}
-		return path;
-	}
-	*/
+	
 }

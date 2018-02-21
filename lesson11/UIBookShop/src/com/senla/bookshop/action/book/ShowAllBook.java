@@ -8,7 +8,11 @@ public class ShowAllBook implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getAllBooks());
+		try {
+			Printers.show(Facade.getInstance().getAllBooks());
+		} catch (Exception e) {
+			Printers.show("Failed to display books ");
+		}
 		
 	}
 

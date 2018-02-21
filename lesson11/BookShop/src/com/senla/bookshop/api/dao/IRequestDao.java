@@ -1,11 +1,11 @@
-package com.senla.bookshop.dao.api;
+package com.senla.bookshop.api.dao;
 
 import java.util.List;
 
 import com.mysql.jdbc.Connection;
 import com.senla.bookshop.entities.Request;
 
-public interface IRequestDao extends IDataBaseDao<Request>{
+public interface IRequestDao extends IGenericDao<Request>{
 
 	List<String> getAllBookRequestByName(Connection connection);
 

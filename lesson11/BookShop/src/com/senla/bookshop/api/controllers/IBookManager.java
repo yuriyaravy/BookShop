@@ -1,35 +1,30 @@
 package com.senla.bookshop.api.controllers;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.List;
 
 import com.senla.bookshop.entities.Book;
 
 public interface IBookManager {
 	
-	void getAnnotationBook() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException, SQLException;
+	void getAnnotationBook() throws Exception;
 
-	List<Book> getBookByName() throws ClassNotFoundException;
+	List<Book> getBookByName() throws ClassNotFoundException, Exception;
 
-	List<Book> getBookByPrice();
+	List<Book> getBookByPrice() throws Exception;
 
-	List<Book> getBookByStatus();
+	List<Book> getBookByStatus() throws Exception;
 
-	List<Book> getBookByYearOfPublic();
+	List<Book> getBookByYearOfPublic() throws Exception;
 
-	List<Book> getBookByDate();
+	List<Book> getBookByDate() throws Exception;
 
-	List<Book> getBooks();
+	List<Book> getBooks() throws Exception;
 
-	Book getBookById(int id);
+	Book getBookById(int id) throws Exception;
 
-	List<Book> sortOldBooks();
+	List<Book> sortOldBooks() throws Exception;
 
-	void addBook(Book book);
+	void addBook(Book book) throws Exception;
 
 	
 	

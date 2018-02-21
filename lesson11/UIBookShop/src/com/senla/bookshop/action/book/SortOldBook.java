@@ -8,6 +8,10 @@ public class SortOldBook implements IAction{
 	
 	@Override
 	public void execute() {
-			Printers.show(Facade.getInstance().sortOldBook()); 
+			try {
+				Printers.show(Facade.getInstance().sortOldBook());
+			} catch (Exception e) {
+				Printers.show("Failed to display books sorted by old books");
+			} 
 	}
 }

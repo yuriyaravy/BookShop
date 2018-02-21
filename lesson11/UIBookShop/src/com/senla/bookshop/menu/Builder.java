@@ -38,8 +38,8 @@ public class Builder {
 		orderMenu.addMenu(new MenuItem("Work with orders",orderWork));
 		orderMenu.addMenu(new MenuItem("Order sortings",orderSort));
 		orderMenu.addMenu(new MenuItem("Statistic", orderStatistic));
-		orderMenu.addMenu(new MenuItem("Save order to CSV file", new SaveOrderToCSV()));
-		orderMenu.addMenu(new MenuItem("Read order from CSV file", new ReadOrderFromCSV()));
+		orderMenu.addMenu(new MenuItem("Save order to CSV file (annotation)", new SaveOrderToCsvAnnotation()));
+		orderMenu.addMenu(new MenuItem("Read order from CSV file(annotation)", new ReadOrderFromCsvAnnotation()));
 		orderMenu.addMenu(new MenuItem("Back",mainMenu));
 		
 		bookMenu.addMenu(new MenuItem("Add a new book ", new AddBook()));
@@ -55,8 +55,8 @@ public class Builder {
 		requestMenu.addMenu(new MenuItem("Show all requests ", new ShowAllRequest()));
 		requestMenu.addMenu(new MenuItem("Show request by price", new RequestByPrice()));
 		requestMenu.addMenu(new MenuItem("Add new request ", new AddNewRequest()));
-		requestMenu.addMenu(new MenuItem("Save request to CSV file", new SaveRequestToCSV()));
-		requestMenu.addMenu(new MenuItem("Read request from CSV file", new ReadRequestFromCSV()));
+		requestMenu.addMenu(new MenuItem("Save request to CSV file (annotation)", new SaveRequestToCsvAnnotation()));
+		requestMenu.addMenu(new MenuItem("Read request from CSV file (annotation)", new ReadRequestCsvAnnotation()));
 		requestMenu.addMenu(new MenuItem("Back ", mainMenu));
 		
 		mainMenu.addMenu(new MenuItem("Book", bookMenu));

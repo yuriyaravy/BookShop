@@ -10,7 +10,11 @@ public class AmountByTime implements IAction{
 	@Override
 	public void execute() {
 		Printers.show("For how many days do you want to know your profit");
-		Facade.getInstance().getProfitByPeriodOfTime(Scanners.scannerForInteger());
+		try {
+			Facade.getInstance().getProfitByPeriodOfTime(Scanners.scannerForInteger());
+		} catch (Exception e) {
+			Printers.show("Have problem with display profit by time");
+		}
 		
 	}
 

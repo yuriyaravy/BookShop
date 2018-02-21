@@ -9,7 +9,11 @@ public class SortBookByName implements IAction{
 	
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortBookByName());
+		try {
+			Printers.show(Facade.getInstance().sortBookByName());
+		} catch (Exception e) {
+			Printers.show("Failed to display books sorted by name");
+		}
 	}
 
 }

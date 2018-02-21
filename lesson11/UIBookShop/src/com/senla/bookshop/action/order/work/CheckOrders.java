@@ -8,7 +8,11 @@ public class CheckOrders implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getOrders());
+		try {
+			Printers.show(Facade.getInstance().getOrders());
+		} catch (Exception e) {
+			Printers.show("Failed to display orders");
+		}
 		
 	}
 

@@ -8,10 +8,10 @@ public class ReadOrderFromCsvAnnotation implements IAction{
 	
 	@Override
 	public void execute() {
-		if(Facade.getInstance().OrderAnnotationFromCSV()){
-			Printers.show("You are get orders from SCV file with using annotation");
-		}else{
-			Printers.show("Fail, no orders no honey");
+		try {
+			Facade.getInstance().orderAnnotationFromCSV();
+		} catch (Exception e) {
+			Printers.show("Failed to get orders from CSV");
 		}
 	}
 

@@ -10,6 +10,8 @@ import com.senla.bookshop.annotations.enums.PropertyType;
 @CsvEntity(fileName = "files/files/data/csv/book.csv")
 public class Book implements Serializable{
 	
+	private static final long serialVersionUID = -8193180247283226091L;
+	
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1, keyField="bookInfo")
 	private Integer id;
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 2, keyField="bookInfo")
@@ -25,8 +27,6 @@ public class Book implements Serializable{
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 7)
 	private Integer countOfRequest;
 	
-	
-	
 	public Book() {
 	}
 	
@@ -36,38 +36,6 @@ public class Book implements Serializable{
 		this.price = price;
 		this.status = status;
 		this.yearOfPublication = yearOfPublication;
-	}
-	
-
-	public Book(Integer id, String name, Double price, Boolean status, Integer yearOfPublication, Date date) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.status = status;
-		this.yearOfPublication = yearOfPublication;
-		this.date = date;
-	}
-
-	public Book(Integer id, String name, Double price,Integer yearOfPublication, Boolean status) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.status = status;
-		this.yearOfPublication = yearOfPublication;
-		this.date = new Date();
-		this.countOfRequest = 0;
-	}
-	
-	public Book(Integer id, String name, Double price, Boolean status, Integer yearOfPublication, Date date,
-			Integer countOfRequest) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.status = status;
-		this.yearOfPublication = yearOfPublication;
-		this.date = date;
-		this.countOfRequest = countOfRequest;
 	}
 
 	public Integer getId() {

@@ -1,9 +1,6 @@
 package com.senla.bookshop.facade;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -35,27 +32,46 @@ public class Facade implements IFacade{
 	}
 	@Override
 	public void addRequest(Object t) throws SQLException{
-		requestManager.addRequest(t);
+		try {
+			requestManager.addRequest(t);
+		} catch (Exception e) {
+			logger.error(e);
+		}
 	}
 	@Override
-	public Request getAllRequest() {
-		return	(Request) requestManager.getAllBookRequestByName();
+	public Request getAllRequest() throws Exception{
+		try {
+			return	(Request) requestManager.getAllBookRequestByName();
+		} catch (Exception e) {
+			logger.error(e);
+		}
+		return null;
 	}
 	@Override
-	public Book getBookById(int id) {
-		Book book = bookManager.getBookById(id);
+	public Book getBookById(int id) throws Exception{
+		Book book = null;
+		try {
+			book = bookManager.getBookById(id);
+		} catch (Exception e) {
+			logger.error(e);
+		}
 		return book;
 	}
 	@Override
-	public double getProfitForAllOrders() {
-		double profit = orderManager.getProfitForAllOrders();
+	public double getProfitForAllOrders() throws Exception{
+		double profit = 0;
+		try {
+			profit = orderManager.getProfitForAllOrders();
+		} catch (Exception e) {
+			logger.error(e);
+		}
 		return profit;
 	}
 	@Override
 	public void orderCompleate(int id){
 		try {
 			orderManager.orderCompleate(id);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			logger.error(e);
 		}
 	}
@@ -69,18 +85,22 @@ public class Facade implements IFacade{
 		
 	}
 	@Override
-	public void getProfitByPeriodOfTime(int day) {
-		orderManager.getProfitByPeriodOfTime(day);
+	public void getProfitByPeriodOfTime(int day)throws Exception {
+		try {
+			orderManager.getProfitByPeriodOfTime(day);
+		} catch (Exception e) {
+			logger.error(e);
+		}
 		
 	}
 	@Override
-	public double getProfitForOneOrder() {
-		double profit = orderManager.getProfitForAllOrders();
-		return profit;
-	}
-	@Override
-	public Order getOrderById(int id) {
-		Order order = orderManager.getOrderById(id);
+	public Order getOrderById(int id) throws Exception {
+		Order order = null;
+		try {
+			order = orderManager.getOrderById(id);
+		} catch (Exception e) {
+			logger.error(e);
+		}
 		return order;
 	}
 	@Override
@@ -116,121 +136,217 @@ public class Facade implements IFacade{
 		
 	}
 	@Override
-	public int getCountOfOrder() {
-		int orders = orderManager.getCountOfOrder();
+	public int getCountOfOrder() throws Exception {
+		int orders = 0;
+		try {
+			orders = orderManager.getCountOfOrder();
+		} catch (Exception e) {
+			logger.error(e);
+		}
 		return orders;
 	}
 	@Override
-	public List<String> sortRequestByName(){
-		return requestManager.getAllBookRequestByName();
+	public List<String> sortRequestByName() throws Exception{
+		try {
+			return requestManager.getAllBookRequestByName();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Double> sortRequestAmounte(){
-		return requestManager.getAllBookRequestByAmount();
+	public List<Double> sortRequestAmounte() throws Exception{
+		try {
+			return requestManager.getAllBookRequestByAmount();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Order> sortOrderByDateOfDeliver(){
-		return orderManager.getOrderByDateOfDelivered();
+	public List<Order> sortOrderByDateOfDeliver() throws Exception{
+		try {
+			return orderManager.getOrderByDateOfDelivered();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Double> sortOrderByPrice(){
-		return orderManager.getOrderByPrice();
+	public List<Double> sortOrderByPrice() throws Exception{
+		try {
+			return orderManager.getOrderByPrice();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Order> sortOrderByStatus(){
-		return orderManager.getOrderByStatus();
+	public List<Order> sortOrderByStatus() throws Exception{
+		try {
+			return orderManager.getOrderByStatus();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Book> sortBookByDate(){
-		return bookManager.getBookByDate();
+	public List<Book> sortBookByDate() throws Exception{
+		try {
+			return bookManager.getBookByDate();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Book> sortBookByName(){
+	public List<Book> sortBookByName() throws Exception{
 		try {
 			return bookManager.getBookByName();
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			logger.error(e);
 			e.printStackTrace();
 		}
 		return null;
 	}
 	@Override
-	public List<Book> sortBookByPrice(){
-		return bookManager.getBookByPrice();
+	public List<Book> sortBookByPrice() throws Exception{
+		try {
+			return bookManager.getBookByPrice();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Book> sortBookByStatus(){
-		return bookManager.getBookByStatus();
+	public List<Book> sortBookByStatus() throws Exception{
+		try {
+			return bookManager.getBookByStatus();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	@Override
-	public List<Book> sortBookByYearOfPublic(){
-		return bookManager.getBookByYearOfPublic();
-	}
-	
-	@Override
-	public List<Book> sortOldBook(){
-		return bookManager.sortOldBooks();
-	}
-	
-	@Override
-	public List<Book> getBooks(){
-		return bookManager.getBooks();
-	}
-	@Override
-	public List<Book> getAllBooks(){
-		return bookManager.getBooks();
-	}
-	@Override
-	public List<Order> getOrders(){
-		return orderManager.getOrders();
-	}
-	@Override
-	public List<Request> getRequests(){
-		return requestManager.getRequest();
-	}
-	@Override
-	public List<Request> readObjectFromCSV(){
-		return requestManager.getRequest();
+	public List<Book> sortBookByYearOfPublic() throws Exception{
+		try {
+			return bookManager.getBookByYearOfPublic();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
 	}
 	
 	@Override
-	public boolean booksAnnotationFromCSV(){
+	public List<Book> sortOldBook() throws Exception{
+		try {
+			return bookManager.sortOldBooks();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
+	
+	@Override
+	public List<Book> getBooks() throws Exception{
+		try {
+			return bookManager.getBooks();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
+	@Override
+	public List<Book> getAllBooks() throws Exception{
+		try {
+			return bookManager.getBooks();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
+	@Override
+	public List<Order> getOrders() throws Exception{
+		try {
+			return orderManager.getOrders();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
+	@Override
+	public List<Request> getRequests() throws Exception{
+		try {
+			return requestManager.getRequest();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
+	@Override
+	public List<Request> readObjectFromCSV() throws Exception{
+		try {
+			return requestManager.getRequest();
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
+	
+	@Override
+	public boolean booksAnnotationFromCSV() throws Exception{
 		try {
 			bookManager.getAnnotationBook();
 			return true;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| IOException | ParseException | SQLException e) {
+		} catch (Exception e) {
 			logger.error(e);
 			return false;
 		}
 	}
 	
 	@Override
-	public boolean OrderAnnotationFromCSV(){
+	public boolean orderAnnotationFromCSV() throws Exception{
 		try {
 			orderManager.getAnnotationOrder();
 			return true;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| IOException | ParseException | SQLException e) {
+		} catch (Exception e) {
 			logger.error(e);
 			return false;
 		}
 	}
 	
 	@Override
-	public boolean requestAnnotationFromCSV(){
+	public boolean orderAnnotationToCSV() throws Exception{
+		try{
+			orderManager.saveAnnotationOrder();
+		return true;
+		}catch(Exception e){
+			logger.error(e);
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean requestAnnotationFromCSV() throws Exception{
 		try {
-			requestManager.getAnnotationRequest();
+				requestManager.getAnnotationRequest();
 			return true;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| IOException | ParseException | SQLException e) {
+		} catch (Exception e) {
 			logger.error(e);
 			return false;
 		}
 	}
+	@Override
+	public void requestAnnotationToCSV() throws Exception{
+		try {
+				requestManager.saveAnnotationRequest();
+		} catch (Exception e) {
+			logger.error(e);
+		}
+	}
 	
 	@Override
-	public boolean addBook(Book book){
+	public boolean addBook(Book book) throws Exception{
 		try{
 			bookManager.addBook(book);
 		return true;

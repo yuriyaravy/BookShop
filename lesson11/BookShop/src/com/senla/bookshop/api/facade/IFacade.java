@@ -11,69 +11,71 @@ public interface IFacade {
 
 	void addRequest(Object t) throws SQLException;
 
-	Request getAllRequest();
+	Request getAllRequest() throws Exception;
 
-	boolean OrderAnnotationFromCSV();
+	boolean requestAnnotationFromCSV() throws Exception;
 
-	boolean requestAnnotationFromCSV();
+	boolean booksAnnotationFromCSV() throws Exception;
 
-	boolean booksAnnotationFromCSV();
+	Book getBookById(int id) throws Exception;
 
-	Book getBookById(int id);
+	List<Book> sortBookByDate() throws Exception;
 
-	List<Book> sortBookByDate();
+	List<Book> sortBookByName() throws Exception;
 
-	List<Book> sortBookByName();
+	List<Book> sortBookByPrice() throws Exception;
 
-	List<Book> sortBookByPrice();
+	List<Book> sortBookByStatus() throws Exception;
 
-	List<Book> sortBookByStatus();
+	List<Book> sortBookByYearOfPublic() throws Exception;
 
-	List<Book> sortBookByYearOfPublic();
+	List<Book> getBooks() throws Exception;
 
-	List<Book> getBooks();
+	List<Book> sortOldBook() throws Exception;
 
-	List<Book> sortOldBook();
+	List<Order> getOrders() throws Exception;
 
-	List<Order> getOrders();
+	List<Request> getRequests() throws Exception;
 
-	List<Request> getRequests();
+	List<String> sortRequestByName() throws Exception;
 
-	List<String> sortRequestByName();
+	List<Double> sortRequestAmounte() throws Exception;
 
-	List<Double> sortRequestAmounte();
+	List<Order> sortOrderByDateOfDeliver() throws Exception;
 
-	List<Order> sortOrderByDateOfDeliver();
+	List<Order> sortOrderByStatus() throws Exception;
 
-	List<Order> sortOrderByStatus();
+	int getCountOfOrder() throws Exception;
 
-	int getCountOfOrder();
-
-	double getProfitForAllOrders();
+	double getProfitForAllOrders() throws Exception;
 
 	void orderCompleate(int id) throws SQLException;
 
 	void allOrderCompleate() throws SQLException;
 
-	Order getOrderById(int id);
+	Order getOrderById(int id) throws Exception;
 
 	boolean deleteBookToOrder(int id);
 
 	boolean cancelOrder(int id);
 
-	List<Double> sortOrderByPrice();
+	List<Double> sortOrderByPrice() throws Exception;
 
-	void getProfitByPeriodOfTime(int day);
+	void getProfitByPeriodOfTime(int day) throws Exception;
 
 	boolean addBookToOrder(List<Book> book);
 
-	List<Request> readObjectFromCSV();
+	List<Request> readObjectFromCSV() throws Exception;
 
-	double getProfitForOneOrder();
+	List<Book> getAllBooks() throws Exception;
 
-	List<Book> getAllBooks();
+	boolean addBook(Book book) throws Exception;
 
-	boolean addBook(Book book);
+	boolean orderAnnotationToCSV() throws Exception;
+
+	boolean orderAnnotationFromCSV() throws Exception;
+
+	void requestAnnotationToCSV() throws Exception;
 	
 	
 

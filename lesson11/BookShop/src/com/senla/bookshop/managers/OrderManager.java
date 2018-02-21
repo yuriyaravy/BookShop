@@ -1,15 +1,15 @@
 package com.senla.bookshop.managers;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
-import java.text.ParseException;
+import java.sql.Savepoint;
 import java.util.List;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import com.mysql.jdbc.Connection;
 import com.senla.bookshop.api.controllers.IOrderManager;
-import com.senla.bookshop.dao.api.IOrderDao;
+import com.senla.bookshop.api.dao.IOrderDao;
 import com.senla.bookshop.dao.connect.DataBaseConnect;
 import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Book;
@@ -20,108 +20,125 @@ import com.senla.bookshop.utils.annotations.AnnotationCSVWriter;
 
 public class OrderManager implements IOrderManager{
 	
-	private final IOrderDao orderStorage = (IOrderDao) DependencyIngection.getInctance().getClassInstance(IOrderDao.class);
+	private static final Logger logger = LogManager.getLogger(BookManager.class);
+	
+	private final IOrderDao orderDao = (IOrderDao) DependencyIngection.getInctance().getClassInstance(IOrderDao.class);
 	private DataBaseConnect dbconnect = DataBaseConnect.getInstance();
 	
-	@Override
-	public void getAnnotationOrder() throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ParseException, SQLException{
-		orderStorage.create((Connection) dbconnect.getConnection(),(Order) AnnotationCSVReader.readerFromCsv(Order.class));
-	}
+	
 	
 	@Override
-	public double getProfitForAllOrders(){
-		double profit = 0;
-		synchronized (orderStorage) {
-			for(Double tempReq : orderStorage.getAllOrderByPrice((Connection) dbconnect.getConnection())){
-				profit += tempReq;
-			}
-		}
-		return profit;
+	public void getAnnotationOrder() throws Exception{
+		orderDao.update((Connection) dbconnect.getConnection(),(Order) AnnotationCSVReader.readerFromCsv(Order.class));
 	}
 	@Override
-	public void orderCompleate(int id) throws SQLException{
-		synchronized (orderStorage) {
-			Order order = orderStorage.getById((Connection) dbconnect.getConnection(),id);
+	public void saveAnnotationOrder() throws Exception{
+		List<Order> list = orderDao.getOrderById((Connection) dbconnect.getConnection());
+		AnnotationCSVWriter.wtiteToCSVFile(list);
+	}
+	@Override
+	public double getProfitForAllOrders() throws Exception{
+		List<Double> myList = orderDao.getAllOrderByPrice((Connection) dbconnect.getConnection());
+		return myList.stream().mapToDouble(f -> f.doubleValue()).sum();
+	}
+	@Override
+	public void orderCompleate(int id) throws Exception{
+		synchronized (orderDao) {
+			Order order = orderDao.getById((Connection) dbconnect.getConnection(),id);
 			order.setStatus(OrderStatus.COMPLEATE);
-			orderStorage.update((Connection) dbconnect.getConnection(),order);
+			orderDao.update((Connection) dbconnect.getConnection(),order);
 		}
 	}
 	@Override
-	public  void allOrderCompleate() throws SQLException{
-		synchronized (orderStorage) {
-			for(Order temp : orderStorage.getOrderById((Connection) dbconnect.getConnection())){
+	public  void allOrderCompleate() throws Exception{
+		synchronized (orderDao) {
+			List<Order> orderList = orderDao.getOrderById((Connection) dbconnect.getConnection());
+			for(Order temp : orderList){
 				temp.setStatus(OrderStatus.COMPLEATE);
-				orderStorage.update((Connection) dbconnect.getConnection(),temp);
+				orderDao.update((Connection) dbconnect.getConnection(),temp);
 			}
 		}
 	}
 			
 	@Override
-	public Order getOrderById(int id){
-		return orderStorage.getById((Connection) dbconnect.getConnection(),id);
+	public Order getOrderById(int id) throws Exception{
+		return orderDao.getById((Connection) dbconnect.getConnection(),id);
 	}
 
 	@Override
-	public void addBookToOrder(Book book) throws SQLException{
-		synchronized (orderStorage) {
+	public void addBookToOrder(Book book) throws Exception{
+		Connection connection = (Connection) dbconnect.getConnection();
+		Savepoint savepoint = null;
+		try{
+			connection.setAutoCommit(false);
+			savepoint = connection.setSavepoint();
 			Order order = new Order();
 			order.setBook(book);
 			order.setStatus(OrderStatus.PROCESSING);
-			orderStorage.create((Connection) dbconnect.getConnection(),order);
+			orderDao.create((Connection) dbconnect.getConnection(),order);
+			connection.commit();
+			connection.setAutoCommit(true);
+		} catch (SQLException e) {
+			try {
+				connection.rollback(savepoint);
+			} catch (SQLException e1) {
+				logger.error(e1);
+			}
+		} finally {
+			try {
+				connection.setAutoCommit(true);
+			} catch (SQLException e) {
+				logger.error(e);
+			}
 		}
 	}
 	@Override
-	public void deleteOrder(int id) throws SQLException{
-		synchronized (orderStorage) {
-			orderStorage.delete((Connection) dbconnect.getConnection(),id);
+	public void deleteOrder(int id) throws Exception{
+		synchronized (orderDao) {
+			orderDao.delete((Connection) dbconnect.getConnection(),id);
 		}
 	}
 	@Override
-	public void cancelOrder(int id) throws SQLException{
-		synchronized (orderStorage) {
-			Order cancelOrder = orderStorage.getById((Connection) dbconnect.getConnection(),id);
+	public void cancelOrder(int id) throws Exception{
+		synchronized (orderDao) {
+			Order cancelOrder = orderDao.getById((Connection) dbconnect.getConnection(),id);
 			cancelOrder.setStatus(OrderStatus.CANCELED);
-			orderStorage.update((Connection) dbconnect.getConnection(),cancelOrder);
+			orderDao.update((Connection) dbconnect.getConnection(),cancelOrder);
 		}
 	}
 	@Override
-	public int getCountOfOrder(){
-		int profit = orderStorage.getOrderById((Connection) dbconnect.getConnection()).size();
-		return profit;
+	public int getCountOfOrder() throws Exception{
+		return orderDao.getOrderById((Connection) dbconnect.getConnection()).size();
 	}
 	@Override
-	public List<Order> getOrderByDateOfDelivered(){
-		return orderStorage.getOrderByDateOfDelivered((Connection) dbconnect.getConnection());
+	public List<Order> getOrderByDateOfDelivered() throws Exception{
+		return orderDao.getOrderByDateOfDelivered((Connection) dbconnect.getConnection());
 	}
 	@Override
-	public List<Order> getOrderByStatus(){
-		return orderStorage.getOrderByStatus((Connection) dbconnect.getConnection());
+	public List<Order> getOrderByStatus() throws Exception{
+		return orderDao.getOrderByStatus((Connection) dbconnect.getConnection());
 	}
 	@Override
-	public List<Double> getOrderByPrice(){
-		return orderStorage.getAllOrderByPrice((Connection) dbconnect.getConnection());
+	public List<Double> getOrderByPrice() throws Exception{
+		return orderDao.getAllOrderByPrice((Connection) dbconnect.getConnection());
 	}
 	@Override
-	public List<Double> getProfitByPeriodOfTime(int day){
-		return orderStorage.getProfitByPeriodOfTime((Connection) dbconnect.getConnection(),day);
+	public List<Double> getProfitByPeriodOfTime(int day) throws Exception{
+		return orderDao.getProfitByPeriodOfTime((Connection) dbconnect.getConnection(),day);
 	}
 	@Override
-	public void saveOrderToCSV() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException, IOException{
-		AnnotationCSVWriter aw = new AnnotationCSVWriter();
-		aw.wtiteToCSVFile(orderStorage.getOrderById((Connection) dbconnect.getConnection()));
+	public void saveOrderToCSV() throws Exception{
+		AnnotationCSVWriter.wtiteToCSVFile(orderDao.getOrderById((Connection) dbconnect.getConnection()));
 	}
 	@Override
-	public void readOrderFromCSV(){
+	public List<Order> getOrders() throws Exception{
+		return orderDao.getOrderById((Connection) dbconnect.getConnection());
 	}
 	@Override
-	public List<Order> getOrders(){
-		return orderStorage.getOrderById((Connection) dbconnect.getConnection());
-	}
-	
-	@Override
-	public Order cloneOrder(Order order) throws CloneNotSupportedException {
+	public Order cloneOrder(Order order) throws SQLException, Exception {
 		Order clone = null;
 			clone = order.clone();
+			orderDao.create((Connection) dbconnect.getConnection(), clone);
 		return clone;
 	}
 	

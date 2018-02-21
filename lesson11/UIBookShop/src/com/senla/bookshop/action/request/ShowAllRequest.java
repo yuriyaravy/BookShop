@@ -8,7 +8,11 @@ public class ShowAllRequest implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getAllRequest());
+		try {
+			Printers.show(Facade.getInstance().getAllRequest());
+		} catch (Exception e) {
+			Printers.show("Errors program can't show all requests");
+		}
 	}
 
 }

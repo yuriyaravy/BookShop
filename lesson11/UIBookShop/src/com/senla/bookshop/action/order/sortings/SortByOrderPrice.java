@@ -9,6 +9,10 @@ public class SortByOrderPrice implements IAction{
 	
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortOrderByPrice());
+		try {
+			Printers.show(Facade.getInstance().sortOrderByPrice());
+		} catch (Exception e) {
+			Printers.show("Failed to display orders sorted by price");
+		}
 	}
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Response implements Serializable{
 	
+	private static final long serialVersionUID = 7761827563522952769L;
+
 	private Object object;
 	
 	private Boolean ok;

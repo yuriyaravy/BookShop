@@ -9,7 +9,11 @@ public class SortByOrderStatus implements IAction{
 	
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortOrderByStatus());
+		try {
+			Printers.show(Facade.getInstance().sortOrderByStatus());
+		} catch (Exception e) {
+			Printers.show("Failed to display orders sorted by status");
+		}
 	}
 
 }

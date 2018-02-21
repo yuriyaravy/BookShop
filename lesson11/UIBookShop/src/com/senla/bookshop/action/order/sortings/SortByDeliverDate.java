@@ -9,7 +9,11 @@ public class SortByDeliverDate implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortOrderByDateOfDeliver());
+		try {
+			Printers.show(Facade.getInstance().sortOrderByDateOfDeliver());
+		} catch (Exception e) {
+			Printers.show("Failed to display orders sorted by delivery date");
+		}
 	}
 
 }

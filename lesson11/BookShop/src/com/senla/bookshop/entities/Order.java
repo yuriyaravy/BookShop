@@ -11,6 +11,8 @@ import com.senla.bookshop.enums.OrderStatus;
 @CsvEntity(fileName = "files/files/data/csv/order.csv")
 public class Order implements Serializable , Cloneable{
 	
+	private static final long serialVersionUID = -1311635413752160170L;
+	
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1)
 	private Integer id;
 	@CsvProperty(propertyType = PropertyType.CompositeProperty, columnNumber = 2, keyField="bookInfo")
@@ -25,13 +27,6 @@ public class Order implements Serializable , Cloneable{
 	}
 	
 	public Order(Book book, Date dateOfDeliver, OrderStatus status) {
-		this.book = book;
-		this.dateOfDeliver = dateOfDeliver;
-		this.status = status;
-	}
-
-	public Order(Integer id, Book book, Date dateOfDeliver, OrderStatus status) {
-		this.id = id;
 		this.book = book;
 		this.dateOfDeliver = dateOfDeliver;
 		this.status = status;

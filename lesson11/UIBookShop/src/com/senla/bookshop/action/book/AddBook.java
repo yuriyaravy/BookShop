@@ -1,7 +1,5 @@
 package com.senla.bookshop.action.book;
 
-import java.text.ParseException;
-import java.util.Date;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;

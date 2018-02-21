@@ -1,11 +1,6 @@
 package com.senla.bookshop.api.controllers;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.Comparator;
 import java.util.List;
 
 import com.senla.bookshop.entities.Book;
@@ -13,40 +8,39 @@ import com.senla.bookshop.entities.Order;
 
 public interface IOrderManager {
 
-	void getAnnotationOrder() throws FileNotFoundException, InstantiationException, IllegalAccessException,
-			IllegalArgumentException, InvocationTargetException, IOException, ParseException, SQLException;
+	void getAnnotationOrder() throws Exception;
 
-	double getProfitForAllOrders();
+	double getProfitForAllOrders() throws Exception;
 
-	void orderCompleate(int id) throws SQLException;
+	void orderCompleate(int id) throws SQLException, Exception;
 
-	void allOrderCompleate() throws SQLException;
+	void allOrderCompleate() throws SQLException, Exception;
 
-	Order getOrderById(int id);
+	Order getOrderById(int id) throws Exception;
 
-	void addBookToOrder(Book book) throws SQLException;
+	void addBookToOrder(Book book) throws SQLException, Exception;
 
-	void deleteOrder(int id) throws SQLException;
+	void deleteOrder(int id) throws SQLException, Exception;
 
-	void cancelOrder(int id) throws SQLException;
+	void cancelOrder(int id) throws SQLException, Exception;
 
-	int getCountOfOrder();
+	int getCountOfOrder() throws Exception;
 
-	List<Order> getOrderByDateOfDelivered();
+	List<Order> getOrderByDateOfDelivered() throws Exception;
 
-	List<Order> getOrderByStatus();
+	List<Order> getOrderByStatus() throws Exception;
 
-	void saveOrderToCSV() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException, IOException;
+	void saveOrderToCSV() throws Exception;
 
-	Order cloneOrder(Order order) throws CloneNotSupportedException;
+	Order cloneOrder(Order order) throws CloneNotSupportedException, SQLException, Exception;
 
-	void readOrderFromCSV();
+	List<Order> getOrders() throws Exception;
 
-	List<Order> getOrders();
+	List<Double> getOrderByPrice() throws Exception;
 
-	List<Double> getOrderByPrice();
+	List<Double> getProfitByPeriodOfTime(int day) throws Exception;
 
-	List<Double> getProfitByPeriodOfTime(int day);
+	void saveAnnotationOrder() throws Exception;
 
 
 }

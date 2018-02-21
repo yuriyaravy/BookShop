@@ -4,15 +4,14 @@ import com.senla.bookshop.api.IAction;
 import com.senla.bookshop.facade.Facade;
 import com.senla.bookshop.utils.Printers;
 
-public class ReadRequestCsvAnnotation implements IAction{
-	
+public class SaveRequestToCsvAnnotation implements IAction{
+
 	@Override
 	public void execute() {
-		try{
-			Facade.getInstance().requestAnnotationFromCSV();
+		try {
+			Facade.getInstance().requestAnnotationToCSV();
 		} catch (Exception e) {
-			Printers.show("Failed to read request from CSV by annotation");
+			Printers.show("Could not save request by annotation to CSV");
 		}
 	}
-
 }

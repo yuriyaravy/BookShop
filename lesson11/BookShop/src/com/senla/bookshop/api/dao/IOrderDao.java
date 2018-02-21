@@ -1,11 +1,11 @@
-package com.senla.bookshop.dao.api;
+package com.senla.bookshop.api.dao;
 
 import java.util.List;
 
 import com.mysql.jdbc.Connection;
 import com.senla.bookshop.entities.Order;
 
-public interface IOrderDao extends IDataBaseDao<Order>{
+public interface IOrderDao extends IGenericDao<Order>{
 
 	List<Order> getOrderByDateOfDelivered(Connection connection);
 

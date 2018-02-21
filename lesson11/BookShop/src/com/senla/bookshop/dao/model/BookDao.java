@@ -11,12 +11,13 @@ import org.apache.log4j.Logger;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
-import com.senla.bookshop.dao.api.IBookDao;
+import com.senla.bookshop.api.dao.IBookDao;
 import com.senla.bookshop.entities.Book;
+import com.senla.bookshop.utils.setting.Setting;
 
-public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
+public class BookDao extends AbstractDao<Book> implements IBookDao{
 	
-	private static final Logger logger = LogManager.getLogger(BookDataBaseDao.class);
+	private static final Logger logger = LogManager.getLogger(BookDao.class);
 	
 	private static final String ID_BOOK = "id_book";
 	private static final String NAME_BOOK = "name";
@@ -31,39 +32,33 @@ public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
 	private static final String	DELETE_BOOK_BY_ID = "delete from book where id_book = ?";
 	private static final String SELECT_ALL_FROM_BOOK = "select * from book";
 	
-	private static final String SELECT_OLD_BOOK = "select * from book where to_days(now()) - to_days(date_of_add) >= 60;";
+	private static final String SELECT_OLD_BOOK = "select * from book where to_days(now()) - to_days(date_of_add) >= ;";
 
 	@Override
 	protected String getIdQuery() {
 		return SELECT_FROM_BOOK_BY_ID;
 	}
-
 	@Override
 	protected String getInsertQuery() {
 		return INSERT_INTO_BOOK;
 	}
-
 	@Override
 	protected String getDeleteQuery() {
 		return DELETE_BOOK_BY_ID;
 	}
-
 	@Override
 	protected String getAllQuery() {
 		return SELECT_ALL_FROM_BOOK;
 	}
-
 	@Override
 	protected String getUpdateQuery() {
 		return UPDATE_BOOK;
 	}
-
 	@Override
 	protected void prepareUpdateStatement(PreparedStatement statement, Book object) throws SQLException {
 		prepareInsertStatement(statement , object);
 		statement.setInt(5, object.getId());
 	}
-
 	@Override
 	protected void prepareInsertStatement(PreparedStatement statement, Book object) throws SQLException {
 		statement.setString(1, object.getName());
@@ -71,7 +66,6 @@ public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
 		statement.setBoolean(3, object.isStatus());
 		statement.setInt(4, object.getYearOfPublication());
 	}
-
 	@Override
 	protected Book parseEntity(ResultSet resultSet) {
 		try{
@@ -92,12 +86,10 @@ public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
 	public List<Book> getBooks(Connection connection){
 		return getAll(connection, ID_BOOK);
 	}
-	
 	@Override
 	public List<Book> getBookByName(Connection connection){
 		return getAll(connection, NAME_BOOK);
 	}
-	
 	@Override
 	public List<Book> getBookByPrice(Connection connection){
 		return getAll(connection, PRICE_BOOK);
@@ -114,14 +106,14 @@ public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
 	public List<Book> getBookByDate(Connection connection){
 		return getAll(connection, DATE_OF_ADD_BOOK);
 	}
-	
 	@Override
-	public List<Book> getOldBook(Connection connection) {
+	public List<Book> getOldBook(Connection connection) throws Exception {
 		List<Book> tempList = new ArrayList<>();
+		int mounth = Setting.getMonth();
 		Statement statement = null;
 		try {
 			statement = (Statement) connection.createStatement();
-			ResultSet resultSet = statement.executeQuery(SELECT_OLD_BOOK);
+			ResultSet resultSet = statement.executeQuery(SELECT_OLD_BOOK + mounth);
 			while (resultSet.next()) {
 				tempList.add(parseEntity(resultSet));
 			}
@@ -131,7 +123,9 @@ public class BookDataBaseDao extends ADataBaseDao<Book> implements IBookDao{
 			return null;
 		} finally {
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}

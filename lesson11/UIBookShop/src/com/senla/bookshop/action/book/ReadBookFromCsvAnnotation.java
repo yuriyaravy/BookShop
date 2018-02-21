@@ -8,11 +8,12 @@ public class ReadBookFromCsvAnnotation implements IAction{
 
 	@Override
 	public void execute() {
-		if(Facade.getInstance().booksAnnotationFromCSV()){
-			Printers.show("You are get books from SCV file with using annotation");
-		}else{
-			Printers.show("Fail, no books no honey");
+		try {
+			Facade.getInstance().booksAnnotationFromCSV();
+		} catch (Exception e) {
+			Printers.show("Could not get books by annotation from CSV");
 		}
+		
 	}
 
 }

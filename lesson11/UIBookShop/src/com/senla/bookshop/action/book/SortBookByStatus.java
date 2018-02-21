@@ -8,7 +8,11 @@ public class SortBookByStatus implements IAction{
 	
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortBookByStatus());
+		try {
+			Printers.show(Facade.getInstance().sortBookByStatus());
+		} catch (Exception e) {
+			Printers.show("Failed to display books sorted by status");
+		}
 	}
 
 }

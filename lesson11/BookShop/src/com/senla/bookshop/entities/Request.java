@@ -9,6 +9,8 @@ import com.senla.bookshop.annotations.enums.PropertyType;
 @CsvEntity(fileName = "files/files/data/csv/request.csv")
 public class Request implements Serializable{
 	
+	private static final long serialVersionUID = 2203288805903871087L;
+	
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1)
 	private Integer id;
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 2, keyField="bookInfo")

@@ -11,20 +11,19 @@ import org.apache.log4j.Logger;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
-import com.senla.bookshop.dao.api.IOrderDao;
-import com.senla.bookshop.dao.connect.DataBaseConnect;
+import com.senla.bookshop.api.dao.IOrderDao;
 import com.senla.bookshop.dao.utils.DateUtil;
 import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entities.Order;
 import com.senla.bookshop.enums.OrderStatus;
 
-public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
+public class OrderDao extends AbstractDao<Order> implements IOrderDao{
 	
-	private static final Logger logger = LogManager.getLogger(OrderDataBaseDao.class);
+	private static final Logger logger = LogManager.getLogger(OrderDao.class);
 	
 	private static final String ID_ORDER = "id_order";
 	private static final String ID_BOOK = "id_book";
-	private static final String DATE_OF_DELIVERY = "date_of_deliver";
+	private static final String DATE_OF_DELIVERY = "date_of_deliver;";
 	private static final String ORDER_STATUS = "order_status";
 	
 	private static final String PRICE_BOOK = "price";
@@ -85,7 +84,7 @@ public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
 			Order tempOrder = new Order();
 			tempOrder.setId(resultSet.getInt(ID_ORDER));
 			if (resultSet.findColumn(ID_BOOK) > 0) {
-				BookDataBaseDao bookDao = (BookDataBaseDao) DependencyIngection.getInctance().getClassInstance(BookDataBaseDao.class);
+				BookDao bookDao = (BookDao) DependencyIngection.getInctance().getClassInstance(BookDao.class);
 				tempOrder.setBook(bookDao.parseEntity(resultSet));
 			}
 			tempOrder.setDateOfDeliver(resultSet.getDate(DATE_OF_DELIVERY));
@@ -113,7 +112,9 @@ public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
 			return null;
 		} finally {
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -135,7 +136,9 @@ public class OrderDataBaseDao extends ADataBaseDao<Order> implements IOrderDao{
 			return null;
 		} finally {
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}

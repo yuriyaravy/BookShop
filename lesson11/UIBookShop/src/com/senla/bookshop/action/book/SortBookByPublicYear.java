@@ -9,7 +9,11 @@ public class SortBookByPublicYear implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().sortBookByYearOfPublic());
+		try {
+			Printers.show(Facade.getInstance().sortBookByYearOfPublic());
+		} catch (Exception e) {
+			Printers.show("Failed to display books sorted by year of publication");
+		}
 	}
 
 }

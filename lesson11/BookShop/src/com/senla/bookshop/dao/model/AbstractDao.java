@@ -12,12 +12,11 @@ import java.sql.ResultSet;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
-import com.senla.bookshop.dao.api.IDataBaseDao;
-import com.senla.bookshop.dao.connect.DataBaseConnect;
+import com.senla.bookshop.api.dao.IGenericDao;
 
-public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
+public abstract class AbstractDao <T> implements IGenericDao<T>{
 	
-	private static final Logger logger = LogManager.getLogger(ADataBaseDao.class);
+	private static final Logger logger = LogManager.getLogger(AbstractDao.class);
 	
 	protected abstract String getIdQuery();
 	protected abstract String getInsertQuery();
@@ -31,19 +30,20 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 
 	protected abstract T parseEntity(ResultSet resultSet);
 	
-	
 	@Override
 	public void create(Connection connection, T object) throws SQLException {
 		PreparedStatement statement = null;
 		try{
-				statement = connection.prepareStatement(getInsertQuery());
+			statement = connection.prepareStatement(getInsertQuery());
 			prepareInsertStatement(statement, object);
 			statement.executeUpdate();
 		} catch (SQLException e){
 			logger.error(e);
 		}finally{
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -62,7 +62,9 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 			logger.error(e);
 		}finally{
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -85,7 +87,9 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 			logger.error(e);
 		}finally{
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -101,6 +105,7 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 			statement = (Statement) connection.createStatement();
 			String query = (sortingColumn.length == 1) ? getAllQuery() + " order by " + sortingColumn[0]
 					: getAllQuery();
+			System.out.println(query);
 			ResultSet resultSet = statement.executeQuery(query);
 			while (resultSet.next()) {
 				tempList.add(parseEntity(resultSet));
@@ -111,7 +116,9 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 			return null;
 		} finally {
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}
@@ -126,11 +133,12 @@ public abstract class ADataBaseDao <T> implements IDataBaseDao<T>{
 			prepareUpdateStatement(statement, object);
 			statement.executeUpdate();
 		} catch (SQLException e){
-			e.printStackTrace();
 			logger.error(e);
 		}finally{
 			try {
-				statement.close();
+				if(statement != null){
+					statement.close();
+				}
 			} catch (SQLException e) {
 				logger.error(e);
 			}

@@ -1,4 +1,4 @@
-package com.senla.bookshop.dao.api;
+package com.senla.bookshop.api.dao;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import com.mysql.jdbc.Connection;
 
 
-public interface IDataBaseDao<T> {
+public interface IGenericDao<T> {
 	
 	void create(Connection connection, T object) throws SQLException;
 	

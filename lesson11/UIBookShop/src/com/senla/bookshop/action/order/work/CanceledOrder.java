@@ -9,7 +9,11 @@ public class CanceledOrder implements IAction{
 
 	@Override
 	public void execute() {
-		Printers.show(Facade.getInstance().getOrders());
+		try {
+			Printers.show(Facade.getInstance().getOrders());
+		} catch (Exception e) {
+			Printers.show("Failed to display orders");
+		}
 		Printers.show("Write order id for canceled this order");
 		if(Facade.getInstance().cancelOrder(Scanners.scannerForInteger())){
 			Printers.show("Your order was canceled");

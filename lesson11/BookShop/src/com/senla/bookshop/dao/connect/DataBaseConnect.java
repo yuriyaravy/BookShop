@@ -32,24 +32,25 @@ public class DataBaseConnect {
 		return instance;
 	}
 	
-	public Connection getConnection() {
+	public Connection getConnection() throws Exception {
 		if (connection == null) {
-			Connect();
+			connect();
 		}
 
 		return connection;
 	}
 	
-	public void Connect(){
+	public void connect() throws Exception{
 		try {
 			Class.forName(DRIVER);
 			connection = DriverManager.getConnection(HOST, LOGIN, PASSWORD);
 		} catch (ClassNotFoundException | SQLException e) {
 			logger.error("SQLexception" + e);
+			throw new Exception();
 		}
 	}
 	
-	public void closeConnect(){
+	public void closeConnect() throws Exception{
 		try {
 			if (connection != null) {
 				connection.close();
@@ -57,6 +58,7 @@ public class DataBaseConnect {
 			}
 		} catch (SQLException e) {
 			logger.error("Connection is not closed", e);
+			throw new Exception();
 		}
 	}
 	
