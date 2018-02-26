@@ -13,7 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,8 +35,8 @@ public class Order implements Serializable , Cloneable{
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1)
 	private Integer id;
 	
-//	@OneToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name="id_book", nullable=true)
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "book_id", nullable = true)
 	@CsvProperty(propertyType = PropertyType.CompositeProperty, columnNumber = 2, keyField="bookInfo")
 	private Book book;
 	

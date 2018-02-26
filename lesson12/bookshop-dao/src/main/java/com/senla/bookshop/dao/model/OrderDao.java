@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -28,74 +29,9 @@ public class OrderDao extends AbstractDao<Order> implements IOrderDao{
 	
 	private static final String PRICE_BOOK = "price";
 	
-	private static final String UPDATE_ORDER = "update orders set id_book=?, date_of_deliver=?, order_status=? where id_order=?"; 
-	private static final String INSERT_INTO_ORDER = "insert into orders (id_order, id_book, date_of_deliver, order_status) value (?, ?, ?, ?)";
-	private static final String SELECT_FROM_ORDER_BY_ID = "select * from order where id_order = ?";
-	private static final String	DELETE_ORDER_BY_ID = "delete from order where id_order = ?";
-	private static final String SELECT_ALL_FROM_ORDER = "select * from order";
-	
 	private static final String SELECT_ORDER_BY_AMOUNT = "select o.price, o.name from book as o, orders as p where o.id_book = p.id_book order by o.price desc;";
 	private static final String SELECT_ORDER_PROFIT= "select  o.price, o.name from book as o, orders as p where o.id_book = p.id_book and p.order_status = 'COMPLEATE' and to_days(now()) - to_days(date_of_add) >=";
 
-	@Override
-	protected String getIdQuery() {
-		return SELECT_FROM_ORDER_BY_ID;
-	}
-
-	@Override
-	protected String getInsertQuery() {
-		return INSERT_INTO_ORDER;
-	}
-
-	@Override
-	protected String getDeleteQuery() {
-		return DELETE_ORDER_BY_ID;
-	}
-
-	@Override
-	protected String getAllQuery() {
-		return SELECT_ALL_FROM_ORDER;
-	}
-
-	@Override
-	protected String getUpdateQuery() {
-		return UPDATE_ORDER;
-	}
-
-	@Override
-	protected void prepareUpdateStatement(PreparedStatement statement, Order object) throws SQLException {
-		statement.setInt(1, object.getId());
-		statement.setInt(2, object.getBook().getId());
-		statement.setString(3, DateUtil.parserStringFromDate(object.getDateOfDeliver()));
-		statement.setString(4, object.getStatus().toString());
-	}
-
-	@Override
-	protected void prepareInsertStatement(PreparedStatement statement, Order object) throws SQLException {
-		statement.setInt(1, object.getId());
-		statement.setInt(2, object.getBook().getId());
-		statement.setString(3, DateUtil.parserStringFromDate(object.getDateOfDeliver()));
-		statement.setString(4, object.getStatus().toString());
-	}
-
-	@Override
-	protected Order parseEntity(ResultSet resultSet) {
-		try {
-			Order tempOrder = new Order();
-			tempOrder.setId(resultSet.getInt(ID_ORDER));
-			if (resultSet.findColumn(ID_BOOK) > 0) {
-				BookDao bookDao = (BookDao) DependencyIngection.getInctance().getClassInstance(BookDao.class);
-				tempOrder.setBook(bookDao.parseEntity(resultSet));
-			}
-			tempOrder.setDateOfDeliver(resultSet.getDate(DATE_OF_DELIVERY));
-			tempOrder.setStatus(OrderStatus.valueOf(resultSet.getString(ORDER_STATUS)));
-			return tempOrder;
-		} catch (SQLException e) {
-			logger.error(e);
-			return null;
-		}
-		
-	}
 	@Override
 	public List<Double> getProfitByPeriodOfTime(Connection connection, int day) {
 		List<Double> tempList = new ArrayList<>();
@@ -145,16 +81,16 @@ public class OrderDao extends AbstractDao<Order> implements IOrderDao{
 		}
 	}
 	@Override
-	public List<Order> getOrderByStatus(Connection connection){
-		return getAll(connection, ORDER_STATUS);
+	public List<Order> sortOrderByStatus(Session session){
+		return getAll(session, ORDER_STATUS);
 	}
 	@Override
-	public List<Order> getOrderByDateOfDelivered(Connection connection){
-		return getAll(connection, DATE_OF_DELIVERY);
+	public List<Order> sortOrderByDateOfDelivered(Session session){
+		return getAll(session, DATE_OF_DELIVERY);
 	}
 	@Override
-	public List<Order> getOrderById(Connection connection){
-		return getAll(connection, ID_ORDER);
+	public List<Order> sortOrderById(Session session){
+		return getAll(session, ID_ORDER);
 	}
 	
 

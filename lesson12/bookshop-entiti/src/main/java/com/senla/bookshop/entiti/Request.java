@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import com.senla.bookshop.annotations.CsvEntity;
@@ -31,8 +30,7 @@ public class Request implements Serializable{
 	private Integer id;
 	
 	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name = "id_book", nullable = true)
-//	@PrimaryKeyJoinColumn
+	@JoinColumn(name = "book_id", nullable = true)
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 2, keyField="bookInfo")
 	private Book book;
 	

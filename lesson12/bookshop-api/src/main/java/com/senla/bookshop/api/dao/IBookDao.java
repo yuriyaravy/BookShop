@@ -2,24 +2,26 @@ package com.senla.bookshop.api.dao;
 
 import java.util.List;
 
-import com.mysql.jdbc.Connection;
+import org.hibernate.Session;
+
 import com.senla.bookshop.entiti.Book;
 
 public interface IBookDao extends IGenericDao<Book> {
 
-	List<Book> getBookByName(Connection connection);
+	List<Book> getBook(Session session);
 
-	List<Book> getBookByDate(Connection connection);
+	List<Book> sortBookByName(Session session);
 
-	List<Book> getBookByYearOfPublic(Connection connection);
+	List<Book> sortBookByPrice(Session session);
 
-	List<Book> getBookByStatus(Connection connection);
+	List<Book> sortBookByStatus(Session session);
 
-	List<Book> getBookByPrice(Connection connection);
+	List<Book> sortBookByYearOfPublic(Session session);
 
-	List<Book> getBooks(Connection connection);
+	List<Book> sortBookByDate(Session session);
 
-	List<Book> getOldBook(Connection connection) throws Exception;
+	List<Book> getOldBook(Session session);
+
 	
 
 }

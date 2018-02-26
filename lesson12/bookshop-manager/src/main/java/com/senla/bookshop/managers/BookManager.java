@@ -6,13 +6,15 @@ import java.util.List;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
 
 import com.mysql.jdbc.Connection;
 import com.senla.bookshop.api.controllers.IBookManager;
 import com.senla.bookshop.api.dao.IBookDao;
 import com.senla.bookshop.dao.connect.DataBaseConnect;
 import com.senla.bookshop.di.DependencyIngection;
-import com.senla.bookshop.hibernate.Book;
+import com.senla.bookshop.entiti.Book;
+import com.senla.bookshop.hibernate.HibernateUtil;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 
 public class BookManager implements IBookManager{
@@ -20,7 +22,7 @@ public class BookManager implements IBookManager{
 	private static final Logger logger = LogManager.getLogger(BookManager.class);
 	
 	private final IBookDao bookDao = (IBookDao) DependencyIngection.getInctance().getClassInstance(IBookDao.class);
-	private DataBaseConnect dbconnect = DataBaseConnect.getInstance();
+	private HibernateUtil session = HibernateUtil.getInstance();
 	
 	@Override
 	public void getAnnotationBook() throws Exception{
@@ -66,7 +68,7 @@ public class BookManager implements IBookManager{
 	}
 	@Override
 	public List<Book> getBookByYearOfPublic() throws Exception{
-		return bookDao.getBookByYearOfPublic((Connection) dbconnect.getConnection());
+		return bookDao.sortBookByYearOfPublic((Session) session.getSessionFactory());
 	}
 	@Override
 	public List<Book> getBookByStatus() throws Exception{
