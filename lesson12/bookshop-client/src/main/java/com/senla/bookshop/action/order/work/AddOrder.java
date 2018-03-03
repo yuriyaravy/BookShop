@@ -3,8 +3,8 @@ package com.senla.bookshop.action.order.work;
 import java.util.List;
 
 import com.senla.bookshop.api.IAction;
+import com.senla.bookshop.entiti.Book;
 import com.senla.bookshop.facade.Facade;
-import com.senla.bookshop.hibernate.Book;
 import com.senla.bookshop.utils.Printers;
 import com.senla.bookshop.utils.Scanners;
 

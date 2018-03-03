@@ -17,7 +17,7 @@ import com.senla.bookshop.annotations.CsvProperty;
 import com.senla.bookshop.annotations.enums.PropertyType;
 
 @Entity
-@Table(name="request")
+@Table(name="requests")
 @CsvEntity(fileName = "files/files/data/csv/request.csv")
 public class Request implements Serializable{
 	
@@ -29,7 +29,7 @@ public class Request implements Serializable{
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1)
 	private Integer id;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "book_id", nullable = true)
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 2, keyField="bookInfo")
 	private Book book;

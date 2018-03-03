@@ -9,7 +9,7 @@ import com.senla.bookshop.entiti.Request;
 
 public interface IFacade {
 
-	void addRequest(Object t) throws SQLException;
+	void addRequest(Request request) throws SQLException;
 
 	Request getAllRequest() throws Exception;
 
@@ -37,9 +37,9 @@ public interface IFacade {
 
 	List<Request> getRequests() throws Exception;
 
-	List<String> sortRequestByName() throws Exception;
+	List<Object[]> sortRequestByName() throws Exception;
 
-	List<Double> sortRequestAmounte() throws Exception;
+	Double sortRequestAmounte() throws Exception;
 
 	List<Order> sortOrderByDateOfDeliver() throws Exception;
 
@@ -55,11 +55,11 @@ public interface IFacade {
 
 	Order getOrderById(int id) throws Exception;
 
-	boolean deleteBookToOrder(int id);
+	boolean deleteBookToOrder(Order order);
 
 	boolean cancelOrder(int id);
 
-	List<Double> sortOrderByPrice() throws Exception;
+	Double sortOrderByPrice() throws Exception;
 
 	void getProfitByPeriodOfTime(int day) throws Exception;
 

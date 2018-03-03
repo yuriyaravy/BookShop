@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
   <groupId>com.senla</groupId>
-  <artifactId>bookshop-server</artifactId>
+  <artifactId>bookshop-backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>bookshop-util</artifactId>
@@ -12,6 +12,27 @@
 	  <artifactId>bookshop-annotation</artifactId>
 	  <version>0.0.1-SNAPSHOT</version>
   </dependency>
+  <dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>4.3.11.Final</version>
+  </dependency>
+   <dependency>
+		<groupId>com.senla</groupId>
+		<artifactId>bookshop-entiti</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>4.3.1.Final</version>
+  </dependency>
+  <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.6</version>
+</dependency>
   <dependency>
     <groupId>log4j</groupId>
     <artifactId>log4j</artifactId>

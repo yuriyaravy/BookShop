@@ -14,4 +14,6 @@ public interface IOrderDao extends IGenericDao<Order>{
 
 	List<Order> sortOrderById(Session session);
 
+	List<Order> getCompletedOrder(Session session);
+
 }

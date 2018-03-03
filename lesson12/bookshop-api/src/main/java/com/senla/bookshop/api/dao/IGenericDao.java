@@ -12,8 +12,9 @@ public interface IGenericDao<T> {
 	
 	void update(Session session, T object);
 
-	List<T> getAll(Session session, Class<T> type);
-
 	T getById(Session session, Integer id);
+
+	List<T> getAll(Session session, String[] sortingColumn);
+
 
 }

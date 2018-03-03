@@ -10,9 +10,9 @@ import com.senla.bookshop.api.controllers.IOrderManager;
 import com.senla.bookshop.api.controllers.IRequestManager;
 import com.senla.bookshop.api.facade.IFacade;
 import com.senla.bookshop.di.DependencyIngection;
+import com.senla.bookshop.entiti.Book;
 import com.senla.bookshop.entiti.Order;
 import com.senla.bookshop.entiti.Request;
-import com.senla.bookshop.hibernate.Book;
 
 public class Facade implements IFacade{
 	
@@ -31,9 +31,9 @@ public class Facade implements IFacade{
 		return facade;
 	}
 	@Override
-	public void addRequest(Object t) throws SQLException{
+	public void addRequest(Request request) throws SQLException{
 		try {
-			requestManager.addRequest(t);
+			requestManager.addRequest( request);
 		} catch (Exception e) {
 			logger.error(e);
 		}
@@ -114,9 +114,9 @@ public class Facade implements IFacade{
 		}
 	}
 	@Override
-	public boolean deleteBookToOrder(int id) {
+	public boolean deleteBookToOrder(Order order) {
 		try {
-			orderManager.deleteOrder(id);
+			orderManager.deleteOrder(order);
 			return true;
 		} catch (Exception e) {
 			logger.error(e);
@@ -146,7 +146,7 @@ public class Facade implements IFacade{
 		return orders;
 	}
 	@Override
-	public List<String> sortRequestByName() throws Exception{
+	public List<Object[]> sortRequestByName() throws Exception{
 		try {
 			return requestManager.getAllBookRequestByName();
 		} catch (Exception e) {
@@ -155,7 +155,7 @@ public class Facade implements IFacade{
 		}
 	}
 	@Override
-	public List<Double> sortRequestAmounte() throws Exception{
+	public Double sortRequestAmounte() throws Exception{
 		try {
 			return requestManager.getAllBookRequestByAmount();
 		} catch (Exception e) {
@@ -173,7 +173,7 @@ public class Facade implements IFacade{
 		}
 	}
 	@Override
-	public List<Double> sortOrderByPrice() throws Exception{
+	public Double sortOrderByPrice() throws Exception{
 		try {
 			return orderManager.getOrderByPrice();
 		} catch (Exception e) {
@@ -250,7 +250,7 @@ public class Facade implements IFacade{
 	@Override
 	public List<Book> getBooks() throws Exception{
 		try {
-			return bookManager.getBooks();
+			return bookManager.getBookByName();
 		} catch (Exception e) {
 			logger.error(e);
 			return null;
@@ -259,7 +259,7 @@ public class Facade implements IFacade{
 	@Override
 	public List<Book> getAllBooks() throws Exception{
 		try {
-			return bookManager.getBooks();
+			return bookManager.getBookByName();
 		} catch (Exception e) {
 			logger.error(e);
 			return null;

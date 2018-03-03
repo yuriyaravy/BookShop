@@ -9,18 +9,18 @@ import org.apache.log4j.Logger;
 
 public class ReadDependency {
 	
-	private final static Logger logger = Logger.getLogger(DependencyIngection.class);
+	//private final static Logger logger = Logger.getLogger(DependencyIngection.class);
 	
-	private static final String DEPENDENCY_PATH = "E:/WorkSpace/bookshop-dependency/src/main/resources/dependency.property";
+	private static final String DEPENDENCY_PATH = "src/main/resources/dependency.property";
 	
-	private static Map<Object, Object> dependencies;
+	public static Map<Object, Object> dependencies;
 	
 	public static void getDependencyFromFile(){
 		dependencies = new Properties();
 		try (FileInputStream  input = new FileInputStream(DEPENDENCY_PATH)){
 			((Properties)dependencies).load(input);
 		}catch (IOException  e) {
-			logger.error(e.getMessage());
+		//	logger.error(e.getMessage());
 		}
 	}
 	

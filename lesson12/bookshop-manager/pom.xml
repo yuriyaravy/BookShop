@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
 	  <groupId>com.senla</groupId>
-	  <artifactId>bookshop-server</artifactId>
+	  <artifactId>bookshop-backend</artifactId>
 	  <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>bookshop-manager</artifactId>
@@ -27,10 +27,10 @@
 	  <artifactId>bookshop-dao</artifactId>
 	  <version>0.0.1-SNAPSHOT</version>  
   </dependency>
-	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>5.1.45</version>
- 	</dependency>
+  <dependency>
+	  <groupId>com.senla</groupId>
+	  <artifactId>bookshop-util</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>  
+  </dependency>
   </dependencies>
 </project>

@@ -18,6 +18,11 @@
 		</dependency>
 		<dependency>
 			<groupId>com.senla</groupId>
+			<artifactId>bookshop-server</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.senla</groupId>
 			<artifactId>bookshop-util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

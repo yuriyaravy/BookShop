@@ -15,7 +15,7 @@ public class DeleteOrder implements IAction{
 			Printers.show("Failed to display orders");
 		}
 		Printers.show("Write order id for delete this order");
-		if(Facade.getInstance().deleteBookToOrder(Scanners.scannerForInteger())){
+		if(Facade.getInstance().getOrderById(Scanners.scannerForInteger())){
 			Printers.show("Your order was delete");
 		}else{
 			Printers.show("Fail, something wrong");

@@ -8,8 +8,6 @@ import com.senla.bookshop.entiti.Book;
 
 public interface IBookDao extends IGenericDao<Book> {
 
-	List<Book> getBook(Session session);
-
 	List<Book> sortBookByName(Session session);
 
 	List<Book> sortBookByPrice(Session session);

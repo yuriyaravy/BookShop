@@ -12,17 +12,15 @@ public interface IOrderManager {
 
 	double getProfitForAllOrders() throws Exception;
 
-	void orderCompleate(int id) throws SQLException, Exception;
+	void orderCompleate(int id) throws Exception;
 
-	void allOrderCompleate() throws SQLException, Exception;
+	void allOrderCompleate() throws  Exception;
 
 	Order getOrderById(int id) throws Exception;
 
-	void addBookToOrder(Book book) throws SQLException, Exception;
+	void addBookToOrder(Book book) throws  Exception;
 
-	void deleteOrder(int id) throws SQLException, Exception;
-
-	void cancelOrder(int id) throws SQLException, Exception;
+	void cancelOrder(int id) throws  Exception;
 
 	int getCountOfOrder() throws Exception;
 
@@ -36,11 +34,13 @@ public interface IOrderManager {
 
 	List<Order> getOrders() throws Exception;
 
-	List<Double> getOrderByPrice() throws Exception;
+	Double getOrderByPrice() throws Exception;
 
-	List<Double> getProfitByPeriodOfTime(int day) throws Exception;
+	Double getProfitByPeriodOfTime(int day) throws Exception;
 
 	void saveAnnotationOrder() throws Exception;
+
+	void deleteOrder(Order order) throws Exception;
 
 
 }

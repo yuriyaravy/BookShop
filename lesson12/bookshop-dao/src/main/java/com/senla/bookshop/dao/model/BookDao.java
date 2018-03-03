@@ -3,8 +3,6 @@ package com.senla.bookshop.dao.model;
 import java.util.Calendar;
 import java.util.List;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -15,19 +13,15 @@ import com.senla.bookshop.utils.setting.Setting;
 
 public class BookDao extends AbstractDao<Book> implements IBookDao{
 	
-	private static final Logger logger = LogManager.getLogger(BookDao.class);
-	
-	private static final String ID_BOOK = "id_book";
+	public BookDao() {
+		super(Book.class);
+	}
 	private static final String NAME_BOOK = "name";
 	private static final String PRICE_BOOK = "price";
 	private static final String STATUS_BOOK = "status";
 	private static final String PUBLICATION_OF_BOOK = "year_of_publication";
 	private static final String DATE_OF_ADD_BOOK = "date_of_add";
 	
-	@Override
-	public List<Book> getBook(Session session){
-		return getAll(session);
-	}
 	@Override
 	public List<Book> sortBookByName(Session session){
 		return getAll(session, NAME_BOOK);
@@ -59,11 +53,7 @@ public class BookDao extends AbstractDao<Book> implements IBookDao{
 		books = criteria.list();
 		return books;
 	}
-	@Override
-	public List<Book> getAll(Session session, Class<Book> type) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 }
 

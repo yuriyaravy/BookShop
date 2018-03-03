@@ -19,7 +19,7 @@ import com.senla.bookshop.annotations.CsvProperty;
 import com.senla.bookshop.annotations.enums.PropertyType;
 
 @Entity
-@Table(name="book")
+@Table(name="books")
 @CsvEntity(fileName = "files/files/data/csv/book.csv")
 public class Book implements Serializable{
 	
