@@ -1,220 +1,70 @@
-[2018-02-28 15:59:12,757] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 15:59:12,806] [ERROR] [DependencyIngection]: 
-[2018-02-28 15:59:12,811] [ERROR] [DependencyIngection]: 
-[2018-02-28 15:59:12,830] [ERROR] [DependencyIngection]: 
-[2018-02-28 15:59:12,830] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:00:21,906] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:00:33,855] [ERROR] [DependencyIngection]: src\main\resources\dependency.property (Не удается найти указанный файл)
-[2018-02-28 16:00:33,857] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:00:33,858] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:00:33,859] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:00:33,860] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:06:39,391] [ERROR] [DependencyIngection]: 2dependency.property (Не удается найти указанный файл)
-[2018-02-28 16:06:39,392] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:06:39,393] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:06:39,394] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:06:39,394] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:07:26,174] [ERROR] [DependencyIngection]: resourses\dependency.property (Системе не удается найти указанный путь)
-[2018-02-28 16:07:26,176] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:07:26,177] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:07:26,178] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:07:26,178] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:08:20,023] [ERROR] [DependencyIngection]: resources\dependency.property (Системе не удается найти указанный путь)
-[2018-02-28 16:08:20,024] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:08:20,025] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:08:20,026] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:08:20,026] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:16:28,910] [ERROR] [DependencyIngection]: main\resources\dependency.property (Системе не удается найти указанный путь)
-[2018-02-28 16:16:28,912] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:16:28,913] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:16:28,914] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:16:28,914] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:16:57,479] [ERROR] [DependencyIngection]: \main\resources\dependency.property (Системе не удается найти указанный путь)
-[2018-02-28 16:16:57,481] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:16:57,482] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:16:57,484] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:16:57,484] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:17:17,887] [ERROR] [DependencyIngection]: src\main\resources\dependency.property (Не удается найти указанный файл)
-[2018-02-28 16:17:17,889] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:17:17,890] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:17:17,894] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:17:17,894] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:37:29,526] [ERROR] [DependencyIngection]: src\main\resources\dependency.property (Не удается найти указанный файл)
-[2018-02-28 16:37:29,528] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:37:29,529] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:37:29,530] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:37:29,530] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 16:59:56,781] [ERROR] [DependencyIngection]: src\main\resources\dependency.property (Не удается найти указанный файл)
-[2018-02-28 16:59:56,782] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:59:56,783] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:59:56,787] [ERROR] [DependencyIngection]: 
-[2018-02-28 16:59:56,788] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 17:02:03,932] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.RequestManager
-[2018-02-28 17:02:03,934] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.BookManager
-[2018-02-28 17:02:03,940] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.OrderManager
-[2018-02-28 17:02:03,941] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 17:15:56,076] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 17:15:56,078] [ERROR] [DependencyIngection]: 
-[2018-02-28 17:15:56,079] [ERROR] [DependencyIngection]: 
-[2018-02-28 17:15:56,080] [ERROR] [DependencyIngection]: 
-[2018-02-28 17:15:56,080] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 17:19:44,318] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 17:19:44,320] [ERROR] [DependencyIngection]: 
-[2018-02-28 17:19:44,321] [ERROR] [DependencyIngection]: 
-[2018-02-28 17:19:44,322] [ERROR] [DependencyIngection]: 
-[2018-02-28 17:19:44,322] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 19:58:32,012] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 19:58:32,041] [ERROR] [DependencyIngection]: 
-[2018-02-28 19:58:32,042] [ERROR] [DependencyIngection]: 
-[2018-02-28 19:58:32,043] [ERROR] [DependencyIngection]: 
-[2018-02-28 19:58:32,044] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 19:59:42,235] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 19:59:42,236] [ERROR] [DependencyIngection]: 
-[2018-02-28 19:59:42,238] [ERROR] [DependencyIngection]: 
-[2018-02-28 19:59:42,239] [ERROR] [DependencyIngection]: 
-[2018-02-28 19:59:42,239] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 20:06:27,500] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 20:06:27,501] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:06:27,503] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:06:27,504] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:06:27,504] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 20:08:45,661] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 20:08:45,663] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:08:45,664] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:08:45,665] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:08:45,665] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 20:09:14,124] [ERROR] [DependencyIngection]: dependency.property (Не удается найти указанный файл)
-[2018-02-28 20:09:14,126] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:09:14,127] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:09:14,128] [ERROR] [DependencyIngection]: 
-[2018-02-28 20:09:14,128] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 20:20:35,226] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-[2018-02-28 20:20:35,236] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
-[2018-02-28 20:20:35,238] [INFO] [Environment]: HHH000206: hibernate.properties not found
-[2018-02-28 20:20:35,241] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
-[2018-02-28 20:20:35,277] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
-[2018-02-28 20:20:35,278] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
-[2018-02-28 20:20:35,994] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
-[2018-02-28 20:20:36,139] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-[2018-02-28 20:20:36,169] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-[2018-02-28 20:20:36,169] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
-[2018-02-28 20:20:36,170] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
-[2018-02-28 20:20:36,172] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
-[2018-02-28 20:20:36,678] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-[2018-02-28 20:20:36,932] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
-[2018-02-28 20:20:36,938] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
-[2018-02-28 20:20:37,420] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
-[2018-02-28 20:20:37,421] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
-[2018-02-28 20:20:37,424] [INFO] [SchemaUpdate]: HHH000396: Updating schema
-[2018-02-28 20:20:37,518] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
-[2018-02-28 20:20:37,518] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, id, countofrequest, status]
-[2018-02-28 20:20:37,518] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
-[2018-02-28 20:20:37,518] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
-[2018-02-28 20:20:37,530] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
-[2018-02-28 20:20:37,531] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, id, book_id, status]
-[2018-02-28 20:20:37,531] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_o2c3ohh0hof8wms3tubkh0v5s]
-[2018-02-28 20:20:37,531] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_o2c3ohh0hof8wms3tubkh0v5s, primary]
-[2018-02-28 20:20:37,539] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
-[2018-02-28 20:20:37,539] [INFO] [TableMetadata]: HHH000037: Columns: [id, book_id]
-[2018-02-28 20:20:37,539] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
-[2018-02-28 20:20:37,539] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
-[2018-02-28 20:20:37,546] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
-[2018-02-28 20:20:37,561] [ERROR] [Facade]: java.lang.ClassCastException: org.hibernate.internal.SessionFactoryImpl cannot be cast to org.hibernate.Session
-[2018-02-28 20:21:25,224] [ERROR] [Facade]: java.lang.ClassCastException: org.hibernate.internal.SessionFactoryImpl cannot be cast to org.hibernate.Session
-[2018-02-28 20:21:53,513] [ERROR] [Facade]: java.lang.ClassCastException: org.hibernate.internal.SessionFactoryImpl cannot be cast to org.hibernate.Session
-[2018-02-28 20:23:25,670] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-[2018-02-28 20:23:25,680] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
-[2018-02-28 20:23:25,682] [INFO] [Environment]: HHH000206: hibernate.properties not found
-[2018-02-28 20:23:25,684] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
-[2018-02-28 20:23:25,720] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
-[2018-02-28 20:23:25,721] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
-[2018-02-28 20:24:03,921] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
-[2018-02-28 20:24:04,049] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-[2018-02-28 20:24:04,063] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-[2018-02-28 20:24:04,064] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
-[2018-02-28 20:24:04,064] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
-[2018-02-28 20:24:04,066] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
-[2018-02-28 20:24:04,417] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-[2018-02-28 20:24:04,640] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
-[2018-02-28 20:24:04,646] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
-[2018-02-28 20:24:05,028] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
-[2018-02-28 20:24:05,028] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
-[2018-02-28 20:24:05,031] [INFO] [SchemaUpdate]: HHH000396: Updating schema
-[2018-02-28 20:24:05,057] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
-[2018-02-28 20:24:05,057] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, id, countofrequest, status]
-[2018-02-28 20:24:05,057] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
-[2018-02-28 20:24:05,057] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
-[2018-02-28 20:24:05,070] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
-[2018-02-28 20:24:05,070] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, id, book_id, status]
-[2018-02-28 20:24:05,070] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_o2c3ohh0hof8wms3tubkh0v5s]
-[2018-02-28 20:24:05,070] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_o2c3ohh0hof8wms3tubkh0v5s, primary]
-[2018-02-28 20:24:05,079] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
-[2018-02-28 20:24:05,079] [INFO] [TableMetadata]: HHH000037: Columns: [id, book_id]
-[2018-02-28 20:24:05,080] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
-[2018-02-28 20:24:05,080] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
-[2018-02-28 20:24:05,081] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
-[2018-02-28 20:24:27,989] [ERROR] [Facade]: java.lang.ClassCastException: java.util.ArrayList cannot be cast to com.senla.bookshop.entiti.Request
-[2018-02-28 21:55:58,002] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-[2018-02-28 21:55:58,019] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
-[2018-02-28 21:55:58,023] [INFO] [Environment]: HHH000206: hibernate.properties not found
-[2018-02-28 21:55:58,026] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
-[2018-02-28 21:55:58,060] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
-[2018-02-28 21:55:58,060] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
-[2018-02-28 21:55:58,674] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
-[2018-02-28 21:55:58,801] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-[2018-02-28 21:55:58,808] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-[2018-02-28 21:55:58,809] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
-[2018-02-28 21:55:58,809] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
-[2018-02-28 21:55:58,811] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
-[2018-02-28 21:55:59,131] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-[2018-02-28 21:55:59,143] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
-[2018-02-28 21:55:59,362] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
-[2018-02-28 21:55:59,369] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
-[2018-02-28 21:55:59,433] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
-[2018-02-28 22:02:19,362] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 22:02:26,123] [ERROR] [Facade]: java.lang.NullPointerException
-[2018-02-28 22:02:32,555] [ERROR] [Facade]: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Enum
-[2018-02-28 23:55:15,692] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-[2018-02-28 23:55:15,711] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
-[2018-02-28 23:55:15,713] [INFO] [Environment]: HHH000206: hibernate.properties not found
-[2018-02-28 23:55:15,716] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
-[2018-02-28 23:55:15,749] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
-[2018-02-28 23:55:15,749] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
-[2018-02-28 23:55:16,393] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
-[2018-02-28 23:55:16,512] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-[2018-02-28 23:55:16,518] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-[2018-02-28 23:55:16,518] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
-[2018-02-28 23:55:16,518] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
-[2018-02-28 23:55:16,520] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
-[2018-02-28 23:55:16,837] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-[2018-02-28 23:55:16,846] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
-[2018-02-28 23:55:17,058] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
-[2018-02-28 23:55:17,063] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
-[2018-02-28 23:55:17,123] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
-[2018-02-28 23:57:01,129] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
-[2018-02-28 23:57:01,147] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
-[2018-02-28 23:57:01,162] [INFO] [Environment]: HHH000206: hibernate.properties not found
-[2018-02-28 23:57:01,162] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
-[2018-02-28 23:57:01,200] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
-[2018-02-28 23:57:01,200] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
-[2018-02-28 23:57:01,629] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
-[2018-02-28 23:57:01,751] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-[2018-02-28 23:57:01,751] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-[2018-02-28 23:57:01,751] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
-[2018-02-28 23:57:01,751] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
-[2018-02-28 23:57:01,751] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
-[2018-02-28 23:57:02,061] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-[2018-02-28 23:57:02,082] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
-[2018-02-28 23:57:02,277] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
-[2018-02-28 23:57:02,283] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
-[2018-02-28 23:57:02,342] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
-[2018-03-01 01:24:18,035] [ERROR] [AddBook]: java.lang.NullPointerException
-[2018-03-01 02:02:34,063] [ERROR] [ServerWorker]: java.io.EOFException
-[2018-03-01 02:03:52,526] [ERROR] [ServerWorker]: java.io.EOFException
-[2018-03-01 02:03:52,527] [ERROR] [AddBook]: java.lang.NullPointerException
-[2018-03-01 02:08:40,916] [ERROR] [ServerWorker]: java.io.EOFException
-[2018-03-01 02:08:40,916] [ERROR] [AddBook]: java.lang.NullPointerException
-[2018-03-01 02:09:56,714] [ERROR] [ServerWorker]: java.io.EOFException
-[2018-03-01 02:09:56,716] [ERROR] [AddBook]: java.lang.NullPointerException
-[2018-03-01 02:14:13,437] [ERROR] [ServerWorker]: java.io.EOFException
-[2018-03-01 02:16:08,901] [ERROR] [ServerWorker]: java.io.EOFException
+[2018-03-07 16:41:12,322] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-07 16:41:12,341] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-07 16:41:12,345] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-07 16:41:12,347] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-07 16:41:12,389] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-07 16:41:12,389] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-07 16:41:13,034] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-07 16:41:13,195] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-07 16:41:13,243] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-07 16:41:13,243] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-07 16:41:13,243] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-07 16:41:13,245] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-07 16:41:14,110] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-07 16:41:14,139] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-07 16:41:14,434] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-07 16:41:14,440] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-07 16:41:14,528] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-07 16:41:15,347] [ERROR] [BookManager]: org.hibernate.QueryException: could not resolve property: date_of_deliver; of: com.senla.bookshop.entiti.Order
+[2018-03-07 16:50:16,648] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-07 16:50:16,658] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-07 16:50:16,661] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-07 16:50:16,663] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-07 16:50:16,701] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-07 16:50:16,701] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-07 16:50:17,091] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-07 16:50:17,215] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-07 16:50:17,222] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-07 16:50:17,222] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-07 16:50:17,222] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-07 16:50:17,225] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-07 16:50:17,574] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-07 16:50:17,586] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-07 16:50:17,819] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-07 16:50:17,825] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-07 16:50:17,892] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-07 16:50:18,446] [INFO] [SchemaExport]: HHH000227: Running hbm2ddl schema export
+[2018-03-07 16:50:18,652] [ERROR] [SchemaExport]: HHH000389: Unsuccessful: alter table books drop foreign key FK_a2hycuy8mfqlvgkancp9q6sg0
+[2018-03-07 16:50:18,653] [ERROR] [SchemaExport]: Can't DROP 'FK_a2hycuy8mfqlvgkancp9q6sg0'; check that column/key exists
+[2018-03-07 16:50:18,929] [ERROR] [SchemaExport]: HHH000389: Unsuccessful: drop table if exists books
+[2018-03-07 16:50:18,929] [ERROR] [SchemaExport]: Cannot delete or update a parent row: a foreign key constraint fails
+[2018-03-07 16:50:19,132] [ERROR] [SchemaExport]: HHH000389: Unsuccessful: create table books (id integer not null auto_increment, countOfRequest integer, date date, name varchar(255), price double precision, status char(1), yearOfPublication integer, book_id integer, primary key (id))
+[2018-03-07 16:50:19,132] [ERROR] [SchemaExport]: Table 'books' already exists
+[2018-03-07 16:50:19,469] [ERROR] [SchemaExport]: HHH000389: Unsuccessful: alter table books add constraint FK_a2hycuy8mfqlvgkancp9q6sg0 foreign key (book_id) references orders (id)
+[2018-03-07 16:50:19,470] [ERROR] [SchemaExport]: Key column 'book_id' doesn't exist in table
+[2018-03-07 16:50:19,844] [INFO] [SchemaExport]: HHH000230: Schema export complete
+[2018-03-07 16:50:19,902] [ERROR] [Facade]: java.lang.NullPointerException
+[2018-03-07 16:52:07,091] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-07 16:52:07,101] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-07 16:52:07,105] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-07 16:52:07,107] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-07 16:52:07,139] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-07 16:52:07,139] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-07 16:52:07,749] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-07 16:52:07,874] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-07 16:52:07,879] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-07 16:52:07,880] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-07 16:52:07,880] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-07 16:52:07,882] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-07 16:52:08,222] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-07 16:52:08,232] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-07 16:52:08,463] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-07 16:52:08,470] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-07 16:52:08,535] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-07 16:52:09,078] [INFO] [SchemaExport]: HHH000227: Running hbm2ddl schema export
+[2018-03-07 16:52:09,085] [ERROR] [SchemaExport]: HHH000389: Unsuccessful: alter table books drop foreign key FK_a2hycuy8mfqlvgkancp9q6sg0
+[2018-03-07 16:52:09,085] [ERROR] [SchemaExport]: Table 'mydb.books' doesn't exist
+[2018-03-07 16:52:09,085] [ERROR] [SchemaExport]: HHH000389: Unsuccessful: alter table requests drop foreign key FK_7qq94bswr3jddtomfve20m3k6
+[2018-03-07 16:52:09,086] [ERROR] [SchemaExport]: Table 'mydb.requests' doesn't exist
+[2018-03-07 16:52:10,448] [INFO] [SchemaExport]: HHH000230: Schema export complete
+[2018-03-07 16:52:10,506] [ERROR] [Facade]: java.lang.NullPointerException

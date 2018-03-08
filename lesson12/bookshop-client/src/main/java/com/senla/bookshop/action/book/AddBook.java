@@ -5,7 +5,7 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 
 import com.senla.bookshop.api.IAction;
-import com.senla.bookshop.entiti.Book;
+import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.facade.Facade;
 import com.senla.bookshop.server.Request;
 import com.senla.bookshop.server.Response;

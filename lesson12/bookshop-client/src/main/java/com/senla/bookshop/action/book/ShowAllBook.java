@@ -3,7 +3,7 @@ package com.senla.bookshop.action.book;
 import java.util.List;
 
 import com.senla.bookshop.api.IAction;
-import com.senla.bookshop.entiti.Book;
+import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.server.Request;
 import com.senla.bookshop.server.Response;
 import com.senla.bookshop.server.ServerWorker;
