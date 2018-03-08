@@ -1,0 +1,196 @@
+[2018-03-01 00:49:27,687] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:44,560] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:47,422] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:48,952] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:50,771] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:53,015] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:54,386] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:56,259] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 00:49:58,016] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 01:00:06,078] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 01:07:13,280] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 01:07:26,469] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 01:07:27,809] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:02:34,062] [ERROR] [DependencyIngection]: 
+[2018-03-01 02:03:10,852] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:03:12,198] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:03:13,424] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:03:14,664] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:03:16,186] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:03:17,946] [ERROR] [MultiThread]: Class or input/ouput errors
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.ObjectInputStream$PeekInputStream.read(ObjectInputStream.java:2620)
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2636)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3113)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:853)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:349)
+	at com.senla.bookshop.server.MultiThread.run(MultiThread.java:26)
+[2018-03-01 02:03:52,524] [ERROR] [DependencyIngection]: 
+[2018-03-01 02:08:40,913] [ERROR] [DependencyIngection]: 
+[2018-03-01 02:09:56,712] [ERROR] [DependencyIngection]: 
+[2018-03-01 02:14:13,434] [ERROR] [DependencyIngection]: 
+[2018-03-01 02:16:08,899] [ERROR] [DependencyIngection]: 
