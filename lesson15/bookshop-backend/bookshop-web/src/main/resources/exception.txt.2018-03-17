@@ -1,0 +1,299 @@
+[2018-03-16 15:31:03,845] [ERROR] [DependencyIngection]: src\main\resources\dependency.property (Не удается найти указанный файл)
+[2018-03-16 15:31:03,847] [ERROR] [DependencyIngection]: 
+[2018-03-16 15:31:03,854] [ERROR] [DependencyIngection]: 
+[2018-03-16 15:31:03,877] [ERROR] [DependencyIngection]: 
+[2018-03-16 15:31:03,877] [ERROR] [Facade]: java.lang.NullPointerException
+[2018-03-16 15:31:50,850] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.RequestManager
+[2018-03-16 15:31:50,852] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.BookManager
+[2018-03-16 15:31:50,854] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.OrderManager
+[2018-03-16 15:31:50,854] [ERROR] [Facade]: java.lang.NullPointerException
+[2018-03-16 15:41:33,700] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.RequestManager
+[2018-03-16 15:41:33,702] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.BookManager
+[2018-03-16 15:41:33,704] [ERROR] [DependencyIngection]: com.senla.bookshop.managers.OrderManager
+[2018-03-16 15:41:33,704] [ERROR] [Facade]: java.lang.NullPointerException
+[2018-03-16 15:46:24,738] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 15:46:24,750] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 15:46:24,753] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 15:46:24,758] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 15:46:24,800] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 15:46:24,800] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 15:48:58,211] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 15:48:58,221] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 15:48:58,224] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 15:48:58,228] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 15:48:58,268] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 15:48:58,268] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 15:48:58,734] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 15:48:58,856] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 15:48:58,862] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 15:48:58,862] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 15:48:58,862] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 15:48:58,864] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 15:48:59,237] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 15:48:59,249] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 15:48:59,504] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 15:48:59,511] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 15:48:59,575] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 15:49:00,136] [INFO] [SchemaExport]: HHH000227: Running hbm2ddl schema export
+[2018-03-16 15:49:03,079] [INFO] [SchemaExport]: HHH000230: Schema export complete
+[2018-03-16 15:49:03,111] [ERROR] [Facade]: org.hibernate.HibernateException: No CurrentSessionContext configured!
+[2018-03-16 15:52:11,930] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 15:52:11,941] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 15:52:11,944] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 15:52:11,948] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 15:52:11,990] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 15:52:11,991] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 15:52:12,466] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 15:52:12,596] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 15:52:12,602] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 15:52:12,603] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 15:52:12,603] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 15:52:12,605] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 15:52:12,925] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 15:52:12,936] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 15:52:13,194] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 15:52:13,203] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 15:52:13,275] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 15:52:13,856] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 15:52:13,856] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 15:52:13,859] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 15:52:13,890] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 15:52:13,891] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 15:52:13,891] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:52:13,891] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:52:13,900] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 15:52:13,900] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 15:52:13,900] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:52:13,900] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:52:13,907] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 15:52:13,907] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 15:52:13,907] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:52:13,907] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:52:13,914] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 15:52:13,914] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 15:52:13,915] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 15:52:13,915] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 15:52:13,916] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
+[2018-03-16 15:52:13,930] [ERROR] [Facade]: org.hibernate.HibernateException: No CurrentSessionContext configured!
+[2018-03-16 15:56:51,238] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 15:56:51,248] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 15:56:51,252] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 15:56:51,256] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 15:56:51,306] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 15:56:51,306] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 15:56:51,787] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 15:56:51,917] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 15:56:51,922] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 15:56:51,923] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 15:56:51,923] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 15:56:51,925] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 15:56:52,252] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 15:56:52,264] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 15:56:52,512] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 15:56:52,519] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 15:56:52,581] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 15:56:53,144] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 15:56:53,144] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 15:56:53,147] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 15:56:53,165] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 15:56:53,165] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 15:56:53,165] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:56:53,165] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:56:53,174] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 15:56:53,175] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 15:56:53,175] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:56:53,175] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:56:53,181] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 15:56:53,182] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 15:56:53,182] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:56:53,182] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:56:53,189] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 15:56:53,189] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 15:56:53,189] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 15:56:53,189] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 15:56:53,190] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
+[2018-03-16 15:58:10,239] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 15:58:10,249] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 15:58:10,252] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 15:58:10,256] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 15:58:10,304] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 15:58:10,304] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 15:58:10,766] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 15:58:10,866] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 15:58:10,882] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 15:58:10,882] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 15:58:10,882] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 15:58:10,882] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 15:58:11,182] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 15:58:11,182] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 15:58:11,440] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 15:58:11,444] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 15:58:11,506] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 15:58:12,099] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 15:58:12,099] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 15:58:12,104] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 15:58:12,119] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 15:58:12,119] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 15:58:12,119] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:58:12,119] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:58:12,119] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:58:12,137] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:58:12,153] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 15:58:12,153] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 15:58:12,153] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 15:58:12,153] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 15:58:12,153] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
+[2018-03-16 15:58:38,675] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 15:58:38,691] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 15:58:38,691] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 15:58:38,691] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 15:58:38,729] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 15:58:38,729] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 15:58:39,391] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 15:58:39,513] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 15:58:39,513] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 15:58:39,513] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 15:58:39,513] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 15:58:39,513] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 15:58:39,832] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 15:58:39,848] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 15:58:40,092] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 15:58:40,092] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 15:58:40,161] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 15:58:40,693] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 15:58:40,693] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 15:58:40,709] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 15:58:40,715] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 15:58:40,715] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 15:58:40,715] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:58:40,715] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 15:58:40,731] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 15:58:40,747] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 15:58:40,747] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 15:58:40,747] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 15:58:40,747] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 15:58:40,747] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
+[2018-03-16 16:01:25,195] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 16:01:25,210] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 16:01:25,210] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 16:01:25,210] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 16:01:25,260] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 16:01:25,260] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 16:01:25,711] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 16:01:25,839] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 16:01:25,845] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 16:01:25,845] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 16:01:25,845] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 16:01:25,845] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 16:01:26,161] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 16:01:26,161] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 16:01:26,392] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 16:01:26,407] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 16:01:26,460] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 16:01:26,992] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 16:01:26,992] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 16:01:27,002] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 16:01:27,018] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 16:01:27,036] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 16:01:27,036] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 16:01:27,036] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 16:01:27,036] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 16:01:27,043] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 16:01:27,043] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 16:01:27,043] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 16:01:27,043] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 16:01:27,044] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
+[2018-03-16 16:22:56,943] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 16:22:56,959] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 16:22:56,959] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 16:22:56,959] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 16:22:57,002] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 16:22:57,002] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 16:22:57,559] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 16:22:57,679] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 16:22:57,679] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 16:22:57,695] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 16:22:57,695] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 16:22:57,695] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 16:22:58,007] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 16:22:58,019] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 16:22:58,244] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 16:22:58,244] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 16:22:58,306] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 16:22:58,844] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 16:22:58,844] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 16:22:58,846] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 16:22:58,862] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 16:22:58,878] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 16:22:58,878] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
+[2018-03-16 16:31:34,165] [INFO] [Version]: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[2018-03-16 16:31:34,177] [INFO] [Version]: HHH000412: Hibernate Core {4.3.11.Final}
+[2018-03-16 16:31:34,182] [INFO] [Environment]: HHH000206: hibernate.properties not found
+[2018-03-16 16:31:34,185] [INFO] [Environment]: HHH000021: Bytecode provider name : javassist
+[2018-03-16 16:31:34,224] [INFO] [Configuration]: HHH000043: Configuring from resource: /hibernate.cfg.xml
+[2018-03-16 16:31:34,224] [INFO] [Configuration]: HHH000040: Configuration resource: /hibernate.cfg.xml
+[2018-03-16 16:31:34,803] [INFO] [Configuration]: HHH000041: Configured SessionFactory: null
+[2018-03-16 16:31:34,935] [WARN] [DriverManagerConnectionProviderImpl]: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[2018-03-16 16:31:34,935] [INFO] [DriverManagerConnectionProviderImpl]: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
+[2018-03-16 16:31:34,935] [INFO] [DriverManagerConnectionProviderImpl]: HHH000046: Connection properties: {user=root, password=****}
+[2018-03-16 16:31:34,935] [INFO] [DriverManagerConnectionProviderImpl]: HHH000006: Autocommit mode: false
+[2018-03-16 16:31:34,935] [INFO] [DriverManagerConnectionProviderImpl]: HHH000115: Hibernate connection pool size: 20 (min=1)
+[2018-03-16 16:31:35,255] [INFO] [Dialect]: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2018-03-16 16:31:35,255] [INFO] [LobCreatorBuilder]: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[2018-03-16 16:31:35,504] [INFO] [TransactionFactoryInitiator]: HHH000399: Using default transaction strategy (direct JDBC transactions)
+[2018-03-16 16:31:35,504] [INFO] [ASTQueryTranslatorFactory]: HHH000397: Using ASTQueryTranslatorFactory
+[2018-03-16 16:31:35,567] [INFO] [Version]: HV000001: Hibernate Validator 4.3.1.Final
+[2018-03-16 16:31:36,106] [INFO] [SchemaUpdate]: HHH000228: Running hbm2ddl schema update
+[2018-03-16 16:31:36,106] [INFO] [SchemaUpdate]: HHH000102: Fetching database metadata
+[2018-03-16 16:31:36,111] [INFO] [SchemaUpdate]: HHH000396: Updating schema
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000261: Table found: mydb.books
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000037: Columns: [date, price, name, yearofpublication, book_id, countofrequest, status]
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000261: Table found: mydb.order_books
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, order_id]
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 16:31:36,127] [INFO] [TableMetadata]: HHH000126: Indexes: [uk_gtpsasujyhhwpyyt4lokm7m1f, fk_qvpnm4jilcghqvak43t3dgsey]
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000261: Table found: mydb.orders
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000037: Columns: [date_of_deliver, order_id, status]
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000108: Foreign keys: []
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000126: Indexes: [primary]
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000261: Table found: mydb.requests
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000037: Columns: [book_id, request_id]
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000108: Foreign keys: [fk_7qq94bswr3jddtomfve20m3k6]
+[2018-03-16 16:31:36,143] [INFO] [TableMetadata]: HHH000126: Indexes: [fk_7qq94bswr3jddtomfve20m3k6, primary]
+[2018-03-16 16:31:36,143] [INFO] [SchemaUpdate]: HHH000232: Schema update complete
