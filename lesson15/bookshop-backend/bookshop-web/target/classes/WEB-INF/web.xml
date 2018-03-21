@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>GetAllOrderServlet</servlet-name>
+  	<display-name>GetAllOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.senla.bookshop.servlet.GetAllOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetAllRequestServlet</servlet-name>
+  	<display-name>GetAllRequestServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.senla.bookshop.servlet.GetAllRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PutBookServler</servlet-name>
+  	<display-name>PutBookServler</display-name>
+  	<description></description>
+  	<servlet-class>com.senla.bookshop.servlet.PutBookServler</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PutOrderServler</servlet-name>
+  	<display-name>PutOrderServler</display-name>
+  	<description></description>
+  	<servlet-class>com.senla.bookshop.servlet.PutOrderServler</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PutRequestServler</servlet-name>
+  	<display-name>PutRequestServler</display-name>
+  	<description></description>
+  	<servlet-class>com.senla.bookshop.servlet.PutRequestServler</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteBookServlet</servlet-name>
+  	<display-name>DeleteBookServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.senla.bookshop.servlet.DeleteBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>GetAllOrderServlet</servlet-name>
+  	<url-pattern>/GetAllOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetAllRequestServlet</servlet-name>
+  	<url-pattern>/GetAllRequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PutBookServler</servlet-name>
+  	<url-pattern>/PutBookServler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PutOrderServler</servlet-name>
+  	<url-pattern>/PutOrderServler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PutRequestServler</servlet-name>
+  	<url-pattern>/PutRequestServler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteBookServlet</servlet-name>
+  	<url-pattern>/DeleteBookServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
