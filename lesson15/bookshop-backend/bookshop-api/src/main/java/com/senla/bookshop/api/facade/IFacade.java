@@ -88,9 +88,6 @@ public interface IFacade {
 
 	void saveLog(User user, String action) throws Exception;
 
-	User getAuthUser(String login, String password) throws Exception;
-	
-	
+	User getUserByPasswordAndLogin(String login, String password) throws Exception;
 
-	
 }

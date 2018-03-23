@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.senla</groupId>
-  <artifactId>bookshop-backend</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-	  <module>bookshop-annotation</module>
-	  <module>bookshop-api</module>
-	  <module>bookshop-dao</module>
-	  <module>bookshop-dependency</module>
-	  <module>bookshop-entiti</module>
-	  <module>bookshop-facade</module>
-	  <module>bookshop-manager</module>
-	  <module>bookshop-util</module>
-	  <module>bookshop-server</module>
-	  <module>TTr</module>
-	  <module>bookshop-entity</module>
-    <module>bookshop-web</module>
-    <module>dsf</module>
-  </modules>
- 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.senla</groupId>
+	<artifactId>bookshop-backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>bookshop-annotation</module>
+		<module>bookshop-api</module>
+		<module>bookshop-dao</module>
+		<module>bookshop-dependency</module>
+		<module>bookshop-entiti</module>
+		<module>bookshop-facade</module>
+		<module>bookshop-manager</module>
+		<module>bookshop-util</module>
+		<module>bookshop-server</module>
+		<module>TTr</module>
+		<module>bookshop-entity</module>
+		<module>bookshop-web</module>
+		<module>dsf</module>
+	</modules>
+
 </project>

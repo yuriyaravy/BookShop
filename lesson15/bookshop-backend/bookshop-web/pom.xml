@@ -1,45 +1,46 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.senla</groupId>
-    <artifactId>bookshop-backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>bookshop-web</artifactId>
-  <packaging>war</packaging>
-  <name>bookshop-web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-<dependencies>
-<dependency>
-     <groupId>com.google.code.gson</groupId>
-     <artifactId>gson</artifactId>
-     <version>2.2.2</version>
-     <scope>compile</scope>
-</dependency>
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-lang3</artifactId>
-    <version>3.4</version>
-</dependency>
-<dependency>
-    <groupId>com.senla</groupId>
-    <artifactId>bookshop-facade</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-</dependency>
-<dependency>
-	<groupId>javax.servlet</groupId>
-	<artifactId>javax.servlet-api</artifactId>
-	<version>3.1.0</version>
-</dependency>
-<dependency>
-	<groupId>org.apache.tomcat</groupId>
-	<artifactId>tomcat-servlet-api</artifactId>
-	<version>8.0.37</version>
-</dependency>
-</dependencies>
-  <build>
-    <finalName>bookshop-web</finalName>
-  </build>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.senla</groupId>
+		<artifactId>bookshop-backend</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>bookshop-web</artifactId>
+	<packaging>war</packaging>
+	<name>bookshop-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.senla</groupId>
+			<artifactId>bookshop-facade</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>8.0.37</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>bookshop-web</finalName>
+	</build>
 </project>

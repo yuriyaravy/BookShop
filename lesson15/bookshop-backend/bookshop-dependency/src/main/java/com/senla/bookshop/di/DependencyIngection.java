@@ -5,26 +5,25 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-
 public class DependencyIngection {
-	
+
 	private final static Logger logger = Logger.getLogger(DependencyIngection.class);
-	
+
 	private static DependencyIngection dependencyIngection;
-	
+
 	private static Map<String, Object> classList = new HashMap<String, Object>();
-	
-	private DependencyIngection(){
+
+	private DependencyIngection() {
 	}
-	
-	public static DependencyIngection getInctance(){
-		if(dependencyIngection == null){
+
+	public static DependencyIngection getInctance() {
+		if (dependencyIngection == null) {
 			dependencyIngection = new DependencyIngection();
 		}
 		return dependencyIngection;
 	}
-	
-	public Object getClassInstance(Class<?> entClazz){
+
+	public Object getClassInstance(Class<?> entClazz) {
 		Object obj = null;
 		if (classList.containsKey(entClazz.getName())) {
 			obj = classList.get(entClazz.getName());
@@ -40,6 +39,6 @@ public class DependencyIngection {
 			}
 		}
 		return obj;
-	}		
+	}
 
 }

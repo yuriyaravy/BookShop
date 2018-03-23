@@ -2,65 +2,54 @@ package com.senla.bookshop.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.senla.bookshop.entity.User;
 import com.senla.bookshop.facade.Facade;
 import com.senla.bookshop.utils.web.TokenHandler;
+import com.senla.bookshop.utils.web.TokenStorage;
 
 @WebServlet("/login")
-public class LoginServler extends HttpServlet{
+public class LoginServler extends HttpServlet {
+
+	final static Logger LOGGER = Logger.getLogger(LoginServler.class);
 
 	private static final long serialVersionUID = 1L;
-	
-	public LoginServler() {
-	}
-	
-	
+
+	private static final String ERROR = "{error}";
+	private static final String LOGIN = "login";
+	private static final String PASSWORD = "password";
+	private static final String ATTRIBUT = "User";
 
 	@Override
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String login =   request.getParameter("login");
-		String surname = request.getParameter("surname");
-		String password = request.getParameter("password");
-		if(login!= null && password != null && surname != null) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		String login = request.getParameter(LOGIN);
+		String password = request.getParameter(PASSWORD);
+		if (login != null && password != null) {
 			try {
-				Facade.getInstance().registration(login, surname, password);
-			} catch (Exception e) {
-				response.getWriter().print("Errore");
-			}
-			
-		}
-	}
-
-
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String login =request.getParameter("login");
-		String password = request.getParameter("password");
-		if(login != null && password != null) {
-			try {
-				User user = Facade.getInstance().getAuthUser(login, password);
-				if(user != null) {
-					String token = TokenHandler.getInstance().generateToken(user.getId());
-					response.addHeader("User", token);
-					request.getSession().setAttribute("User", user);
-					Facade.getInstance().saveLog(user, "login");
-					response.getWriter().println("login");
-				}else {
+				User user = Facade.getInstance().getUserByPasswordAndLogin(login, password);
+				if (user != null) {
+					String token = TokenHandler.getInstance().generateToken(user.getName(),
+							user.getAuthUser().getPassword());
+					TokenStorage.getInstance().setCache(user, token);
+					request.getSession().setAttribute(ATTRIBUT, user);
+					Facade.getInstance().saveLog(user, LOGIN);
+				} else {
 					response.setStatus(404);
 				}
 			} catch (Exception e) {
-				response.getWriter().print("Errore");
+				try {
+					response.getWriter().print(ERROR);
+				} catch (IOException e1) {
+					LOGGER.error(e1.getMessage());
+				}
 			}
 		}
 	}
-	
-	
 
 }

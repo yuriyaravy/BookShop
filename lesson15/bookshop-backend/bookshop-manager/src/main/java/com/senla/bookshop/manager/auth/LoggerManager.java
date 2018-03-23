@@ -12,14 +12,13 @@ import com.senla.bookshop.entity.Log;
 import com.senla.bookshop.manager.RequestManager;
 import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
-public class LoggerManager implements ILoggerManager{
-	
+public class LoggerManager implements ILoggerManager {
+
 	private static final Logger LOGGER = LogManager.getLogger(RequestManager.class);
-	
-	
+
 	private final SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
 	private final LoggerDao logDao = new LoggerDao();
-	
+
 	@Override
 	public void addLog(Log logg) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
@@ -27,13 +26,13 @@ public class LoggerManager implements ILoggerManager{
 			session.beginTransaction();
 			logDao.create(session, logDao);
 			session.getTransaction().commit();
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
+		} catch (HibernateException e) {
+			if (session.getTransaction() != null) {
 				session.getTransaction().rollback();
 			}
-				LOGGER.error(e);
-		} 
-		
+			LOGGER.error(e);
+		}
+
 	}
 
 }

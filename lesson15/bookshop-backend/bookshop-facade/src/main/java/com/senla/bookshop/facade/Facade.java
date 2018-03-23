@@ -21,43 +21,49 @@ import com.senla.bookshop.entity.User;
 import com.senla.bookshop.manager.auth.LoggerManager;
 import com.senla.bookshop.manager.auth.UserManager;
 
-public class Facade implements IFacade{
-	
+public class Facade implements IFacade {
+
 	final static Logger LOGGER = Logger.getLogger(Facade.class);
-	
-	private IRequestManager requestManager = (IRequestManager) DependencyIngection.getInctance().getClassInstance(IRequestManager.class);
-	private IBookManager bookManager = (IBookManager) DependencyIngection.getInctance().getClassInstance(IBookManager.class);
-	private IOrderManager orderManager = (IOrderManager) DependencyIngection.getInctance().getClassInstance(IOrderManager.class);
+
+	private IRequestManager requestManager = (IRequestManager) DependencyIngection.getInctance()
+			.getClassInstance(IRequestManager.class);
+	private IBookManager bookManager = (IBookManager) DependencyIngection.getInctance()
+			.getClassInstance(IBookManager.class);
+	private IOrderManager orderManager = (IOrderManager) DependencyIngection.getInctance()
+			.getClassInstance(IOrderManager.class);
 	private UserManager userManager = new UserManager();
 	private LoggerManager logUsers = new LoggerManager();
-	
+
 	private static Facade facade;
-	
+
 	public static Facade getInstance() {
 		if (facade == null) {
 			facade = new Facade();
 		}
 		return facade;
 	}
+
 	@Override
-	public void addRequest(Request request) throws SQLException{
+	public void addRequest(Request request) throws SQLException {
 		try {
-			requestManager.addRequest( request);
+			requestManager.addRequest(request);
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 	}
+
 	@Override
-	public Request getAllRequest() throws Exception{
+	public Request getAllRequest() throws Exception {
 		try {
-			return	(Request) requestManager.getAllBookRequestByName();
+			return (Request) requestManager.getAllBookRequestByName();
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 		return null;
 	}
+
 	@Override
-	public Book getBookById(int id) throws Exception{
+	public Book getBookById(int id) throws Exception {
 		Book book = null;
 		try {
 			book = bookManager.getBookById(id);
@@ -66,8 +72,9 @@ public class Facade implements IFacade{
 		}
 		return book;
 	}
+
 	@Override
-	public double getProfitForAllOrders() throws Exception{
+	public double getProfitForAllOrders() throws Exception {
 		double profit = 0;
 		try {
 			profit = orderManager.getProfitForAllOrders();
@@ -76,32 +83,36 @@ public class Facade implements IFacade{
 		}
 		return profit;
 	}
+
 	@Override
-	public void orderCompleate(int id){
+	public void orderCompleate(int id) {
 		try {
 			orderManager.orderCompleate(id);
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 	}
+
 	@Override
-	public void allOrderCompleate(){
+	public void allOrderCompleate() {
 		try {
 			orderManager.allOrderCompleate();
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
-		
+
 	}
+
 	@Override
-	public void getProfitByPeriodOfTime(int day)throws Exception {
+	public void getProfitByPeriodOfTime(int day) throws Exception {
 		try {
 			orderManager.getProfitByPeriodOfTime(day);
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
-		
+
 	}
+
 	@Override
 	public Order getOrderById(int id) throws Exception {
 		Order order = null;
@@ -112,6 +123,7 @@ public class Facade implements IFacade{
 		}
 		return order;
 	}
+
 	@Override
 	public boolean addBookToOrder(List<Book> book) {
 		try {
@@ -122,6 +134,7 @@ public class Facade implements IFacade{
 			return false;
 		}
 	}
+
 	@Override
 	public boolean deleteBookToOrder(Order order) {
 		try {
@@ -131,8 +144,9 @@ public class Facade implements IFacade{
 			LOGGER.error(e);
 			return false;
 		}
-		
+
 	}
+
 	@Override
 	public boolean cancelOrder(int id) {
 		try {
@@ -142,8 +156,9 @@ public class Facade implements IFacade{
 			LOGGER.error(e);
 			return false;
 		}
-		
+
 	}
+
 	@Override
 	public int getCountOfOrder() throws Exception {
 		int orders = 0;
@@ -154,8 +169,9 @@ public class Facade implements IFacade{
 		}
 		return orders;
 	}
+
 	@Override
-	public List<Object[]> sortRequestByName() throws Exception{
+	public List<Object[]> sortRequestByName() throws Exception {
 		try {
 			return requestManager.getAllBookRequestByName();
 		} catch (Exception e) {
@@ -163,8 +179,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public Double sortRequestAmounte() throws Exception{
+	public Double sortRequestAmounte() throws Exception {
 		try {
 			return requestManager.getAllBookRequestByAmount();
 		} catch (Exception e) {
@@ -172,8 +189,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Order> sortOrderByDateOfDeliver() throws Exception{
+	public List<Order> sortOrderByDateOfDeliver() throws Exception {
 		try {
 			return orderManager.getOrderByDateOfDelivered();
 		} catch (Exception e) {
@@ -181,8 +199,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public Double sortOrderByPrice() throws Exception{
+	public Double sortOrderByPrice() throws Exception {
 		try {
 			return orderManager.getOrderByPrice();
 		} catch (Exception e) {
@@ -190,8 +209,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Order> sortOrderByStatus() throws Exception{
+	public List<Order> sortOrderByStatus() throws Exception {
 		try {
 			return orderManager.getOrderByStatus();
 		} catch (Exception e) {
@@ -199,8 +219,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Book> sortBookByDate() throws Exception{
+	public List<Book> sortBookByDate() throws Exception {
 		try {
 			return bookManager.getBookByDate();
 		} catch (Exception e) {
@@ -208,8 +229,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Book> sortBookByName() throws Exception{
+	public List<Book> sortBookByName() throws Exception {
 		try {
 			return bookManager.getBookByName();
 		} catch (Exception e) {
@@ -218,8 +240,9 @@ public class Facade implements IFacade{
 		}
 		return null;
 	}
+
 	@Override
-	public List<Book> sortBookByPrice() throws Exception{
+	public List<Book> sortBookByPrice() throws Exception {
 		try {
 			return bookManager.getBookByPrice();
 		} catch (Exception e) {
@@ -227,8 +250,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Book> sortBookByStatus() throws Exception{
+	public List<Book> sortBookByStatus() throws Exception {
 		try {
 			return bookManager.getBookByStatus();
 		} catch (Exception e) {
@@ -236,8 +260,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Book> sortBookByYearOfPublic() throws Exception{
+	public List<Book> sortBookByYearOfPublic() throws Exception {
 		try {
 			return bookManager.getBookByYearOfPublic();
 		} catch (Exception e) {
@@ -245,9 +270,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
-	
+
 	@Override
-	public List<Book> sortOldBook() throws Exception{
+	public List<Book> sortOldBook() throws Exception {
 		try {
 			return bookManager.sortOldBooks();
 		} catch (Exception e) {
@@ -255,9 +280,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
-	
+
 	@Override
-	public List<Book> getBooks() throws Exception{
+	public List<Book> getBooks() throws Exception {
 		try {
 			return bookManager.getBookByName();
 		} catch (Exception e) {
@@ -265,8 +290,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Order> getOrders() throws Exception{
+	public List<Order> getOrders() throws Exception {
 		try {
 			return orderManager.getOrders();
 		} catch (Exception e) {
@@ -274,8 +300,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Request> getRequests() throws Exception{
+	public List<Request> getRequests() throws Exception {
 		try {
 			return requestManager.getRequest();
 		} catch (Exception e) {
@@ -283,8 +310,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
+
 	@Override
-	public List<Request> readObjectFromCSV() throws Exception{
+	public List<Request> readObjectFromCSV() throws Exception {
 		try {
 			return requestManager.getRequest();
 		} catch (Exception e) {
@@ -292,9 +320,9 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
-	
+
 	@Override
-	public boolean booksAnnotationFromCSV() throws Exception{
+	public boolean booksAnnotationFromCSV() throws Exception {
 		try {
 			bookManager.getAnnotationBook();
 			return true;
@@ -303,9 +331,9 @@ public class Facade implements IFacade{
 			return false;
 		}
 	}
-	
+
 	@Override
-	public boolean orderAnnotationFromCSV() throws Exception{
+	public boolean orderAnnotationFromCSV() throws Exception {
 		try {
 			orderManager.getAnnotationOrder();
 			return true;
@@ -314,73 +342,78 @@ public class Facade implements IFacade{
 			return false;
 		}
 	}
-	
+
 	@Override
-	public boolean orderAnnotationToCSV() throws Exception{
-		try{
-			orderManager.saveAnnotationOrder();
-		return true;
-		}catch(Exception e){
-			LOGGER.error(e);
-			return false;
-		}
-	}
-	
-	@Override
-	public boolean requestAnnotationFromCSV() throws Exception{
+	public boolean orderAnnotationToCSV() throws Exception {
 		try {
-				requestManager.getAnnotationRequest();
+			orderManager.saveAnnotationOrder();
 			return true;
 		} catch (Exception e) {
 			LOGGER.error(e);
 			return false;
 		}
 	}
+
 	@Override
-	public void requestAnnotationToCSV() throws Exception{
+	public boolean requestAnnotationFromCSV() throws Exception {
 		try {
-				requestManager.saveAnnotationRequest();
+			requestManager.getAnnotationRequest();
+			return true;
 		} catch (Exception e) {
-			LOGGER.error(e);
-		}
-	}
-	
-	@Override
-	public boolean addBook(Book book) throws Exception{
-		try{
-			bookManager.addBook(book);
-		return true;
-		}catch(Exception e){
 			LOGGER.error(e);
 			return false;
 		}
 	}
+
 	@Override
-	public void cloneOrder(int id) throws Exception{
-		try{
+	public void requestAnnotationToCSV() throws Exception {
+		try {
+			requestManager.saveAnnotationRequest();
+		} catch (Exception e) {
+			LOGGER.error(e);
+		}
+	}
+
+	@Override
+	public boolean addBook(Book book) throws Exception {
+		try {
+			bookManager.addBook(book);
+			return true;
+		} catch (Exception e) {
+			LOGGER.error(e);
+			return false;
+		}
+	}
+
+	@Override
+	public void cloneOrder(int id) throws Exception {
+		try {
 			orderManager.cloneOrder(id);
-		}catch(Exception e){
+		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 	}
+
 	@Override
-	public void deleteBook(int id) throws Exception{
-		try{
+	public void deleteBook(int id) throws Exception {
+		try {
 			bookManager.deleteBook(id);
-		}catch(Exception e){
+		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 	}
+
 	@Override
-	public void deleteRequest(int id) throws Exception{
-		try{
+	public void deleteRequest(int id) throws Exception {
+		try {
 			requestManager.deleteRequest(id);
-		}catch(Exception e){
+		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 	}
+
 	@Override
-	public Request getRequestById(int id) throws Exception{
+	public Request getRequestById(int id) throws Exception {
 		Request request = null;
 		try {
 			request = requestManager.getRequestById(id);
@@ -390,18 +423,18 @@ public class Facade implements IFacade{
 			return null;
 		}
 	}
-	
+
 	@Override
-	public void registration(String name, String surname, String password) throws Exception{
+	public void registration(String name, String surname, String password) throws Exception {
 		try {
 			userManager.registraton(name, surname, password);
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 	}
-	
+
 	@Override
-	public void saveLog(User user, String action) throws Exception{
+	public void saveLog(User user, String action) throws Exception {
 		try {
 			String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
 			String userName = user.getName();
@@ -410,9 +443,9 @@ public class Facade implements IFacade{
 			LOGGER.error(e);
 		}
 	}
-	
+
 	@Override
-	public User getAuthUser(String login, String password) throws Exception{
+	public User getUserByPasswordAndLogin(String login, String password) throws Exception {
 		try {
 			User user = userManager.getAuthUser(new AuthUser(null, login, password));
 			return user;

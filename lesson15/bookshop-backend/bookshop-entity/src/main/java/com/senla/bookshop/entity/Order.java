@@ -26,33 +26,29 @@ import com.senla.bookshop.annotations.enums.PropertyType;
 import com.senla.bookshop.enums.OrderStatus;
 
 @Entity
-@Table(name="orders")
+@Table(name = "orders")
 @CsvEntity(fileName = "files/files/data/csv/order.csv")
-public class Order implements Serializable , Cloneable{
-	
+public class Order implements Serializable, Cloneable {
+
 	private static final long serialVersionUID = -1311635413752160170L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="order_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "order_id")
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 1)
 	private Integer id;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "order_books", 
-				joinColumns = @JoinColumn(name = "book_id"),
-				inverseJoinColumns = @JoinColumn(name = "order_id"))
-	@CsvProperty(propertyType = PropertyType.CompositeProperty, columnNumber = 2, keyField="bookInfo")
+	@JoinTable(name = "order_books", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "order_id"))
+	@CsvProperty(propertyType = PropertyType.CompositeProperty, columnNumber = 2, keyField = "bookInfo")
 	private List<Book> books;
-	
-	
-	@Column(name="date_of_deliver")
+
+	@Column(name = "date_of_deliver")
 	@Temporal(TemporalType.DATE)
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 3)
 	private Date dateOfDeliver;
-	
-	
-	@Column(name="status")
+
+	@Column(name = "status")
 	@Enumerated(EnumType.STRING)
 	@CsvProperty(propertyType = PropertyType.SimpleProperty, columnNumber = 4)
 	private OrderStatus status;
@@ -60,13 +56,13 @@ public class Order implements Serializable , Cloneable{
 	public Order() {
 		super();
 	}
-	
+
 	public Order(List<Book> books, Date dateOfDeliver, OrderStatus status) {
 		this.books = books;
 		this.dateOfDeliver = dateOfDeliver;
 		this.status = status;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -99,7 +95,6 @@ public class Order implements Serializable , Cloneable{
 		this.status = status;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", books=" + books + ", dateOfDeliver=" + dateOfDeliver + ", status=" + status + "]";
@@ -107,9 +102,9 @@ public class Order implements Serializable , Cloneable{
 
 	@Override
 	public Order clone() throws CloneNotSupportedException {
-		Order cloneOrder = (Order)super.clone();
+		Order cloneOrder = (Order) super.clone();
 		cloneOrder.setId(0);
 		return cloneOrder;
-  }
-	
+	}
+
 }

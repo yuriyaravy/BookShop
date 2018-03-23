@@ -9,14 +9,15 @@ import com.senla.bookshop.entity.User;
 
 public class UserDao extends AbstractDao<User> implements IUserDao {
 
+	private static final String AUTH_USER = "authUser";
+
 	public UserDao() {
 		super(User.class);
 	}
 
 	@Override
 	public User getUserData(AuthUser authUser, Session session) {
-		User user = (User) session.createCriteria(User.class).add(Restrictions.eq("authUser", authUser))
-				.uniqueResult();
+		User user = (User) session.createCriteria(User.class).add(Restrictions.eq(AUTH_USER, authUser)).uniqueResult();
 		return user;
 	}
 

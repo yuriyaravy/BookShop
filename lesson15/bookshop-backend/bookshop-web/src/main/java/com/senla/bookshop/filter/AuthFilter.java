@@ -11,26 +11,26 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.xml.ws.spi.WebServiceFeatureAnnotation;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.senla.bookshop.entity.User;
-import com.senla.bookshop.utils.web.TokenHandler;
+import com.senla.bookshop.facade.Facade;
+import com.senla.bookshop.utils.web.TokenStorage;
 
-public class AuthFilter implements Filter{
-	
+public class AuthFilter implements Filter {
+
 	private static final Logger LOGGER = Logger.getLogger(AuthFilter.class);
-	
+
+	private static final String ATTRIBUTE_USER = "User";
+	private static final String ATTRIBUTE_METHOD = "method";
+	private static final String CONDITION = "/";
+
 	private List<String> pathFilter = Arrays
-			.asList(new String[] { "deleteBook", "getBooks", "getOrders", "getRequests"
-					, "putBookTo" , "putOrder" , "request" , "login" , "logout"});
-	
+			.asList(new String[] { "book", "order", "request", "request", "login", "logout" });
+
 	private FilterConfig filterConfig;
-	
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -38,17 +38,30 @@ public class AuthFilter implements Filter{
 	}
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)throws IOException, ServletException {
-		
-		HttpServletRequest req = (HttpServletRequest) request;
-		String uri = ((HttpServletRequest)request).getRequestURI();
-		String path  = StringUtils.substringAfterLast(uri, "/");
-		
-		Integer id = TokenHandler.getInstance().extractToken(req.getHeader("id"));
-		
-		if(!pathFilter.contains(path) && id != null) {
-			chain.doFilter(request, response);
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
+			throws IOException, ServletException {
+
+		String url = ((HttpServletRequest) request).getRequestURI();
+		String path = StringUtils.substringAfterLast(((HttpServletRequest) request).getRequestURI(), CONDITION);
+
+		if (!pathFilter.contains(path)) {
+			filterChain.doFilter(request, response);
 			return;
+		}
+		HttpServletRequest req = (HttpServletRequest) request;
+		User user = (User) req.getSession().getAttribute(ATTRIBUTE_USER);
+		if (user != null) {
+			String token;
+			try {
+				token = TokenStorage.getInstance().getToken(user);
+				if (token != null) {
+					filterChain.doFilter(request, response);
+					String action = url + " " + (String) req.getSession().getAttribute(ATTRIBUTE_METHOD);
+					Facade.getInstance().saveLog(user, action);
+				}
+			} catch (Exception e) {
+				LOGGER.error(e.getMessage());
+			}
 		}
 	}
 

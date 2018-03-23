@@ -23,7 +23,7 @@ public class ReadDependency {
 			logger.error(e.getMessage());
 		}
 	}
-	
+
 	public static String getClassName(String key) {
 		if (dependencies == null) {
 			getDependencyFromFile();

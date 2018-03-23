@@ -10,18 +10,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "auth_users")
 public class AuthUser {
-	
+
 	private Integer id;
 	private String login;
 	private String password;
-	
+
 	public AuthUser(Integer id, String login, String password) {
 		super();
 		this.id = id;
 		this.login = login;
 		this.password = password;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -41,7 +41,7 @@ public class AuthUser {
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	
+
 	@Column(name = "password")
 	public String getPassword() {
 		return password;
@@ -50,6 +50,5 @@ public class AuthUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 
 }

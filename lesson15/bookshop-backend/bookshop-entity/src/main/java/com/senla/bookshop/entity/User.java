@@ -9,12 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-	
+
 	private Integer id;
 	private AuthUser authUser;
 	private String name;
 	private String surname;
-	
+
 	public User(Integer id, AuthUser authUser, String name, String surname) {
 		super();
 		this.id = id;
@@ -22,7 +22,7 @@ public class User {
 		this.name = name;
 		this.surname = surname;
 	}
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	public AuthUser getAuthUser() {
 		return authUser;
@@ -31,7 +31,7 @@ public class User {
 	public void setAuthUser(AuthUser authUser) {
 		this.authUser = authUser;
 	}
-	
+
 	@Column(name = "name")
 	public String getName() {
 		return name;
@@ -40,7 +40,7 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "surname")
 	public String getSurname() {
 		return surname;
@@ -49,7 +49,7 @@ public class User {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	
+
 	@Column(name = "name")
 	public Integer getId() {
 		return id;
@@ -58,5 +58,5 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 }

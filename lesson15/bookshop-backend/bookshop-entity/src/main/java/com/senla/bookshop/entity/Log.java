@@ -7,8 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Logs_table")
 public class Log {
-	
-	
+
 	private String time;
 	private String userName;
 	private String actionName;
@@ -27,7 +26,7 @@ public class Log {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	
+
 	@Column(name = "user_name")
 	public String getUserName() {
 		return userName;
@@ -36,7 +35,7 @@ public class Log {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+
 	@Column(name = "action")
 	public String getActionName() {
 		return actionName;
@@ -45,5 +44,5 @@ public class Log {
 	public void setActionName(String actionName) {
 		this.actionName = actionName;
 	}
-	
+
 }
