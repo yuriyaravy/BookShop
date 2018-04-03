@@ -7,19 +7,26 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.senla.bookshop.api.controller.IBookManager;
 import com.senla.bookshop.api.dao.IBookDao;
-import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
-public class BookManager implements IBookManager{
+@RestController
+@Transactional(rollbackFor = {Exception.class})
+public class BookController implements IBookManager{
 	
-	private static final Logger LOGGER = LogManager.getLogger(BookManager.class);
+	private static final Logger LOGGER = LogManager.getLogger(BookController.class);
 	
-	private final IBookDao bookDao = (IBookDao) DependencyIngection.getInctance().getClassInstance(IBookDao.class);
+	@Autowired
+	private IBookDao bookDao;
 	private SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
 	
 	@Override
@@ -28,57 +35,46 @@ public class BookManager implements IBookManager{
 	}
 	
 	@Override
+	@RequestMapping(value = "/create-book", method = RequestMethod.POST)
 	public void addBook(Book book) throws Exception{
-		Session session = sessionFactory.getCurrentSession();
 		try{
-			session.beginTransaction();
-			bookDao.create(session, book);
-			session.getTransaction().commit();
+		Session session = sessionFactory.getCurrentSession();
+		bookDao.create(session, book);
 		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
 			LOGGER.error(e);
-		} 
+		}
 	}
 	
 	@Override
+	@RequestMapping(value = "/get-book-by-id", method = RequestMethod.GET)
 	public Book getBookById(int id) throws Exception{
 		Session session = sessionFactory.getCurrentSession();
 		Book book = null;
 		try{
-			session.beginTransaction();
 			book = bookDao.getById(session, id);
-			session.getTransaction().commit();
 			return book;
 		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
 			LOGGER.error(e);
 			return null;
 		}
 	}
 	
 	@Override
+	@RequestMapping(value = "/sort-book-by-name", method = RequestMethod.GET)
 	public List<Book> getBookByName() throws Exception{
 		Session session = sessionFactory.getCurrentSession();
 		List<Book> books = null;
 		try{
-			session.beginTransaction();
 			books = bookDao.sortBookByName(session);
-			session.getTransaction().commit();
 			return books;
 		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
 			LOGGER.error(e);
 			return null;
 		}
 	}
 	
 	@Override
+	@RequestMapping(value = "/sort-book-by-name", method = RequestMethod.GET)
 	public List<Book> getBookByDate() throws Exception{
 		Session session = sessionFactory.getCurrentSession();
 		List<Book> books = null;
