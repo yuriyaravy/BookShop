@@ -1,4 +1,4 @@
-package com.senla.bookshop.manager.auth;
+package com.senla.bookshop.service.auth;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -9,7 +9,7 @@ import org.hibernate.SessionFactory;
 import com.senla.bookshop.api.controller.ILoggerManager;
 import com.senla.bookshop.dao.model.LoggerDao;
 import com.senla.bookshop.entity.Log;
-import com.senla.bookshop.manager.RequestManager;
+import com.senla.bookshop.service.RequestManager;
 import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
 public class LoggerManager implements ILoggerManager {

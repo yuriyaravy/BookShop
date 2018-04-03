@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.senla.bookshop.api.dao.IOrderDao;
 import com.senla.bookshop.entity.Order;
 import com.senla.bookshop.enums.OrderStatus;
 
+@Repository
 public class OrderDao extends AbstractDao<Order> implements IOrderDao {
 
 	public OrderDao() {

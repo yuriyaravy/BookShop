@@ -5,9 +5,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.senla.bookshop.api.dao.IGenericDao;
 
+@Repository
 public abstract class AbstractDao<T> implements IGenericDao<T> {
 
 	protected Class<T> clazz;

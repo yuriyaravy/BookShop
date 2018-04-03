@@ -1,4 +1,4 @@
-package com.senla.bookshop.manager;
+package com.senla.bookshop.service;
 
 import java.sql.SQLException;
 import java.util.Date;
@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.senla.bookshop.api.controller.IOrderManager;
 import com.senla.bookshop.api.dao.IOrderDao;
@@ -20,14 +21,16 @@ import com.senla.bookshop.enums.OrderStatus;
 import com.senla.bookshop.utils.DateManager;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 import com.senla.bookshop.utils.annotations.AnnotationCSVWriter;
-import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
 public class OrderManager implements IOrderManager{
 	
 	private static final Logger LOGGER = LogManager.getLogger(BookManager.class);
 	
+	
 	private final IOrderDao orderDao = (IOrderDao) DependencyIngection.getInctance().getClassInstance(IOrderDao.class);
-	private SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 	
 	@Override
 	public void getAnnotationOrder() throws Exception{

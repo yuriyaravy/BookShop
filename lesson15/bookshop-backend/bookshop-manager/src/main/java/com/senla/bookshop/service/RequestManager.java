@@ -1,4 +1,4 @@
-package com.senla.bookshop.manager;
+package com.senla.bookshop.service;
 
 import java.util.List;
 import java.util.stream.DoubleStream;
@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.senla.bookshop.api.controller.IRequestManager;
 import com.senla.bookshop.api.dao.IRequestDao;
@@ -15,7 +16,6 @@ import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entity.Request;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 import com.senla.bookshop.utils.annotations.AnnotationCSVWriter;
-import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
 public class RequestManager implements IRequestManager{
 	
@@ -23,7 +23,9 @@ public class RequestManager implements IRequestManager{
 	
 	
 	private final IRequestDao requestDao = (IRequestDao) DependencyIngection.getInctance().getClassInstance(IRequestDao.class);
-	private SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 	
 	@Override
 	public void getAnnotationRequest() throws Exception{

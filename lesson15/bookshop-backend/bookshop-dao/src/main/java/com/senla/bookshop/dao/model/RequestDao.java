@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 import com.senla.bookshop.api.dao.IRequestDao;
 import com.senla.bookshop.entity.Request;
 
+@Repository
 public class RequestDao extends AbstractDao<Request> implements IRequestDao {
 
 	public RequestDao() {
