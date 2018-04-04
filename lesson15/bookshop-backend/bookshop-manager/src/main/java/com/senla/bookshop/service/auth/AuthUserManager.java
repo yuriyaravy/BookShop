@@ -1,22 +1,24 @@
-package com.senla.bookshop.manager.auth;
+package com.senla.bookshop.service.auth;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.senla.bookshop.api.controller.IAuthUserManager;
 import com.senla.bookshop.dao.model.AuthUserDao;
 import com.senla.bookshop.entity.AuthUser;
-import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
 public class AuthUserManager implements IAuthUserManager {
 
 	private static final Logger LOGGER = LogManager.getLogger(UserManager.class);
 
-	private final AuthUserDao authUserDao = new AuthUserDao();
-	private SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
+	private  AuthUserDao authUserDao = new AuthUserDao();
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	@Override
 	public void addUser(AuthUser authUser) {

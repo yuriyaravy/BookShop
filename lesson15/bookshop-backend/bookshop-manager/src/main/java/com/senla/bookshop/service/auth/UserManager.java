@@ -1,4 +1,4 @@
-package com.senla.bookshop.manager.auth;
+package com.senla.bookshop.service.auth;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
