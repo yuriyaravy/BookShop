@@ -7,7 +7,7 @@
         <dependent-module archiveName="bookshop-facade-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-facade/bookshop-facade">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="bookshop-manager-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-manager/bookshop-manager">
+        <dependent-module archiveName="bookshop-manager-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-service/bookshop-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="bookshop-annotation-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-annotation/bookshop-annotation">

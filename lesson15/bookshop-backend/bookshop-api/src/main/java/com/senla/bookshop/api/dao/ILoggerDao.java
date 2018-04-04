@@ -1,5 +1,5 @@
 package com.senla.bookshop.api.dao;
 
-public interface ILoggerDAO {
+public interface ILoggerDao {
 
 }

@@ -15,7 +15,7 @@ import com.senla.bookshop.utils.web.TokenStorage;
 
 @Controller
 @RestController
-public class LoginServler {
+public class LoginController {
 
 	private static final String LOGIN = "login";
 

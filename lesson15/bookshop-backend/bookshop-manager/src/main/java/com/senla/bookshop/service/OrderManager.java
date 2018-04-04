@@ -11,10 +11,11 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.senla.bookshop.api.controller.IOrderManager;
 import com.senla.bookshop.api.dao.IOrderDao;
-import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.entity.Order;
 import com.senla.bookshop.enums.OrderStatus;
@@ -22,286 +23,188 @@ import com.senla.bookshop.utils.DateManager;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 import com.senla.bookshop.utils.annotations.AnnotationCSVWriter;
 
-public class OrderManager implements IOrderManager{
-	
-	private static final Logger LOGGER = LogManager.getLogger(BookController.class);
-	
-	
-	private final IOrderDao orderDao = (IOrderDao) DependencyIngection.getInctance().getClassInstance(IOrderDao.class);
-	
+@Service("orderManager")
+@Transactional
+public class OrderManager implements IOrderManager {
+
+	private static final Logger LOGGER = LogManager.getLogger(OrderManager.class);
+
+	@Autowired
+	private IOrderDao orderDao;
+
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
-	public void getAnnotationOrder() throws Exception{
-		orderDao.update(sessionFactory.openSession(),(Order) AnnotationCSVReader.readerFromCsv(Order.class));
+	@Transactional
+	public void getAnnotationOrder() throws Exception {
+		orderDao.update(sessionFactory.openSession(), (Order) AnnotationCSVReader.readerFromCsv(Order.class));
 	}
-	
+
 	@Override
-	public void saveAnnotationOrder() throws Exception{
+	@Transactional
+	public void saveAnnotationOrder() throws Exception {
 		List<Order> list = orderDao.getAll(sessionFactory.openSession(), null);
 		AnnotationCSVWriter.wtiteToCSVFile(list);
 	}
+
 	@Override
-	public double getProfitForAllOrders() throws Exception{
+	@Transactional
+	public double getProfitForAllOrders() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		Double price = null;
-		try{
-			List<Order> myList = orderDao.getAll(session, null);
-			for(Order order : myList){
-				price = DoubleStream.of(((Book) order.getBooks()).getPrice()).sum();
+		List<Order> myList = orderDao.getAll(session, null);
+		for (Order order : myList) {
+			price = DoubleStream.of(((Book) order.getBooks()).getPrice()).sum();
 		}
-			return price;
-		}catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return 0;
-		}
-		
+		return price;
+
 	}
+
 	@Override
-	public void orderCompleate(int id) throws Exception{
+	@Transactional
+	public void orderCompleate(int id) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.beginTransaction();
-			Order order = orderDao.getById(session,id);
+		try {
+			Order order = orderDao.getById(session, id);
 			order.setStatus(OrderStatus.COMPLEATE);
-			orderDao.update(sessionFactory.openSession(),order);
-			session.getTransaction().commit();
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
+			orderDao.update(sessionFactory.openSession(), order);
+		} catch (HibernateException e) {
 			LOGGER.error(e);
 		}
 	}
-	
+
 	@Override
-	public  void allOrderCompleate() throws Exception{
+	@Transactional
+	public void allOrderCompleate() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.beginTransaction();
-			List<Order> orderList = orderDao.getAll(session, null);
-				for(Order temp : orderList){
-					temp.setStatus(OrderStatus.COMPLEATE);
-					orderDao.update(sessionFactory.openSession(),temp);
-				}
-			session.getTransaction().commit();
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
+		List<Order> orderList = orderDao.getAll(session, null);
+		for (Order temp : orderList) {
+			temp.setStatus(OrderStatus.COMPLEATE);
+			orderDao.update(sessionFactory.openSession(), temp);
 		}
 	}
-			
+
 	@Override
-	public Order getOrderById(int id) throws Exception{
+	@Transactional
+	public Order getOrderById(int id) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		Order order = null;
-		try{
-			session.beginTransaction();
-			order = orderDao.getById(session,id);
-			session.getTransaction().commit();
-			return order;
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
-		}
+		order = orderDao.getById(session, id);
+		return order;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addBookToOrder(Book book) throws Exception{
+	@Transactional
+	public void addBookToOrder(Book book) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.beginTransaction();
-			Order order = new Order();
-			order.setBooks((List<Book>) book);
-			order.setStatus(OrderStatus.PROCESSING);
-			orderDao.create(session,order);
-			session.getTransaction().commit();
-		} catch (HibernateException e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-		} 
+		Order order = new Order();
+		order.setBooks((List<Book>) book);
+		order.setStatus(OrderStatus.PROCESSING);
+		orderDao.create(session, order);
 	}
+
 	@Override
-	public void deleteOrder(Order order) throws Exception{
+	@Transactional
+	public void deleteOrder(Order order) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.beginTransaction();
-			orderDao.delete(session, order);
-			session.getTransaction().commit();
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-		}
+		orderDao.delete(session, order);
 	}
-	
+
 	@Override
-	public void cancelOrder(int id) throws Exception{
+	@Transactional
+	public void cancelOrder(int id) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.beginTransaction();
-			Order cancelOrder = orderDao.getById(session,id);
-			cancelOrder.setStatus(OrderStatus.CANCELED);
-			orderDao.update(session,cancelOrder);
-			session.getTransaction().commit();
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-		}
+		Order cancelOrder = orderDao.getById(session, id);
+		cancelOrder.setStatus(OrderStatus.CANCELED);
+		orderDao.update(session, cancelOrder);
 	}
+
 	@Override
-	public int getCountOfOrder() throws Exception{
+	@Transactional
+	public int getCountOfOrder() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.beginTransaction();
-			List<Order> orders = orderDao.getAll(session, null);
-			session.getTransaction().commit();
-			return orders.size();
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return 0;
-		}
+		List<Order> orders = orderDao.getAll(session, null);
+		return orders.size();
 	}
-	
+
 	@Override
-	public List<Order> getOrderByDateOfDelivered() throws Exception{
+	@Transactional
+	public List<Order> getOrderByDateOfDelivered() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		List<Order> orders = null;
-		try{
-			session.beginTransaction();
-			orders = orderDao.sortOrderByDateOfDelivered(session);
-			session.getTransaction().commit();
-			return orders;
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
-		}
+		orders = orderDao.sortOrderByDateOfDelivered(session);
+		session.getTransaction().commit();
+		return orders;
 	}
-	
+
 	@Override
-	public List<Order> getOrderByStatus() throws Exception{
+	@Transactional
+	public List<Order> getOrderByStatus() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		List<Order> orders = null;
-		try{
-			session.beginTransaction();
-			orders = orderDao.sortOrderByStatus(session);
-			session.getTransaction().commit();
-			return orders;
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
-		}
+		orders = orderDao.sortOrderByStatus(session);
+		return orders;
 	}
-	
+
 	@Override
-	public Double getOrderByPrice() throws Exception{
+	@Transactional
+	public Double getOrderByPrice() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		Double profit = null;
-		try{
-			List<Order> list = orderDao.getAll(session, null);
-			for(Order temp : list){
-				profit = DoubleStream.of(((Book) temp.getBooks()).getPrice()).sum();
-			}
-			return profit;
-		}catch(HibernateException e){
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
+		List<Order> list = orderDao.getAll(session, null);
+		for (Order temp : list) {
+			profit = DoubleStream.of(((Book) temp.getBooks()).getPrice()).sum();
 		}
+		return profit;
 	}
-	
+
 	@Override
-	public Double getProfitByPeriodOfTime(int day) throws Exception{
+	@Transactional
+	public Double getProfitByPeriodOfTime(int day) throws Exception {
 		Session session = sessionFactory.getCurrentSession();
 		Date dateNow = DateManager.setDate();
 		Date dateFromOrder;
 		Double profit = null;
-		try{
-			List<Order> list = orderDao.getCompletedOrder(session);
-			for(Order temp : list){
-				dateFromOrder = temp.getDateOfDeliver();
-				long difference = dateNow.getTime() - dateFromOrder.getTime();
-				int days = (int) (difference /(24 * 60 *60 * 1000));
-				if(days > day){
-					profit = DoubleStream.of(((Book) temp.getBooks()).getPrice()).sum();
-				}
+		List<Order> list = orderDao.getCompletedOrder(session);
+		for (Order temp : list) {
+			dateFromOrder = temp.getDateOfDeliver();
+			long difference = dateNow.getTime() - dateFromOrder.getTime();
+			int days = (int) (difference / (24 * 60 * 60 * 1000));
+			if (days > day) {
+				profit = DoubleStream.of(((Book) temp.getBooks()).getPrice()).sum();
 			}
-				return profit;
-		}catch(HibernateException e){
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
 		}
+		return profit;
 	}
-	
+
 	@Override
-	public void saveOrderToCSV() throws Exception{
+	@Transactional
+	public void saveOrderToCSV() throws Exception {
 		AnnotationCSVWriter.wtiteToCSVFile(orderDao.getAll(sessionFactory.openSession(), null));
 	}
+
 	@Override
-	public List<Order> getOrders() throws Exception{
+	@Transactional
+	public List<Order> getOrders() throws Exception {
 		Session session = sessionFactory.getCurrentSession();
-		List<Order> orders = null;
-		try{
-			session.beginTransaction();
-			orders = orderDao.getAll(session , null);
-			session.getTransaction().commit();
-			return orders;
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
-		}
+		List<Order> orders = orderDao.getAll(session, null);
+
+		return orders;
 	}
-	
+
 	@Override
+	@Transactional
 	public Order cloneOrder(int id) throws SQLException, Exception {
 		Session session = sessionFactory.getCurrentSession();
 		Order clone = null;
-		try{
-				Order order = orderDao.getById(session, id);
-				clone = order.clone();
-				session.beginTransaction();
-				orderDao.create(session, clone);
-				session.getTransaction().commit();
-				return clone;
-		} catch (HibernateException  e) {
-			if(session.getTransaction()!= null){
-				session.getTransaction().rollback();
-			}
-			LOGGER.error(e);
-			return null;
-		} 
+		Order order = orderDao.getById(session, id);
+		clone = order.clone();
+		session.beginTransaction();
+		orderDao.create(session, clone);
+		session.getTransaction().commit();
+		return clone;
 	}
-	
+
 }

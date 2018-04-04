@@ -1,36 +1,28 @@
 package com.senla.bookshop.servlet;
 
-import java.io.IOException;
-
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.senla.bookshop.entity.User;
 import com.senla.bookshop.facade.Facade;
 import com.senla.bookshop.utils.web.TokenStorage;
 
-@WebServlet("/logout")
-public class LogoutServlet extends HttpServlet {
+@Controller
+@RestController
+public class LogoutController {
 
-	final static Logger LOGGER = Logger.getLogger(LogoutServlet.class);
-
-	private static final long serialVersionUID = 1L;
-
-	private static final String ERROR = "{error}";
 	private static final String ATTRIBUT = "User";
 	private static final String LOGOUT = "logout";
 	private static final String NEXT_PAGE = "/login";
 
-	public LogoutServlet() {
-	}
-
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(value = { "/logout" }, method = { RequestMethod.GET })
+	protected void logout(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			HttpSession session = request.getSession();
 			User user = (User) session.getAttribute(ATTRIBUT);
@@ -39,11 +31,7 @@ public class LogoutServlet extends HttpServlet {
 			session.invalidate();
 			response.sendRedirect(NEXT_PAGE);
 		} catch (Exception e) {
-			try {
-				response.getWriter().print(ERROR);
-			} catch (IOException e1) {
-				LOGGER.error(e.getMessage());
-			}
+			response.setStatus(404);
 		}
 	}
 

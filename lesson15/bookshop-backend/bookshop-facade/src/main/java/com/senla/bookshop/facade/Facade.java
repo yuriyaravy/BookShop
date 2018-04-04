@@ -6,33 +6,39 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.senla.bookshop.api.controller.IBookManager;
+import com.senla.bookshop.api.controller.ILoggerManager;
 import com.senla.bookshop.api.controller.IOrderManager;
 import com.senla.bookshop.api.controller.IRequestManager;
+import com.senla.bookshop.api.controller.IUserManager;
 import com.senla.bookshop.api.facade.IFacade;
-import com.senla.bookshop.di.DependencyIngection;
 import com.senla.bookshop.entity.AuthUser;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.entity.Log;
 import com.senla.bookshop.entity.Order;
 import com.senla.bookshop.entity.Request;
 import com.senla.bookshop.entity.User;
-import com.senla.bookshop.manager.auth.LoggerManager;
-import com.senla.bookshop.manager.auth.UserManager;
 
 public class Facade implements IFacade {
 
 	final static Logger LOGGER = Logger.getLogger(Facade.class);
 
-	private IRequestManager requestManager = (IRequestManager) DependencyIngection.getInctance()
-			.getClassInstance(IRequestManager.class);
-	private IBookManager bookManager = (IBookManager) DependencyIngection.getInctance()
-			.getClassInstance(IBookManager.class);
-	private IOrderManager orderManager = (IOrderManager) DependencyIngection.getInctance()
-			.getClassInstance(IOrderManager.class);
-	private UserManager userManager = new UserManager();
-	private LoggerManager logUsers = new LoggerManager();
+	@Autowired
+	private IRequestManager requestManager;
+
+	@Autowired
+	private IBookManager bookManager;
+
+	@Autowired
+	private IOrderManager orderManager;
+
+	@Autowired
+	private IUserManager userManager;
+
+	@Autowired
+	private ILoggerManager logUsers;
 
 	private static Facade facade;
 
