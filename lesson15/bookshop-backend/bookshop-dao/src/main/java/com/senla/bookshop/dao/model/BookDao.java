@@ -6,11 +6,13 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.senla.bookshop.api.dao.IBookDao;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.utils.setting.Setting;
 
+@Repository
 public class BookDao extends AbstractDao<Book> implements IBookDao {
 
 	public BookDao() {

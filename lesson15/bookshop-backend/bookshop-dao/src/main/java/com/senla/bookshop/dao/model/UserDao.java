@@ -2,11 +2,13 @@ package com.senla.bookshop.dao.model;
 
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.senla.bookshop.api.dao.IUserDao;
 import com.senla.bookshop.entity.AuthUser;
 import com.senla.bookshop.entity.User;
 
+@Repository
 public class UserDao extends AbstractDao<User> implements IUserDao {
 
 	private static final String AUTH_USER = "authUser";

@@ -24,7 +24,7 @@ import com.senla.bookshop.utils.hibernate.HibernateUtil;
 
 public class OrderManager implements IOrderManager{
 	
-	private static final Logger LOGGER = LogManager.getLogger(BookManager.class);
+	private static final Logger LOGGER = LogManager.getLogger(BookController.class);
 	
 	private final IOrderDao orderDao = (IOrderDao) DependencyIngection.getInctance().getClassInstance(IOrderDao.class);
 	private SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();

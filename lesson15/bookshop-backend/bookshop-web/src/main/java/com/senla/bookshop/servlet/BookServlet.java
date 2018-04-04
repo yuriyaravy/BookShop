@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.gson.Gson;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.facade.Facade;
 
-@WebServlet("/book")
+@Controller
 public class BookServlet extends HttpServlet {
 
 	final static Logger LOGGER = Logger.getLogger(BookServlet.class);
@@ -23,7 +26,7 @@ public class BookServlet extends HttpServlet {
 
 	private static final String ERROR = "{error}";
 
-	@Override
+	@RequestMapping(value = "/book", method = RequestMethod.GET)
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		resp.setContentType("application/json;charset=utf-8");
 		List<Book> books = null;
@@ -40,6 +43,7 @@ public class BookServlet extends HttpServlet {
 		}
 	}
 
+	@RequestMapping(value = "/book", method = RequestMethod.POST)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		String title = request.getParameter("title");
 		Double price = Double.parseDouble(request.getParameter("price"));
@@ -59,7 +63,7 @@ public class BookServlet extends HttpServlet {
 		}
 	}
 
-	@Override
+	@RequestMapping(value = "/book", method = RequestMethod.DELETE)
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) {
 		String stringId = request.getParameter("id");
 		if (stringId != null) {

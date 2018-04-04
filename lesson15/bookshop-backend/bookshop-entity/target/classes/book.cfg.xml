@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.senla.bookshop.entities.Book" table="books">
+        <id column="id" name="book_id" type="java.lang.Long">
+            <generator class="native" />
+        </id>
+        <property name="name" column="name" type="java.lang.String" />
+        <property name="price" column="price" type="java.lang.String" />
+        <property name="status" column="status" type="java.lang.String" />
+        <property name="yearOfPublication" column="yearOfPublication" type="java.lang.Integer" />
+        <property name="date" column="date" type="java.lang.Date" />
+ 
+    </class>
+</hibernate-mapping>
