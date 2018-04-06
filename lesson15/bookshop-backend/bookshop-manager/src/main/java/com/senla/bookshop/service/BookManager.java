@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.senla.bookshop.api.controller.IBookManager;
 import com.senla.bookshop.api.dao.IBookDao;
+import com.senla.bookshop.api.service.IBookManager;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 

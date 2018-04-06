@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.senla.bookshop.api.controller.IRequestManager;
 import com.senla.bookshop.api.dao.IRequestDao;
+import com.senla.bookshop.api.service.IRequestManager;
 import com.senla.bookshop.entity.Request;
 import com.senla.bookshop.utils.annotations.AnnotationCSVReader;
 import com.senla.bookshop.utils.annotations.AnnotationCSVWriter;

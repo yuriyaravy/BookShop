@@ -31,6 +31,7 @@
 	<classpathentry kind="lib" path="C:/Users/user/.m2/repository/org/springframework/spring-context/5.0.4.RELEASE/spring-context-5.0.4.RELEASE.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="spring-context-5.0.4.RELEASE.jar"/>
 			<attribute name="maven.groupId" value="org.springframework"/>
 			<attribute name="maven.artifactId" value="spring-context"/>
 			<attribute name="maven.version" value="5.0.4.RELEASE"/>

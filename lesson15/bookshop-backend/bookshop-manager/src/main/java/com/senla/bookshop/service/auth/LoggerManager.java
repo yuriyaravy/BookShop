@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.senla.bookshop.api.controller.ILoggerManager;
 import com.senla.bookshop.api.dao.ILoggerDao;
+import com.senla.bookshop.api.service.ILoggerManager;
 import com.senla.bookshop.dao.model.AbstractDao;
 import com.senla.bookshop.dao.model.LoggerDao;
 import com.senla.bookshop.entity.Log;

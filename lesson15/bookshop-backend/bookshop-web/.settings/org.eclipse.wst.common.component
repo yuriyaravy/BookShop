@@ -13,9 +13,6 @@
         <dependent-module archiveName="bookshop-annotation-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-annotation/bookshop-annotation">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="bookshop-dependency-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-dependency/bookshop-dependency">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="bookshop-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bookshop-api/bookshop-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>

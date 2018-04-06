@@ -6,6 +6,11 @@
 	<artifactId>bookshop-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
 	<modules>
 		<module>bookshop-annotation</module>
 		<module>bookshop-api</module>
@@ -21,5 +26,7 @@
 		<module>bookshop-web</module>
 		<module>dsf</module>
 	</modules>
+	
+	
 
 </project>

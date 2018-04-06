@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.senla.bookshop.api.controller.IAuthUserManager;
 import com.senla.bookshop.api.dao.IAuthUserDao;
+import com.senla.bookshop.api.service.IAuthUserManager;
 import com.senla.bookshop.entity.AuthUser;
 
 @Service("bookManager")

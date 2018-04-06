@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.senla.bookshop.api.controller.IUserManager;
 import com.senla.bookshop.api.dao.IAuthUserDao;
 import com.senla.bookshop.api.dao.IUserDao;
+import com.senla.bookshop.api.service.IUserManager;
 import com.senla.bookshop.entity.AuthUser;
 import com.senla.bookshop.entity.User;
 

@@ -8,12 +8,12 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.senla.bookshop.api.controller.IBookManager;
-import com.senla.bookshop.api.controller.ILoggerManager;
-import com.senla.bookshop.api.controller.IOrderManager;
-import com.senla.bookshop.api.controller.IRequestManager;
-import com.senla.bookshop.api.controller.IUserManager;
 import com.senla.bookshop.api.facade.IFacade;
+import com.senla.bookshop.api.service.IBookManager;
+import com.senla.bookshop.api.service.ILoggerManager;
+import com.senla.bookshop.api.service.IOrderManager;
+import com.senla.bookshop.api.service.IRequestManager;
+import com.senla.bookshop.api.service.IUserManager;
 import com.senla.bookshop.entity.AuthUser;
 import com.senla.bookshop.entity.Book;
 import com.senla.bookshop.entity.Log;

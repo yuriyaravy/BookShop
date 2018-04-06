@@ -43,7 +43,6 @@ public abstract class AbstractDao<T> implements IGenericDao<T> {
 		return session.createCriteria(returnClass()).list();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public T getById(Session session, Integer id) {
 		return (T) session.get(returnClass(), id);

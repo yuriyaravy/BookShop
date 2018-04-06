@@ -1,7 +1,0 @@
-com.senla.bookshop.api.controller.IRequestManager = com.senla.bookshop.manager.RequestManager
-com.senla.bookshop.api.controller.IOrderManager = com.senla.bookshop.manager.OrderManager
-com.senla.bookshop.api.controller.IBookManager = com.senla.bookshop.manager.BookManager
-com.senla.bookshop.api.facade.IFacade = com.senla.bookshop.facade.Facade
-com.senla.bookshop.api.dao.IOrderDao = com.senla.bookshop.dao.model.OrderDao
-com.senla.bookshop.api.dao.IBookDao = com.senla.bookshop.dao.model.BookDao
-com.senla.bookshop.api.dao.IRequestDao = com.senla.bookshop.dao.model.RequestDao
